@@ -1,5 +1,4 @@
 import "../scss/main.scss";
-import "virtual:svg-icons-register";
 
 
 import gsap from "gsap";

@@ -6,9 +6,7 @@ import viteImagemin from "vite-plugin-imagemin";
 import autoprefixer from "autoprefixer";
 import postcssSortMediaQueries from "postcss-sort-media-queries";
 import zipPack from "vite-plugin-zip-pack";
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import injectHTML from "vite-plugin-html-inject";
-
 
 const rootFolder = path.basename(path.resolve());
 
@@ -17,10 +15,12 @@ export default defineConfig({
 
   plugins: [
     injectHTML(),
-   
+    
     viteImagemin({
       include: ["**/*.{png,jpg,jpeg,gif,svg,webp,avif}"],
-      exclude: ["node_modules/**", "src/assets/icons/**"],
+      // Исключаем иконки из автоматической жесткой очистки, 
+      // чтобы твои анимации и цвета в html/icons не слетели
+      exclude: ["node_modules/**", "src/html/icons/**"],
 
       gifsicle: { optimizationLevel: 7, interlaced: false },
       optipng: { optimizationLevel: 7 },
@@ -32,7 +32,8 @@ export default defineConfig({
             name: "preset-default",
             params: {
               overrides: {
-                removeViewBox: false,
+                removeViewBox: false, 
+                cleanupIDs: false,    
               },
             },
           },
@@ -48,22 +49,7 @@ export default defineConfig({
       outDir: "./",
       outFileName: `${rootFolder}.zip`,
     }),
-
-    createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
-      symbolId: "icons-[dir]-[name]",
-      svgoOptions: {
-        plugins: [
-          {
-            name: "removeAttrs",
-            params: {
-              attrs: "(fill|stroke|style)",
-            },
-          },
-          { name: "removeXMLNS", active: true },
-        ],
-      },
-    }),
+   
   ],
 
   css: {

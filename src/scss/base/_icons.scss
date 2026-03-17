@@ -9,3 +9,36 @@
   fill:#577A5B;
   }
 }
+
+// src/scss/components/_icons.scss
+
+.svg-icon {
+  // Базовые настройки для всех анимированных иконок
+  width: var(--icon-size, 100px);
+  height: var(--icon-size, 100px);
+  display: block;
+  overflow: visible;
+
+  // Стиль для фонового контура
+  .icon-bg * {
+    fill: #e0e0e0 !important;
+    stroke: none !important;
+  }
+
+  // Стиль для наливаемой "воды"
+  .icon-water * {
+    fill: #70c66b !important;
+    stroke: none !important;
+  }
+
+  // Сама анимация наполнения (clip-path)
+  .icon-fill {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1.5s ease-in-out;
+  }
+
+  // Класс, который мы добавим через JS (или при ховере для теста)
+  &.svg-animated .icon-fill {
+    clip-path: inset(0% 0 0 0);
+  }
+}
