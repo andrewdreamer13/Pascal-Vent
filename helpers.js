@@ -72,16 +72,14 @@ function convertFonts() {
 
 // Running the entire process
 (async () => {
-  console.log("🚀 Starting assets preparation...");
   try {
     // First, we clean out the old
     cleanOutputDirs();
 
     // Then we generate a new one
     await convertImages();
-    convertFonts();
+    // convertFonts();
 
-    console.log(" All assets are ready!");
   } catch (err) {
     console.error("❌ Error during preparation:", err);
   }

@@ -1,15 +1,11 @@
 @use "sass:map";
 
 // 1. fonts
-$font-main: 'Ubuntu', sans-serif;
-$font-alt: 'Arial', sans-serif;
-
-$fw-light: 300;
-$fw-reg: 400;
-$fw-medium: 500;
-$fw-bold: 700;
-
+$font-title: 'Ruberoid', sans-serif;
+$font-text: 'Proxima Nova', sans-serif;
 $fs-base: 16px;
+
+
 
 // 2. grid and layers
 $space-xs: 4px;
@@ -31,7 +27,7 @@ $clr-success: #2ecc71;
 $light-theme: (
   "bg": #ffffff,
   "surface": #f4f4f4,
-  "text": #1a1a1a,
+  "text": #848484,
   "text-muted": #666666,
   "accent": #4af6cd,
   "border": #dddddd

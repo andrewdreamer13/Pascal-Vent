@@ -12,9 +12,9 @@
 
 
 body {
-   font-family: t.$font-main, t.$font-alt; 
+   font-family: t.$font-text; 
   font-size: t.$fs-base;
-  font-weight: t.$fw-reg;
+  font-weight: 400;
   background-color: var(--clr-bg);
   color: var(--clr-text);
   transition: background-color 0.3s ease, color 0.3s ease;
