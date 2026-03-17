@@ -1,19 +1,17 @@
-# Static Sites Vite Starter 🚀
+# Pascale Vent 🌬️
 
-A professional, modular starter kit for building high-performance static websites. This boilerplate is designed to automate routine tasks and keep your project architecture clean.
+Professional website for air conditioning and ventilation systems. Built with a focus on high performance and clean UI.
 
-##  Key Features
+## 🛠 Tech Stack
 
-- **Modular HTML**: Organise your code using HTML partials for a component-based workflow.
-- **Modern CSS**: Pre-configured **SCSS** structure with a clean reset system and efficient build process.
-- **Smart Asset Optimization**: 
-  - Automated conversion of images to **WebP** format.
-  - Automated font conversion to **Woff2**.
-- **Performance First**: Optimized for speed and high Lighthouse scores right out of the box.
-- **Clean Git History**: Pre-configured `.gitignore` to keep your repository free of build artifacts and archives.
+- **Bundler:** Vite
+- **Styling:** SCSS (Modular architecture)
+- **Features:** - Adaptive layout (Mobile-first)
+  - Swiper.js for interactive components
+  - Optimized WebP/Woff2 assets
 
-## 🛠 Installation
+## 🚀 Getting Started
 
-1. **Clone the repository:**
+1. **Install dependencies:**
    ```bash
-   git clone [https://github.com/andrewdreamer13/static-sites-vite-starter.git](https://github.com/andrewdreamer13/static-sites-vite-starter.git)
+   npm install
