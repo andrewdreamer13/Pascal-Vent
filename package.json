@@ -1,0 +1,33 @@
+{
+  "name": "pascal-vent",
+  "description": "Design, supply and installation of ventilation and air conditioning systems",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node helpers.js && vite",
+    "build": "node helpers.js && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "glob": "^13.0.6",
+    "imagemin": "^9.0.1",
+    "imagemin-webp": "^8.0.0",
+    "postcss-sort-media-queries": "^6.1.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-css-order": "^2.2.0",
+    "sass": "^1.97.3",
+    "sharp": "^0.34.5",
+    "ttf2woff2": "^8.0.1",
+    "vite": "^7.3.1",
+    "vite-plugin-html-inject": "^1.1.2",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-zip-pack": "^1.2.4"
+  },
+  "dependencies": {
+    "gsap": "^3.14.2",
+    "swiper": "^12.1.2"
+  }
+}

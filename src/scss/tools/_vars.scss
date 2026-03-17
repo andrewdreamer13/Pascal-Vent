@@ -1,0 +1,57 @@
+@use "sass:map";
+
+// 1. fonts
+$font-main: 'Ubuntu', sans-serif;
+$font-alt: 'Arial', sans-serif;
+
+$fw-light: 300;
+$fw-reg: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-base: 16px;
+
+// 2. grid and layers
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 48px;
+
+$z-negative: -1;
+$z-base: 1;
+$z-header: 100;
+
+// 3. universal statuses
+$clr-error: #ff4d4d;
+$clr-success: #2ecc71;
+
+// 4. themes
+
+$light-theme: (
+  "bg": #ffffff,
+  "surface": #f4f4f4,
+  "text": #1a1a1a,
+  "text-muted": #666666,
+  "accent": #4af6cd,
+  "border": #dddddd
+);
+
+$dark-theme: (
+  "bg": #171919,
+  "surface": #252828,
+  "text": #ffffff,
+  "text-muted": #a0a0a0,
+  "accent": #4af6cd,
+  "border": #333333
+);
+
+
+
+// Переменная,За что отвечает
+// --clr-bg,Главный фон страницы (body).
+// --clr-surface,"Фон вложенных элементов: карточки, модалки, плашки."
+// --clr-text,Основной текст (высокий контраст).
+// --clr-text-muted,"Второстепенный текст, подписи, плейсхолдеры (средний контраст)."
+// --clr-accent,"Главный акцентный цвет (кнопки, активные ссылки)."
+// --clr-border,"Цвет границ, разделителей, инпутов."

@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content=""
+    />
+    <meta
+      name="keywords"
+      content=""
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon.png"
+    />
+    <title>Pascal Vent</title>
+    <script>
+  // Surgical precision: instant theme installation
+  (function() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const theme = savedTheme || systemTheme;
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+  </head>
+  <body>
+    <!-- the way to use vite-plugin-html-inject -->
+    <load src="/src/html/layout/header.html" />
+
+    <main>
+      <!-- ways to the images -->
+      <picture>
+        <source
+          srcset="/src/assets/img/webp/beach.webp"
+          type="image/webp"
+        />
+        <img
+          class="image"
+          src="/src/assets/img/raw/beach.jpg"
+          alt="beach"
+          loading="lazy"
+          width="1100"
+          height="770"
+        />
+      </picture>
+    </main>
+    <!-- the way to use vite-plugin-html-inject -->
+    <load src="/src/html/layout/footer.html" />
+
+    <div class="card">
+      <h2 class="card__title">Card title</h2>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam sequi ipsa ex libero dicta fugit, similique molestiae officia omnis iste?
+      </p>
+    </div>
+    <script
+      type="module"
+      src="/src/js/main.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+/* 1. Global Box-Sizing & Reset */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* 2. Page & System Settings */
+:root {
+  /* Enables native dark/light mode UI elements */
+  color-scheme: light dark;
+  scrollbar-gutter: stable;
+}
+
+html {
+  min-height: 100dvh;
+  min-height: 100vh;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  min-height: 100vh;
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+
+/* Chrome/Edge Page Transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* 3. Zero Specificity Reset (using :where to allow effortless overrides) */
+:where(
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl,
+  blockquote,
+  figure,
+  fieldset
+) {
+  margin: 0;
+}
+
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+  list-style: none;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+:where(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 4. Media & SVG Logic */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smart SVG handling for sprites and icons */
+svg {
+  fill: currentColor;
+}
+
+/* Only apply currentColor if the element doesn't use gradients (url) or none */
+:where(svg [fill]:not([fill="none"], [fill^="url"])) {
+  fill: currentColor;
+}
+
+:where(svg [stroke]:not([stroke="none"], [stroke^="url"])) {
+  stroke: currentColor;
+}
+
+/* Optimize transition performance for icon hover states */
+svg.icon {
+  transition:
+    fill 0.15s ease,
+    stroke 0.15s ease;
+  will-change: fill, stroke;
+}
+
+/* 5. Forms & Interactive Elements (Refined) */
+
+:where(input, textarea, button, select) {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+/* Reset for text fields and selects */
+:where(input:not([type="checkbox"], [type="radio"]), textarea, select) {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+:where(button, [type="button"], [type="submit"], [type="reset"]) {
+  appearance: none;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Safari Fix: Removes rounding in inputs*/
+:where(
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  textarea
+) {
+  appearance: none;
+}
+
+textarea {
+  min-height: 3lh;
+  resize: vertical;
+}
+
+/* Mobile tap highlight reset */
+button,
+label {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 6. Accessibility: Focus States */
+
+/* Set the default focus style for keyboard input only */
+:where(:focus-visible) {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Hide the default focus when you click the mouse */
+:where(:focus:not(:focus-visible)) {
+  outline: none;
+}
+
+/*For Safari and older browsers that don't work well with :focus-visible on buttons*/
+:where(button:focus) {
+  cursor: pointer;
+}
+
+/* 7. Chrome Autofill Fixes */
+/* Removes the annoying yellow/blue background on saved credentials */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: currentColor;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+/* 8. Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 9. Utility */
+[hidden] {
+  display: none !important;
+}
+
+table {
+  border-collapse: collapse;
+}
