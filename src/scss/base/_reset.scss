@@ -91,6 +91,10 @@ svg {
   height: auto;
 }
 
+svg {
+  overflow: visible;
+}
+
 /* 5. Forms & Interactive Elements (Refined) */
 
 :where(input, textarea, button, select) {

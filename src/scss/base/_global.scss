@@ -21,8 +21,9 @@ body {
 }
 
 .card {
+  display: inline-block;
   margin: 0 auto;
-  width: 250px;
+  width: 200px;
   padding: 10px;
   background-color: var(--clr-surface);
   border: 1px solid var(--clr-border);
