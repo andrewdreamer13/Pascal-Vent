@@ -18,8 +18,6 @@ export default defineConfig({
     
     viteImagemin({
       include: ["**/*.{png,jpg,jpeg,gif,svg,webp,avif}"],
-      // Исключаем иконки из автоматической жесткой очистки, 
-      // чтобы твои анимации и цвета в html/icons не слетели
       exclude: ["node_modules/**", "src/html/icons/**"],
 
       gifsicle: { optimizationLevel: 7, interlaced: false },
