@@ -25,10 +25,8 @@ const ensureDir = (dir) => {
 const cleanOutputDirs = () => {
   [paths.img.out, paths.fonts.out].forEach((dir) => {
     if (fs.existsSync(dir)) {
-      // Рекурсивно удаляем папку целиком со всем мусором
       fs.rmSync(dir, { recursive: true, force: true });
     }
-    // Сразу пересоздаем пустую папку, чтобы sharp/ttf2woff2 не ругались
     ensureDir(dir);
   });
   console.log("🧹 Output folders (webp & woff2) recreated and cleaned");
