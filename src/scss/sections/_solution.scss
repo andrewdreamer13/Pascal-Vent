@@ -2,8 +2,6 @@
 
 
 .svg-lungs path{
-  // Устанавливаем точку трансформации в центр верхней части (трахеи), 
-  // чтобы легкие расширялись как бы "от входа воздуха"
   transform-origin: 50% 20%; 
   animation: breathe 5s ease-in-out infinite;
   
@@ -12,7 +10,7 @@
 .svg-leaves {
   width: 100%;
 }
-/* 1. СЦЕНАРИЙ (Keyframes) — описываем само движение */
+
 @keyframes leaf-sway {
   0% {
     transform: rotate(-7deg) skewX(-1deg);
@@ -23,17 +21,11 @@
 }
 
 .svg-leaves {
-  /* 2. КОМАНДА — применяем сценарий к группам leaf- */
+ 
   g[id^="leaf-"] {
     transform-origin: center bottom;
     transform-box: fill-box;
-    
-    // Привязываем сценарий 'leaf-sway'
-    // 3s — длительность, ease-in-out — плавность, 
-    // infinite — бесконечно, alternate — туда-сюда
     animation: leaf-sway 3s ease-in-out infinite alternate;
-
-    /* 3. МОДИФИКАТОРЫ (Цикл) — меняем тайминги для каждого листика */
     @for $i from 1 through 10 {
       &:nth-child(#{$i}n) {
         animation-duration: #{2.5 + ($i * 0.3)}s;
@@ -42,11 +34,6 @@
     }
   }
 
-  /* Исключаем ту самую группу, которая должна стоять */
-  // #Group_20465 {
-  //   animation: none !important;
-  //   transform: none !important;
-  // }
 }
 
 @keyframes breathe {

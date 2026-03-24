@@ -12,34 +12,13 @@
 
 
 body {
-   font-family: t.$font-text; 
+  font-family: t.$font-text; 
   font-size: t.$fs-base;
   font-weight: 400;
-  background-color: var(--clr-bg);
-  color: var(--clr-text);
+  background-color: var(--clr-bodyBg);
+  color: var(--clr-textColor);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.card {
-  display: inline-block;
-  margin: 0 auto;
-  width: 200px;
-  padding: 10px;
-  background-color: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-}
 
-.btn-primary {
-  background-color: var(--clr-accent);
-  color: var(--clr-text);
-
-}
-
-.logo {
- 
-}
-
-.map-pin:hover {
-  fill: red;
-}
 

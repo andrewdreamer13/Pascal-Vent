@@ -1,5 +1,3 @@
-
-
 import { defineConfig } from "vite";
 import path from "path";
 import viteImagemin from "vite-plugin-imagemin";
@@ -7,6 +5,8 @@ import autoprefixer from "autoprefixer";
 import postcssSortMediaQueries from "postcss-sort-media-queries";
 import zipPack from "vite-plugin-zip-pack";
 import injectHTML from "vite-plugin-html-inject";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 const rootFolder = path.basename(path.resolve());
 
@@ -15,7 +15,7 @@ export default defineConfig({
 
   plugins: [
     injectHTML(),
-    
+
     viteImagemin({
       include: ["**/*.{png,jpg,jpeg,gif,svg,webp,avif}"],
       exclude: ["node_modules/**", "src/html/icons/**"],
@@ -30,16 +30,41 @@ export default defineConfig({
             name: "preset-default",
             params: {
               overrides: {
-                removeViewBox: false, 
-                cleanupIDs: false,    
+                removeViewBox: false,
+                cleanupIDs: false,
               },
             },
           },
+          { name: "removeDimensions" },
+          { name: "sortAttrs" },
+
           { name: "removeXMLNS", active: true },
         ],
       },
       webp: { quality: 80 },
       avif: { quality: 70 },
+    }),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+      symbolId: "icons-[dir]-[name]",
+      svgoOptions: {
+        plugins: [
+          {
+            name: "removeAttrs",
+            params: {
+              attrs: "(fill|stroke|style)",
+            },
+          },
+          { name: "removeXMLNS", active: true },
+        ],
+      },
+    }),
+
+    ViteMinifyPlugin({
+      collapseWhitespace: true,
+      removeComments: true,
+      minifyCSS: true,
+      minifyJS: true,
     }),
 
     zipPack({
@@ -47,7 +72,6 @@ export default defineConfig({
       outDir: "./",
       outFileName: `${rootFolder}.zip`,
     }),
-   
   ],
 
   css: {

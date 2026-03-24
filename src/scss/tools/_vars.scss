@@ -1,45 +1,46 @@
 @use "sass:map";
 
 // 1. fonts
+
 $font-title: 'Ruberoid', sans-serif;
 $font-text: 'Proxima Nova', sans-serif;
 $fs-base: 16px;
 
 
 
-// 2. grid and layers
-$space-xs: 4px;
-$space-sm: 8px;
-$space-md: 16px;
-$space-lg: 24px;
-$space-xl: 48px;
+// 3 colors
 
-$z-negative: -1;
-$z-base: 1;
-$z-header: 100;
+$accentColor:#9cd3a3;
+$accentColorHover:#54e165;
+$accentColorActive:#5ccd6a;
+$bgColorSecondary:#d9fadd;
+$successColor: #54e165;
+$errorColor: #ff5858;
+$whiteColor: #ffffff;
+$shadowColor:rgb(120, 192, 129, 0.25);
 
-// 3. universal statuses
-$clr-error: #ff4d4d;
-$clr-success: #2ecc71;
+$textColor1:#495e4c;
+$textColor2:#848484;
+$textColor3:#7ca381;
+$textColor4:#7b897d;
+$textColor5:#78c081;
+
 
 // 4. themes
 
 $light-theme: (
-  "bg": #ffffff,
-  "surface": #f4f4f4,
-  "text": #848484,
-  "text-muted": #666666,
-  "accent": #4af6cd,
-  "border": #dddddd
+  "bodyBg":$whiteColor,
+  "itemBg": $bgColorSecondary,
+  "titleColor": $textColor1,
+  "textColor":$textColor2
+  
 );
 
 $dark-theme: (
-  "bg": #171919,
-  "surface": #252828,
-  "text": #ffffff,
-  "text-muted": #a0a0a0,
-  "accent": #4af6cd,
-  "border": #333333
+  "bodyBg":$textColor1,
+  "itemBg": $accentColorActive,
+  "titleColor": $whiteColor,
+  "textColor":$bgColorSecondary
 );
 
 
