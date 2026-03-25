@@ -1,0 +1,41 @@
+.tabs-nav {
+  // 1. Сама кнопка
+  &__btn {
+    // Базовые стили кнопки здесь...
+
+    // 2. SVG внутри кнопки (базовый цвет)
+    svg {
+      // fill: t.$accentColor;
+    }
+
+    // 3. Текст внутри кнопки (тот самый span)
+    // Вкладываем сюда, чтобы кнопка управляла текстом
+    .tabs-nav__text {
+      // font-size, writing-mode...
+    }
+
+    // 4. Ховер на конкретную кнопку
+    &:hover:not(&--active) {
+      background-color: t.$bgColorSecondary;
+      
+      svg {
+        // Изменение цвета иконки при наведении
+      }
+    }
+
+    // 5. Активное состояние кнопки
+    &--active {
+      background-color: t.$accentColor;
+      
+      svg {
+        fill: t.$whiteColor; // Белая иконка на зеленом фоне
+      }
+
+      .tabs-nav__text {
+        color: t.$whiteColor;
+      }
+    }
+  }
+
+  
+}

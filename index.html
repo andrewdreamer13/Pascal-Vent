@@ -75,14 +75,16 @@
       })();
     </script>
   </head>
+
   <body>
-    <!-- the way to use vite-plugin-html-inject -->
     <load src="/src/html/layout/header.html" />
 
     <main>
-      
+     
+      <button class="button">Request a Call</button>
+      <button class="button">Submit</button>
+      <load src="/src/html/components/slider-nav.html" />
 
-      
       <picture>
         <source
           srcset="/src/assets/img/webp/cafe.webp"
@@ -98,7 +100,9 @@
         />
       </picture>
     </main>
-   
+
+    
+
     <load src="/src/html/layout/footer.html" />
 
     <script

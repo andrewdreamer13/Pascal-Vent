@@ -1,0 +1,46 @@
+@use "../tools" as t;
+
+.slider-nav {
+  @include t.flex-mix(center, center, row, 25px);
+  width: 120px;
+  height: 46px;
+
+  &__btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: t.$accentColor;
+    box-shadow: 0 0 0 6px t.$shadowColor;
+    transition: all 0.3s;
+
+    svg {
+      fill: t.$whiteColor;
+    }
+
+    &:not(:disabled):not(&--disabled) {
+      &:hover {
+        background-color: t.$accentColorHover;
+        box-shadow: 0 0 0 6px t.$shadowColorHover;
+      }
+
+      &:active {
+        transform: scale(0.92);
+        background-color: t.$accentColorActive;
+        box-shadow: 0 0 0 6px t.$shadowColorActive;
+      }
+    }
+
+    &:disabled,
+    &--disabled {
+      background-color: t.$whiteColor;
+      box-shadow: 0 0 0 6px rgb(t.$whiteColor, 0.6);
+
+      svg {
+        fill: t.$bgColorSecondary;
+        cursor:auto;
+      }
+    }
+  }
+
+  
+}

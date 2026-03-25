@@ -1,2 +1,64 @@
 @use "../tools" as t;
 
+.button {
+  @include t.flex-mix(center, center);
+  min-width: 447px;
+  margin-bottom: 50px;
+  padding-top: 34px;
+  padding-bottom: 34px;
+  border-radius: 30px;
+  background-color: t.$accentColor;
+  box-shadow:
+    0 0 0 15px t.$shadowColor,
+    inset 2px -2px 12px 0 #226f215c;
+  color: t.$whiteColor;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1;
+  font-family: t.$font-title;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: t.$accentColorHover;
+    box-shadow:
+      0 0 0 15px t.$shadowColorHover,
+      inset 2px -2px 12px 0 #226f215c;
+  }
+
+  &:active {
+    transform: scale(0.99);
+    background-color: t.$accentColorActive;
+    box-shadow:
+      0 0 0 15px t.$shadowColorActive,
+      inset 2px -2px 12px 0 #226f215c;
+  }
+}
+
+.button-small {
+  min-width: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 17px;
+  box-shadow:
+    0 0 0 10px t.$shadowColor,
+    inset 2px -2px 12px 0 #226f215c;
+  font-size: 15px;
+
+  &:hover {
+    background-color: t.$accentColorHover;
+    box-shadow:
+      0 0 0 10px t.$shadowColorHover,
+      inset 2px -2px 12px 0 #226f215c;
+  }
+
+  &:active {
+    background-color: t.$accentColorActive;
+    box-shadow:
+      0 0 0 10px t.$shadowColorActive,
+      inset 2px -2px 12px 0 #226f215c;
+  }
+}
+
