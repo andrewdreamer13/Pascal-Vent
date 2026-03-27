@@ -1,0 +1,62 @@
+@use "../tools" as t;
+
+.burger {
+  display: none;
+  z-index: 1000;
+  position: relative;
+  width: 49px;
+  height: 49px;
+  border-radius: 15px;
+  background-color: t.$whiteColor;
+
+  @media (max-width: 1200px) {
+    @include t.flex-mix(center, center, column, 5px);
+  }
+
+  .line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: t.$accentColor;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-box {
+    display: block;
+    width: 25px;
+    height: 2px;
+    @include t.flex-mix(space-between, center);
+  }
+
+  .line-mid-left {
+    width: 6px;
+  }
+
+  .line-mid-right {
+    width: 16px;
+  }
+
+  &.is-active {
+    .line-top {
+      transform: translateY(4px) rotate(45deg);
+    }
+
+    .line-bottom {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+
+    .line-box {
+      display: none;
+    }
+  }
+
+  &:hover .line {
+    background-color: t.$accentColorHover;
+  }
+  &:active .line {
+    background-color: t.$accentColorActive;
+  }
+
+  
+}

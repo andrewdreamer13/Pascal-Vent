@@ -1,54 +1,34 @@
-<header class="header">
+<header
+  class="header"
+  id="header"
+>
   <div class="header__inner">
-   
-     
-    <a class="logo" href="#">
- <load src="/src/html/icons/common/logo.html" />
-    </a>
-
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a
-            class="nav__link"
-            href="#!"
-            >nav link</a
-          >
-        </li>
-        <li class="nav__item">
-          <a
-            class="nav__link"
-            href="#!"
-            >nav link</a
-          >
-        </li>
-        <li class="nav__item">
-          <a
-            class="nav__link"
-            href="#!"
-            >nav link</a
-          >
-        </li>
-      </ul>
-    </nav>
-
-    <!-- <load src="/src/html/icons/common/map-pin.html" /> -->
-
     <a
-      href="tel:+12345678"
-      class="header__phone"
+      class="header__logo logo"
+      href="index.html"
     >
-      <load src="/src/html/icons/common/phone.html" />
+      <load
+        class="logo__svg"
+        src="/src/html/icons/common/logo.html"
+      />
     </a>
-     <button class="button button-small">Get in Touch</button>
-    <button
-      class="btn-primary"
-      id="theme"
-      aria-label="change theme"
-    >
-      change theme
-    </button>
 
-    <load src="/src/html/components/burger.html" />
+    <load
+      class="header__nav"
+      src="/src/html/components/nav.html"
+    />
+
+    <div class="header__actions">
+      <button
+        class="button-theme"
+        id="themeToggle"
+        aria-label="Toggle theme"
+      ></button>
+
+      <button class="button-small header__button-small">get in touch</button>
+
+      <load src="/src/html/components/burger.html" />
+    </div>
   </div>
 </header>
+

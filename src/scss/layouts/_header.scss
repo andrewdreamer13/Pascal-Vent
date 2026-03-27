@@ -1,10 +1,104 @@
 @use "../tools" as t;
 
 .header {
-  background-color: var(--theme-bg);
-  
+  z-index: 100;
+ position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  @include t.fluid-prop("padding-left", 10, 45, 375, 1440);
+  @include t.fluid-prop("padding-right", 10, 45, 375, 1440);
+  @include t.fluid-prop("border-bottom-right-radius", 40, 70, 375, 1200);
+  @include t.fluid-prop("border-bottom-left-radius", 40, 70, 375, 1200);
+  @include t.fluid-prop("height", 74, 114, 375, 1200);
+
+  &--hidden {
+    transform: translateY(-110%);
+  }
+
+  &--sticky {
+    transform: translateY(0);
+     position: fixed;
+    background-color: t.$bgColorSecondary;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
   &__inner {
     width: 100%;
-    @include t.flex-mix(space-between, center,row,20px);
+    max-width: 1350px;
+    height: 100%;
+    margin: 0 auto;
+    @include t.flex-mix(space-between, center, row, 50px);
+
+    @media (max-width: 450px) {
+     gap:20px;
+    }
+  }
+
+  &__logo {
+    z-index: 100;
+    position: relative;
+    flex-shrink: 0;
+
+    @media (max-width: 1200px) {
+      @include t.fluid-prop("width", 168, 196, 450, 1200);
+      flex-shrink: 1;
+    }
+
+    @media (max-width: 375px) {
+       @include t.fluid-prop("width", 130, 168, 320, 375);
+    }
+  }
+
+
+  &__actions {
+    width: 100%;
+    max-width: 315px;
+    padding: 0 10px;
+    @include t.flex-mix(space-between, center, row, 20px);
+    flex-shrink: 0;
+
+    @media (max-width: 1200px) {
+      max-width: 380px;
+    }
+    @media (max-width: 768px) {
+      max-width: 150px;
+    }
+    @media (max-width: 450px) {
+      max-width: 130px;
+      padding: 0 5px;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+  }
+
+  .button-small {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .button-theme {
+    @media (max-width: 1200px) {
+      @include t.fluid-prop("width", 168, 196, 375, 1200);
+      flex-shrink: 1;
+    }
+  }
+}
+
+body.menu-open {
+  @media (max-width: 1200px) {
+    .header__actions {
+      .button-theme,
+      .header__button-small {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
   }
 }
