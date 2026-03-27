@@ -1,10 +1,14 @@
+import gsap from "gsap";
+
 export const initBurger = (btnSelector, menuSelector) => {
   const burger = document.querySelector(btnSelector);
   const menu = document.querySelector(menuSelector);
   const list = menu ? menu.querySelector(".nav__list") : null;
+  const items = menu.querySelectorAll(".nav__item");
   const body = document.body;
 
   if (!burger || !menu) return;
+
 
   const closeMenu = () => {
     burger.classList.remove("is-active");
@@ -43,4 +47,4 @@ export const initBurger = (btnSelector, menuSelector) => {
       closeMenu();
     }
   });
-};;
+};

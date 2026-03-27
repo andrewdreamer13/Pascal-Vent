@@ -1,10 +1,6 @@
-
-
-
-.svg-lungs path{
-  transform-origin: 50% 20%; 
+.svg-lungs path {
+  transform-origin: 50% 20%;
   animation: breathe 5s ease-in-out infinite;
-  
 }
 
 .svg-leaves {
@@ -21,10 +17,9 @@
 }
 
 .svg-leaves {
- 
   g[id^="leaf-"] {
-    transform-origin: center bottom;
     transform-box: fill-box;
+    transform-origin: center bottom;
     animation: leaf-sway 3s ease-in-out infinite alternate;
     @for $i from 1 through 10 {
       &:nth-child(#{$i}n) {
@@ -33,17 +28,19 @@
       }
     }
   }
-
 }
 
 @keyframes breathe {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     filter: drop-shadow(0 0 5px rgba(103, 198, 107, 0.2));
   }
   50% {
     transform: scale(1.03); // Мягкое расширение
-    filter: drop-shadow(0 0 15px rgba(103, 198, 107, 0.5)); // Эффект свечения на вдохе
+    filter: drop-shadow(
+      0 0 15px rgba(103, 198, 107, 0.5)
+    ); // Эффект свечения на вдохе
   }
 }
 

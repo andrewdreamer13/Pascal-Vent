@@ -2,7 +2,6 @@ import "../scss/main.scss";
 import "virtual:svg-icons-register";
 
 
-import gsap from "gsap";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 

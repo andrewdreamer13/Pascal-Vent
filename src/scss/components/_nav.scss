@@ -7,6 +7,7 @@
   }
 
   &__item {
+    opacity: 1;
   }
 
   &__link {
@@ -23,12 +24,12 @@
     height: 100vh;
     padding: 10px;
     overflow-y: auto;
-    transform: translateX(100%);
+     transform: translateX(100%);
     background-color: t.$bgColorSecondary;
-    transition: transform 0.3s ease-in-out;
+     transition: transform 0.3s ease-in-out;
 
     &.is-open {
-      transform: translateX(0);
+       transform: translateX(0);
       z-index: 10;
     }
 
@@ -42,8 +43,5 @@
     font-size: 18px;
   }
 
-  @media (max-width: 767px) {
-    //  width: 100%;
-  }
   }
 }
