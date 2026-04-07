@@ -2,7 +2,7 @@
 
 .header {
   z-index: 100;
- position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,14 +16,14 @@
   @include t.fluid-prop("border-bottom-right-radius", 40, 70, 375, 1200);
   @include t.fluid-prop("border-bottom-left-radius", 40, 70, 375, 1200);
   @include t.fluid-prop("height", 74, 114, 375, 1200);
-
+  border: 1px solid;
   &--hidden {
     transform: translateY(-110%);
   }
 
   &--sticky {
+    position: fixed;
     transform: translateY(0);
-     position: fixed;
     background-color: t.$bgColorSecondary;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
@@ -36,7 +36,7 @@
     @include t.flex-mix(space-between, center, row, 50px);
 
     @media (max-width: 450px) {
-     gap:20px;
+      gap: 20px;
     }
   }
 
@@ -51,10 +51,9 @@
     }
 
     @media (max-width: 375px) {
-       @include t.fluid-prop("width", 130, 168, 320, 375);
+      @include t.fluid-prop("width", 130, 168, 320, 375);
     }
   }
-
 
   &__actions {
     width: 100%;
@@ -70,10 +69,10 @@
       max-width: 150px;
     }
     @media (max-width: 450px) {
+      flex-shrink: 0;
       max-width: 130px;
       padding: 0 5px;
       gap: 10px;
-      flex-shrink: 0;
     }
   }
 
@@ -91,7 +90,7 @@
   }
 }
 
-body.menu-open {
+body.lock {
   @media (max-width: 1200px) {
     .header__actions {
       .button-theme,

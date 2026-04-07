@@ -13,7 +13,7 @@ export const initHeader = () => {
     if (hero) {
       heroHeight = hero.offsetHeight;
     } else {
-      heroHeight = 200; 
+      heroHeight = 200;
     }
   };
 
@@ -22,7 +22,7 @@ export const initHeader = () => {
   window.addEventListener("resize", updateHeroHeight);
 
   const handleScroll = () => {
-    if (body.classList.contains("menu-open")) return;
+    if (body.classList.contains("lock")) return;
 
     const currentScrollY = window.scrollY;
     if (currentScrollY < 0) return;

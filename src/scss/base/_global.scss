@@ -1,6 +1,5 @@
 @use "../tools" as t;
 
-
 :root {
   @include t.generate-theme(t.$light-theme);
 
@@ -9,24 +8,19 @@
   }
 }
 
-
-
 body {
-  font-family: t.$font-text; 
-  font-size: t.$fs-base;
-  font-weight: 400;
+  overflow-x: hidden;
   background-color: var(--clr-bodyBg);
   color: var(--clr-textColor);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden;
+  font-weight: 400;
+  font-size: t.$fs-base;
+  font-family: t.$font-text;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
-  &.menu-open {
+  &.lock {
     overflow: hidden;
-  }
-  &.modal-open {
-    overflow: hidden;
+    touch-action: none;
   }
 }
-
-
-

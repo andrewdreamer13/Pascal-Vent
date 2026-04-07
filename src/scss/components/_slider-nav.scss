@@ -9,7 +9,7 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background-color: t.$accentColor;
+    background-color: t.$buttonColor;
     box-shadow: 0 0 0 6px t.$shadowColor;
     transition: all 0.3s;
 
@@ -19,13 +19,13 @@
 
     &:not(:disabled):not(&--disabled) {
       &:hover {
-        background-color: t.$accentColorHover;
+        background-color: t.$buttonColorHover;
         box-shadow: 0 0 0 6px t.$shadowColorHover;
       }
 
       &:active {
         transform: scale(0.92);
-        background-color: t.$accentColorActive;
+        background-color: t.$buttonColorActive;
         box-shadow: 0 0 0 6px t.$shadowColorActive;
       }
     }
@@ -37,10 +37,8 @@
 
       svg {
         fill: t.$bgColorSecondary;
-        cursor:auto;
+        cursor: auto;
       }
     }
   }
-
-  
 }

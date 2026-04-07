@@ -12,7 +12,10 @@
   padding-left: calc((100vw - 1180px) / 2 + 10px);
   
   @media (max-width: 1200px) {
-    padding-left: 10px; 
+    padding-left: 10px;
+  }
+  @media (max-width: 900px) {
+    padding-right: 10px; 
   }
 }
 

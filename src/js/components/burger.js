@@ -9,11 +9,10 @@ export const initBurger = (btnSelector, menuSelector) => {
 
   if (!burger || !menu) return;
 
-
   const closeMenu = () => {
     burger.classList.remove("is-active");
     menu.classList.remove("is-open");
-    body.classList.remove("menu-open");
+    body.classList.remove("lock");
     burger.setAttribute("aria-expanded", false);
   };
 
@@ -21,7 +20,7 @@ export const initBurger = (btnSelector, menuSelector) => {
     const isOpened = menu.classList.contains("is-open");
     burger.classList.toggle("is-active");
     menu.classList.toggle("is-open");
-    body.classList.toggle("menu-open");
+    body.classList.toggle("lock");
     burger.setAttribute("aria-expanded", !isOpened);
   };
 

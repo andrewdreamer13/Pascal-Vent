@@ -17,18 +17,27 @@
       class="header__nav"
       src="/src/html/components/nav.html"
     />
-
     <div class="header__actions">
       <button
-        class="button-theme"
-        id="themeToggle"
+        class="theme-toggle"
+        id="theme"
         aria-label="Toggle theme"
-      ></button>
+      >
+        <img
+          class="theme-toggle__icon theme-toggle__icon--dark"
+          src="/src/assets/img/webp/change-theme2.webp"
+          alt="Turn on dark theme"
+        />
+        <img
+          class="theme-toggle__icon theme-toggle__icon--light"
+          src="/src/assets/img/webp/change-theme1.webp"
+          alt="Turn on light theme"
+        />
+      </button>
 
-      <button class="button-small header__button-small">get in touch</button>
+      <button class="button-small header__button-small" data-modal="call">get in touch</button>
 
       <load src="/src/html/components/burger.html" />
     </div>
   </div>
 </header>
-

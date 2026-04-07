@@ -2,51 +2,57 @@
 
 // 1. fonts
 
-$font-title: 'Ruberoid', sans-serif;
-$font-text: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-title: "Ruberoid", sans-serif;
+$font-text:
+  "Proxima Nova",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  sans-serif;
 $fs-base: 16px;
-
-
 
 // 3 colors
 
-$accentColor:#9cd3a3;
-$accentColorHover:#54e165;
-$accentColorActive:#5ccd6a;
-$bgColorSecondary:#d9fadd;
-$bgColorSecondaryBlur:#d9fadd80;
+$buttonColor: #9cd3a3;
+$buttonColorHover: #54e165;
+$buttonColorActive: #5ccd6a;
+$bgColorSecondary: #d9fadd;
+$bgColorSecondaryBlur: #d9fadd80;
+$bgColorThird:#ebedec;
+$modalBg:#d9fadd8c;
 $successColor: #54e165;
 $errorColor: #ff5858;
 $whiteColor: #ffffff;
-$shadowColor:#78c08125;
-$shadowColorHover:#78c08150;
-$shadowColorActive:#78c08175;
 
-$textColor1:#495e4c;
-$textColor2:#848484;
-$textColor3:#7ca381;
-$textColor4:#7b897d;
-$textColor5:#78c081;
+$shadowColor: #78c08125;
+$shadowColorHover: #78c08150;
+$shadowColorActive: #78c08175;
 
+$iconFill: #78c081;
+$iconStroke: #577a5b;
+
+$textColor1: #495e4c;
+$textColor2: #848484;
+$textColor3: #7ca381;
+$textColor4: #7b897d;
+$textColor5: #78c081;
 
 // 4. themes
 
 $light-theme: (
-  "bodyBg":$whiteColor,
+  "bodyBg": $whiteColor,
   "itemBg": $bgColorSecondary,
   "titleColor": $textColor1,
-  "textColor":$textColor2
-  
+  "textColor": $textColor2,
 );
 
 $dark-theme: (
-  "bodyBg":$textColor1,
-  "itemBg": $accentColorActive,
+  "bodyBg": $textColor1,
+  "itemBg": $buttonColorActive,
   "titleColor": $whiteColor,
-  "textColor":$bgColorSecondary
+  "textColor": $bgColorSecondary,
 );
-
-
 
 // Переменная,За что отвечает
 // --clr-bg,Главный фон страницы (body).
