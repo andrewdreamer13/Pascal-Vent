@@ -1,0 +1,133 @@
+@use "../tools" as t;
+
+.call {
+  width: 100%;
+  max-width: 445px;
+  @include t.fluid-prop("width", 280, 445, 320, 480);
+  background-color: t.$bgColorSecondary;
+  box-shadow: 0 0 10px 0 #495d4c1a;
+  @include t.fluid-prop("border-radius", 30, 50, 320, 480);
+
+  &__header {
+    width: 100%;
+    padding: 35px 35px 20px 35px;
+    @include t.fluid-prop("padding-top", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-right", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-bottom", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-left", 18, 35, 320, 480);
+  }
+
+  &__title {
+    color: t.$textColor1;
+    font-weight: 400;
+    font-size: 40px;
+    @include t.fluid-prop("font-size", 25, 40, 320, 480);
+    line-height: 1.4;
+    font-family: t.$font-title;
+    text-transform: capitalize;
+  }
+
+  &__title-row {
+    display: block;
+    max-width: 100%;
+  }
+
+  &__title-row--with-line {
+    display: inline-grid;
+    grid-template-columns: auto minmax(90px, 1fr);
+    align-items: start;
+    @include t.fluid-prop("gap", 15, 25, 320, 480);
+    width: 100%;
+
+    &::after {
+      height: 2px;
+      background: t.$iconFill;
+      content: "";
+      @include t.fluid-prop("max-width", 90, 156, 320, 480);
+      transform: translateY(0.65em);
+    }
+  }
+
+  &__title-text {
+    display: inline-block;
+    text-wrap: balance;
+  }
+
+  &__body {
+    width: 100%;
+    @include t.fluid-prop("padding-top", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-right", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-bottom", 28, 35, 320, 480);
+    @include t.fluid-prop("padding-left", 18, 35, 320, 480);
+    background-color: t.$whiteColor;
+    @include t.fluid-prop("border-top-left-radius", 20, 35, 320, 480);
+    @include t.fluid-prop("border-top-right-radius", 20, 35, 320, 480);
+    @include t.fluid-prop("border-bottom-right-radius", 30, 50, 320, 480);
+    @include t.fluid-prop("border-bottom-left-radius", 30, 50, 320, 480);
+    box-shadow: 0 0 10px 0 #495d4c1a;
+  }
+
+  &__descr {
+    margin-bottom: 20px;
+    color: t.$textColor3;
+    line-height: 1.6;
+  }
+
+  &__schedule {
+    margin-bottom: 15px;
+    dt,
+    dd {
+      color: t.$textColor3;
+      font-weight: 600;
+    }
+
+    dt {
+      margin-bottom: 17px;
+    }
+
+    dd {
+      margin-left: 0;
+      @include t.flex-mix(start, center, row, 15px);
+    }
+  }
+
+  &__clock-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  &__phones {
+    width: 100%;
+    @include t.flex-mix(space-between, center, row, 20px);
+
+    @media (max-width: 480px) {
+      @include t.flex-mix(space-between, start, column, 20px);
+    }
+  }
+
+  &__phone-link {
+    @include t.flex-mix(space-between, center, row, 14px);
+
+    span {
+      color: t.$textColor4;
+    }
+  }
+
+  &__phone-icon {
+    width: 22px;
+    height: 22px;
+    fill: t.$iconFill;
+    stroke: t.$iconStroke;
+  }
+
+  &__phones-devider {
+    width: 1px;
+    height: 39px;
+    border-radius: 1px;
+    background-color: #bee1c2;
+
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+}

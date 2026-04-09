@@ -1,0 +1,160 @@
+@use "../tools" as t;
+
+.callback {
+  width: 100%;
+  max-width: 445px;
+  @include t.fluid-prop("width", 280, 445, 320, 480);
+  @include t.fluid-prop("border-radius", 30, 50, 320, 480);
+  background-color: t.$bgColorSecondary;
+  box-shadow: 0 0 10px 0 #495d4c1a;
+
+  &__header {
+    width: 100%;
+    @include t.fluid-prop("padding-top", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-right", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-bottom", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-left", 18, 35, 320, 480);
+  }
+
+  &__title {
+    color: t.$textColor1;
+    font-weight: 400;
+    font-size: 40px;
+    @include t.fluid-prop("font-size", 25, 40, 320, 480);
+    line-height: 1.4;
+    font-family: t.$font-title;
+    text-transform: capitalize;
+  }
+
+  &__title-row {
+    display: block;
+    max-width: 100%;
+  }
+
+  &__title-row--with-line {
+    display: inline-grid;
+    grid-template-columns: auto minmax(90px, 1fr);
+    align-items: start;
+    @include t.fluid-prop("gap", 15, 25, 320, 480);
+    width: 100%;
+
+    &::after {
+      height: 2px;
+      background: t.$iconFill;
+      content: "";
+      @include t.fluid-prop("max-width", 90, 156, 320, 480);
+      transform: translateY(0.65em);
+    }
+  }
+
+  &__title-text {
+    display: inline-block;
+    text-wrap: balance;
+  }
+
+  &__body {
+    width: 100%;
+    @include t.fluid-prop("padding-top", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-right", 18, 35, 320, 480);
+    @include t.fluid-prop("padding-bottom", 28, 35, 320, 480);
+    @include t.fluid-prop("padding-left", 18, 35, 320, 480);
+
+    @include t.fluid-prop("border-top-left-radius", 20, 35, 320, 480);
+    @include t.fluid-prop("border-top-right-radius", 20, 35, 320, 480);
+    @include t.fluid-prop("border-bottom-right-radius", 30, 50, 320, 480);
+    @include t.fluid-prop("border-bottom-left-radius", 30, 50, 320, 480);
+    background-color: t.$whiteColor;
+    box-shadow: 0 0 10px 0 #495d4c1a;
+  }
+
+  &__form {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 25px;
+    }
+    &:last-of-type {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 16px 20px;
+    border-radius: 15px;
+    background: t.$whiteColor;
+    box-shadow: 0 0 8px 0 rgba(66, 83, 69, 0.14);
+    color: t.$textColor1;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 8px 0 t.$textColor3;
+    }
+
+    &::placeholder {
+      color: t.$textColor3;
+      font-size: 14px;
+      opacity: 1;
+    }
+
+    // &:invalid:not(:placeholder-shown) ~ .callback__error {
+    //   visibility: visible;
+    //   opacity: 1;
+    //  }
+  }
+
+  &__error {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 3px 20px;
+    color: t.$errorColor;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__button {
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 19px;
+    border-radius: 17px;
+    box-shadow: 0 0 0 10px t.$shadowColor;
+    font-size: 15px;
+
+    &:hover {
+      background-color: t.$buttonColorHover;
+      box-shadow: 0 0 0 10px t.$shadowColorHover;
+    }
+
+    &:active {
+      transform: scale(0.99);
+      background-color: t.$buttonColorActive;
+      box-shadow: 0 0 0 10px t.$shadowColorActive;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 10px t.$shadowColorActive;
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    @include t.flex-mix(center, center);
+    padding: 15px 35px;
+  }
+
+  &__logo {
+    @include t.fluid-prop("width", 150, 280, 320, 480);
+  }
+}

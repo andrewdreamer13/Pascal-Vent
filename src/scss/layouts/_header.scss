@@ -82,18 +82,12 @@
     }
   }
 
-  .button-theme {
-    @media (max-width: 1200px) {
-      @include t.fluid-prop("width", 168, 196, 375, 1200);
-      flex-shrink: 1;
-    }
-  }
 }
 
-body.lock {
+body.menu-open {
   @media (max-width: 1200px) {
     .header__actions {
-      .button-theme,
+      .theme-toggle-btn,
       .header__button-small {
         visibility: hidden;
         opacity: 0;

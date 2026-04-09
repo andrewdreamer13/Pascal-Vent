@@ -4,7 +4,7 @@ export function openModalWindow() {
 
   const closeAll = () => {
     modal.classList.remove("modal--visible");
-    document.body.classList.remove("lock");
+    document.body.classList.remove("modal-open");
 
     document.querySelectorAll("[data-modal-target]").forEach((target) => {
       target.classList.remove("modal__content--visible");
@@ -21,13 +21,13 @@ export function openModalWindow() {
       if (targetContent) {
         modal.classList.add("modal--visible");
         targetContent.classList.add("modal__content--visible");
-        document.body.classList.add("lock");
+        document.body.classList.add("modal-open");
       }
     });
   });
 
   modal.addEventListener("click", (e) => {
-    if (e.target.closest(".modal__close-btn") || e.target === modal) {
+    if (e.target.closest(".close-btn") || e.target === modal) {
       closeAll();
     }
   });

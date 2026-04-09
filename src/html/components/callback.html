@@ -1,3 +1,74 @@
-<div class="callback modal__content" id="callback" data-modal-target="callback">
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis minus quisquam praesentium dolorum, sed eius! Nam quisquam, laboriosam natus neque, dolores aut asperiores placeat, et hic architecto cum? Praesentium voluptatem, soluta vel hic repellendus eaque sunt facilis doloribus, iusto aut ex laudantium earum at animi tenetur perspiciatis reiciendis quibusdam itaque. Ea fugiat possimus illum voluptas nesciunt eligendi aliquid dicta ab voluptatem. Eligendi odio autem praesentium eaque iste omnis obcaecati porro delectus odit quo. Accusamus sequi a libero veritatis quas numquam. Nulla consectetur rem, totam quia voluptatem suscipit temporibus quasi veniam, pariatur dolore minus laudantium error nam necessitatibus earum fugit ullam!
-</div>
+<section
+  class="callback modal__content"
+  id="callback"
+  data-modal-target="callback"
+>
+  <button
+    class="close-btn"
+    type="button"
+    aria-label="Close modal"
+  >
+    <span class="close-btn__span"></span>
+    <span class="close-btn__span"></span>
+  </button>
+  <div class="callback__header">
+    <h3 class="callback__title">
+      <span class="callback__title-row callback__title-row--with-line">
+        <span class="callback__title-text">request</span>
+      </span>
+      <span class="callback__title-row">expert callback</span>
+    </h3>
+  </div>
+  <div class="callback__body">
+    <form
+      class="callback__form"
+      action="#"
+      method="POST"
+    >
+      <div class="callback__input-box">
+        <input
+          class="callback__input"
+          id="callback-name"
+          type="text"
+          placeholder="Full name"
+          name="name"
+          aria-describedby="name-error"
+          required
+        />
+        <span
+          class="callback__error"
+          id="name-error"
+          >Please enter a valid name</span
+        >
+      </div>
+      <div class="callback__input-box">
+        <input
+          class="callback__input"
+          id="callback-tel"
+          type="tel"
+          placeholder="Phone number"
+          name="tel"
+          aria-describedby="tel-error"
+          required
+        />
+        <span
+          class="callback__error"
+          id="tel-error"
+          >Please enter a valid number</span
+        >
+      </div>
+      <button
+        class="button callback__button"
+        type="submit"
+      >
+        send request
+      </button>
+    </form>
+  </div>
+  <div class="callback__footer">
+    <load
+      class="callback__logo"
+      src="/src/html/icons/common/logo.html"
+    />
+  </div>
+</section>

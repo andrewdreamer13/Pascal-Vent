@@ -19,7 +19,11 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 
-  &.lock {
+  &.menu-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+  &.modal-open {
     overflow: hidden;
     touch-action: none;
   }
