@@ -12,6 +12,7 @@ import { initAppearance } from "./animations/appearance.js";
 import { changeTheme } from "./components/changeTheme.js";
 import { initHeader } from "./layouts/header.js";
 import { openModalWindow } from "./components/modal.js";
+import { initValidation } from "./forms/validation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -21,4 +22,5 @@ document.addEventListener("DOMContentLoaded", () => {
   changeTheme();
  openModalWindow();
   initAppearance();
+  initValidation("[data-validate]");
 });

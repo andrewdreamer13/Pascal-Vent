@@ -53,6 +53,7 @@
   }
 
   &__body {
+    position: relative;
     width: 100%;
     @include t.fluid-prop("padding-top", 18, 35, 320, 480);
     @include t.fluid-prop("padding-right", 18, 35, 320, 480);
@@ -63,6 +64,7 @@
     @include t.fluid-prop("border-top-right-radius", 20, 35, 320, 480);
     @include t.fluid-prop("border-bottom-right-radius", 30, 50, 320, 480);
     @include t.fluid-prop("border-bottom-left-radius", 30, 50, 320, 480);
+    overflow: hidden;
     background-color: t.$whiteColor;
     box-shadow: 0 0 10px 0 #495d4c1a;
   }
@@ -83,6 +85,28 @@
     &:last-of-type {
       margin-bottom: 45px;
     }
+
+    &._is-invalid {
+      .callback__error {
+        visibility: visible;
+        color: t.$errorColor;
+        opacity: 1;
+      }
+      .callback__input {
+        box-shadow: 0 0 8px 0 t.$errorColor;
+      }
+    }
+
+    &._is-valid {
+      .callback__error {
+        visibility: visible;
+        color: t.$successColor;
+        opacity: 1;
+      }
+      .callback__input {
+        box-shadow: 0 0 8px 0 t.$successColor;
+      }
+    }
   }
 
   &__input {
@@ -93,6 +117,7 @@
     background: t.$whiteColor;
     box-shadow: 0 0 8px 0 rgba(66, 83, 69, 0.14);
     color: t.$textColor1;
+    text-transform: capitalize;
 
     &:focus {
       outline: none;
@@ -104,15 +129,11 @@
       font-size: 14px;
       opacity: 1;
     }
-
-    // &:invalid:not(:placeholder-shown) ~ .callback__error {
-    //   visibility: visible;
-    //   opacity: 1;
-    //  }
   }
 
   &__error {
     display: block;
+    visibility: hidden;
     position: absolute;
     top: 100%;
     left: 0;
@@ -120,7 +141,10 @@
     color: t.$errorColor;
     font-size: 12px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      color 0.3s ease;
   }
 
   &__button {
@@ -148,6 +172,9 @@
     }
   }
 
+  &__success-message {
+  }
+
   &__footer {
     width: 100%;
     @include t.flex-mix(center, center);
@@ -156,5 +183,47 @@
 
   &__logo {
     @include t.fluid-prop("width", 150, 280, 320, 480);
+  }
+}
+
+.success-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: t.$whiteColor;
+  @include t.fluid-prop("padding", 18, 35, 320, 480);
+   @include t.flex-mix(start, center,column);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: opacity .3s ease, visibility .3s ease;
+
+  &--shown {
+     opacity: 1;
+  visibility: visible;
+  z-index: 1;
+  }
+
+  &__title {
+    font-family: t.$font-title;
+    @include t.fluid-prop("font-size", 35, 45, 320, 480);
+    text-align: center;
+    text-transform: uppercase;
+    color: t.$textColor1;
+  }
+
+  &__text {
+    @include t.fluid-prop("font-size", 15, 22, 320, 480);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__icon {
+    font-size: 100px;
+    line-height: 1;
+    font-weight: 700;
+    color: t.$iconFill;
   }
 }

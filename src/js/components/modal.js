@@ -8,6 +8,19 @@ export function openModalWindow() {
 
     document.querySelectorAll("[data-modal-target]").forEach((target) => {
       target.classList.remove("modal__content--visible");
+
+      const successBlock = target.querySelector(".success-block");
+      if (
+        successBlock &&
+        successBlock.classList.contains("success-block--shown")
+      ) {
+        setTimeout(() => {
+          successBlock.classList.remove("success-block--shown");
+
+          const form = target.querySelector("form");
+          if (form) form.reset();
+        }, 300);
+      }
     });
   };
 

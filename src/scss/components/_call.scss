@@ -2,7 +2,6 @@
 
 .call {
   width: 100%;
-  max-width: 445px;
   @include t.fluid-prop("width", 280, 445, 320, 480);
   background-color: t.$bgColorSecondary;
   box-shadow: 0 0 10px 0 #495d4c1a;

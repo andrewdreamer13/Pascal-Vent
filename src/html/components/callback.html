@@ -21,11 +21,13 @@
   </div>
   <div class="callback__body">
     <form
-      class="callback__form"
+      class="callback__form form"
       action="#"
       method="POST"
+      data-validate
+      novalidate
     >
-      <div class="callback__input-box">
+      <div class="callback__input-box form__input-box">
         <input
           class="callback__input"
           id="callback-name"
@@ -36,23 +38,23 @@
           required
         />
         <span
-          class="callback__error"
+          class="callback__error form__error-text"
           id="name-error"
           >Please enter a valid name</span
         >
       </div>
-      <div class="callback__input-box">
+      <div class="callback__input-box form__input-box">
         <input
           class="callback__input"
           id="callback-tel"
           type="tel"
-          placeholder="Phone number"
+        placeholder="Phone"
           name="tel"
           aria-describedby="tel-error"
           required
         />
         <span
-          class="callback__error"
+          class="callback__error form__error-text"
           id="tel-error"
           >Please enter a valid number</span
         >
@@ -64,6 +66,13 @@
         send request
       </button>
     </form>
+    <div class="callback__success-message success-block">
+      <h2 class="success-block__title">success!</h2>
+      <p class="success-block__text">We will call you back soon.</p>
+      <div class="success-block__icon-wrapper">
+        <i class="success-block__icon">✓</i>
+      </div>
+    </div>
   </div>
   <div class="callback__footer">
     <load
