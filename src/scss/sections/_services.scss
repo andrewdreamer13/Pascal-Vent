@@ -1,3 +1,5 @@
+@use "../tools" as t;
+
 .services {
   &__inner {
     display: flex;
@@ -19,6 +21,13 @@
   &__content-wrapper {
     flex: 0 0 55%;
     // Этот блок просто занимает правую часть до самого края container-wide
+  }
+
+  svg {
+   width: 33px;
+   height: 33px;
+   fill:t.$iconFill;
+   stroke: t.$iconStroke; 
   }
 }
 
