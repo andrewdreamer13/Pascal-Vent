@@ -13,6 +13,7 @@ import { changeTheme } from "./components/changeTheme.js";
 import { initHeader } from "./layouts/header.js";
 import { openModalWindow } from "./components/modal.js";
 import { initValidation } from "./forms/validation.js";
+import { initResizableSwiper } from "./sliders/matchMediaSwiper.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -23,4 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
  openModalWindow();
   initAppearance();
   initValidation("[data-validate]");
+  initResizableSwiper();
 });
