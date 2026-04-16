@@ -1,5 +1,5 @@
 export const initLazySvg = () => {
-  const lazyContainers = document.querySelectorAll("[data-svg-receive]");
+  const lazyContainers = document.querySelectorAll("[data-svg-receiver]");
   if (lazyContainers.length === 0) return;
 
   const options = {
