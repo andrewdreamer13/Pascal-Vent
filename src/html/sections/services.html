@@ -29,139 +29,43 @@
       </div>
       <div class="services__tabs-container">
         <div class="services__tabs">
-          <button class="services__tab-btn" type="button" role="tab" aria-selected="true" aria-controls="target-1">
+          <button
+            class="services__tab-btn services__tab-btn--active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="target-1"
+          >
             <div
               class="icon-wrapper"
               data-svg-receiver
               data-svg-id="vent-tab"
             ></div>
-            
-            <span class="services__tab-name">Ventilation system</span>
+
+            <span class="services__tab-name">Ventilation systems</span>
           </button>
-          <button class="services__tab-btn" type="button" role="tab" aria-selected="false" aria-controls="target-2">
+          <button
+            class="services__tab-btn"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="target-2"
+          >
             <div
               class="icon-wrapper"
               data-svg-receiver
               data-svg-id="conditioning-tab"
             ></div>
-           
-            <span class="services__tab-name">Conditioning</span>
+
+            <span class="services__tab-name">Condition systems</span>
           </button>
         </div>
         <div class="services__tab-content">
-          <div class="services__tab-content-item" id="target-1" role="tabpanel">
-            <ul class="services__tab-list">
-              <li class="services__list-item">
-                <div class="services__list-marker">
-                  <div
-                    class="icon-wrapper"
-                    data-svg-receiver
-                    data-svg-id="design"
-                  ></div>
-                  
-                </div>
-                <div class="services__list-text">
-                  Design of ventilation systems of any complexity
-                </div>
-              </li>
-              <li class="services__list-item">
-                <div class="services__list-marker">
-                  <div
-                    class="icon-wrapper"
-                    data-svg-receiver
-                    data-svg-id="air-inflow"
-                  ></div>
-                  
-                </div>
-                <div class="services__list-text">
-                 Installation of supply ventilation
-                </div>
-              </li>
-              <li class="services__list-item">
-                <div class="services__list-marker">
-                  <div
-                    class="icon-wrapper"
-                    data-svg-receiver
-                    data-svg-id="air-outflow"
-                  ></div>
-                  
-                </div>
-                <div class="services__list-text">
-                 Installation of exhaust ventilation
-                </div>
-              </li>
-              <li class="services__list-item">
-                <div class="services__list-marker">
-                  <div
-                    class="icon-wrapper"
-                    data-svg-receiver
-                    data-svg-id="humidity"
-                  ></div>
-                 
-                </div>
-                <div class="services__list-text">
-                 Installation of ventilation with air humidification
-                </div>
-              </li>
-              <li class="services__list-item">
-                <div class="services__list-marker">
-                  <div
-                    class="icon-wrapper"
-                    data-svg-receiver
-                    data-svg-id="recuperator"
-                  ></div>
-                 
-                </div>
-                <div class="services__list-text">
-                 Installation of ventilation with a recuperator
-                </div>
-              </li>
-              <li class="services__list-item">
-                <div class="services__list-marker">
-                  <div
-                    class="icon-wrapper"
-                    data-svg-receiver
-                    data-svg-id="dehumidification"
-                  ></div>
-                 
-                </div>
-                <div class="services__list-text">
-                 Pool ventilation and dehumidification installation
-                </div>
-              </li>
-            </ul>
-            <picture class="services__picture">
-              <source
-                media="(max-width: 900px)"
-                srcset="./src/assets/img/webp/services-tab-mob-1.webp"
-                type="image/webp"
-              />
-              <source
-                media="(max-width: 900px)"
-                srcset="./src/assets/img/raw/services-tab-mob-1.png"
-                type="image/png"
-              />
-              <source
-                media="(min-width: 901px)"
-                srcset="./src/assets/img/webp/services-tab-1.webp"
-                type="image/webp"
-              />
-              <source
-                media="(min-width: 901px)"
-                srcset="./src/assets/img/raw/services-tab-1.png"
-                type="image/png"
-              />
-              <img
-                class="services__tab-img"
-                src="./src/assets/img/raw/services-tab-1.png"
-                alt="ventilation system"
-                loading="lazy"
-                width="240"
-                height="655"
-              />
-            </picture>
-          </div>
-          <div class="services__tab-content-item" id="target-2" role="tabpanel">
+          <div
+            class="services__tab-content-item services__tab-content-item--active"
+            id="target-2"
+            role="tabpanel"
+          >
             <ul class="services__tab-list">
               <li class="services__list-item">
                 <div class="services__list-marker">
@@ -172,7 +76,7 @@
                   ></div>
                 </div>
                 <div class="services__list-text">
-                 Design of air conditioning systems
+                  Design of air conditioning systems
                 </div>
               </li>
               <li class="services__list-item">
@@ -182,10 +86,9 @@
                     data-svg-receiver
                     data-svg-id="split-system"
                   ></div>
-                  
                 </div>
                 <div class="services__list-text">
-                Installation of split systems
+                  Installation of split systems
                 </div>
               </li>
               <li class="services__list-item">
@@ -195,10 +98,9 @@
                     data-svg-receiver
                     data-svg-id="multi-split-system"
                   ></div>
-                  
                 </div>
                 <div class="services__list-text">
-             Installation of multi-split systems
+                  Installation of multi-split systems
                 </div>
               </li>
               <li class="services__list-item">
@@ -208,10 +110,9 @@
                     data-svg-receiver
                     data-svg-id="vrf-system"
                   ></div>
-                  
                 </div>
                 <div class="services__list-text">
-               Installation of VRV and VRF systems
+                  Installation of VRV and VRF systems
                 </div>
               </li>
               <li class="services__list-item">
@@ -221,11 +122,8 @@
                     data-svg-receiver
                     data-svg-id="fancoil"
                   ></div>
-                 
                 </div>
-                <div class="services__list-text">
-               Installation of fan coils
-                </div>
+                <div class="services__list-text">Installation of fan coils</div>
               </li>
               <li class="services__list-item">
                 <div class="services__list-marker">
@@ -234,14 +132,15 @@
                     data-svg-receiver
                     data-svg-id="onwall-system"
                   ></div>
-                 
                 </div>
                 <div class="services__list-text">
-               Installation of wall-mounted, ducted, and cassette air conditioners
+                  Installation of wall-mounted, ducted, and cassette air
+                  conditioners
                 </div>
               </li>
             </ul>
-            <picture class="services__picture">
+           
+            <picture>
               <source
                 media="(max-width: 900px)"
                 srcset="./src/assets/img/webp/services-tab-mob-2.webp"
@@ -272,10 +171,119 @@
               />
             </picture>
           </div>
+           <div
+            class="services__tab-content-item"
+            id="target-1"
+            role="tabpanel"
+          >
+            <ul class="services__tab-list">
+              <li class="services__list-item">
+                <div class="services__list-marker">
+                  <div
+                    class="icon-wrapper"
+                    data-svg-receiver
+                    data-svg-id="design"
+                  ></div>
+                </div>
+                <div class="services__list-text">
+                  Design of ventilation systems of any complexity
+                </div>
+              </li>
+              <li class="services__list-item">
+                <div class="services__list-marker">
+                  <div
+                    class="icon-wrapper"
+                    data-svg-receiver
+                    data-svg-id="air-inflow"
+                  ></div>
+                </div>
+                <div class="services__list-text">
+                  Installation of supply ventilation
+                </div>
+              </li>
+              <li class="services__list-item">
+                <div class="services__list-marker">
+                  <div
+                    class="icon-wrapper"
+                    data-svg-receiver
+                    data-svg-id="air-outflow"
+                  ></div>
+                </div>
+                <div class="services__list-text">
+                  Installation of exhaust ventilation
+                </div>
+              </li>
+              <li class="services__list-item">
+                <div class="services__list-marker">
+                  <div
+                    class="icon-wrapper"
+                    data-svg-receiver
+                    data-svg-id="humidity"
+                  ></div>
+                </div>
+                <div class="services__list-text">
+                  Installation of ventilation with air humidification
+                </div>
+              </li>
+              <li class="services__list-item">
+                <div class="services__list-marker">
+                  <div
+                    class="icon-wrapper"
+                    data-svg-receiver
+                    data-svg-id="recuperator"
+                  ></div>
+                </div>
+                <div class="services__list-text">
+                  Installation of ventilation with a recuperator
+                </div>
+              </li>
+              <li class="services__list-item">
+                <div class="services__list-marker">
+                  <div
+                    class="icon-wrapper"
+                    data-svg-receiver
+                    data-svg-id="dehumidification"
+                  ></div>
+                </div>
+                <div class="services__list-text">
+                  Pool ventilation and dehumidification installation
+                </div>
+              </li>
+             
+            </ul>
+            <picture>
+              <source
+                media="(max-width: 900px)"
+                srcset="./src/assets/img/webp/services-tab-mob-1.webp"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 900px)"
+                srcset="./src/assets/img/raw/services-tab-mob-1.png"
+                type="image/png"
+              />
+              <source
+                media="(min-width: 901px)"
+                srcset="./src/assets/img/webp/services-tab-1.webp"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 901px)"
+                srcset="./src/assets/img/raw/services-tab-1.png"
+                type="image/png"
+              />
+              <img
+                class="services__tab-img"
+                src="./src/assets/img/raw/services-tab-1.png"
+                alt="ventilation system"
+                loading="lazy"
+                width="240"
+                height="655"
+              />
+            </picture>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-

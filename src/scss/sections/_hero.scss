@@ -8,7 +8,7 @@
   &__inner {
     @include t.flex-mix(space-between, center);
     width: 100%;
-   max-width: 1540px;
+    max-width: 1540px;
     min-height: 820px;
     overflow: hidden;
 
@@ -264,6 +264,4 @@
   //     opacity: 0;
   //   }
   // }
-
-  
 }

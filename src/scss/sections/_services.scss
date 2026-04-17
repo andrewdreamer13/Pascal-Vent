@@ -1,2 +1,179 @@
 @use "../tools" as t;
 
+.services {
+  width: 100%;
+  padding: 100px 0 50px 0;
+
+  &__inner {
+    width: 100%;
+    max-width: 1540px;
+    @include t.flex-mix(space-between, start,row, 40px);
+
+    @media (max-width: 900px) {
+      @include t.flex-mix(flex-start, center, column);
+    }
+  }
+
+  &__info {
+    width: 100%;
+    max-width: 445px;
+    padding-top: 70px;
+  }
+
+  &__title {
+    margin-bottom: 22px;
+  }
+
+  &__descr {
+    line-height: 1.63;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__tabs-container {
+    width: 100%;
+    max-width: 750px;
+    @include t.flex-mix(center, center);
+    @media (max-width: 900px) {
+      @include t.flex-mix(center, center, column);
+    }
+  }
+
+  &__tabs {
+    width: 65px;
+    height: 466px;
+    overflow: hidden;
+    border-radius: 40px 0 0 40px;
+    outline: 10px solid t.$bgColorSecondary;
+    box-shadow: inset 2px -2px 12px 0 #226f215c;
+  }
+
+  &__tab-btn {
+    width: 100%;
+    height: 50%;
+    color: t.$textColor3;
+    @include t.flex-mix(space-between, center, column, 15px);
+    padding: 25px 16px;
+    transition: color 0.3s ease;
+
+    &--active {
+      background-color: t.$buttonColorActive;
+      color: t.$whiteColor;
+
+      svg path {
+        fill: t.$whiteColor;
+      }
+    }
+
+    &:hover:not(.services__tab-btn--active) {
+      color: t.$buttonColorActive;
+
+      svg {
+        fill: t.$buttonColorActive;
+      }
+    }
+
+    svg {
+      fill: t.$textColor3;
+      transition: fill 0.3s ease;
+    }
+  }
+
+  &__tab-name {
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+  }
+
+  &__tab-content {
+    position: relative;
+    width: 100%;
+    max-width: 675px;
+  }
+
+  &__tab-content-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 655px;
+    border-radius: 65px 0 0 65px;
+    background-color: t.$bgColorSecondary;
+    @include t.flex-mix(space-between, center, row, 40px);
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+
+    &--active {
+      visibility: visible;
+      z-index: 1;
+      position: relative;
+      opacity: 1;
+    }
+  }
+
+  &__tab-list {
+    width: 100%;
+    max-width: 356px;
+    padding: 114px 0 114px 40px;
+  }
+
+  &__list-item {
+    width: 100%;
+    min-height: 60px;
+    @include t.flex-mix(start, start, row, 15px);
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__list-marker {
+    width: 34px;
+    height: 34px;
+    transform: translateY(0.3em);
+
+    .icon-wrapper {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background-color: t.$whiteColor;
+      @include t.flex-mix(center, center);
+
+      svg path {
+        fill: t.$iconFill;
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        svg path {
+          fill: t.$iconStroke;
+        }
+      }
+    }
+  }
+
+  &__list-text {
+    color: t.$textColor1;
+    font-size: 20px;
+  }
+
+  picture {
+    display: flex;
+    align-self: stretch;
+    width: 36%;
+  
+  }
+
+  &__tab-img {
+    width: 100%;
+    height: 100%;
+     object-fit: cover;
+    border-radius: 50px 0 0 50px;
+    box-shadow: -4px 0 8px 0 #0f2c0f59;
+  }
+}
+

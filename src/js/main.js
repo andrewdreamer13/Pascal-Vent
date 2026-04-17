@@ -13,6 +13,7 @@ import { openModalWindow } from "./components/modal.js";
 import { initValidation } from "./forms/validation.js";
 import { initResizableSwiper } from "./sliders/matchMediaSwiper.js";
 import { initLazySvg } from "./layouts/lazySvgLoader.js";
+import { initTabs } from "./components/tabs.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
@@ -24,4 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initValidation("[data-validate]");
   initResizableSwiper();
   initLazySvg();
+  initTabs();
 });
