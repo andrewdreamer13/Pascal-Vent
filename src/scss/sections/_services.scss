@@ -2,22 +2,29 @@
 
 .services {
   width: 100%;
-  padding: 100px 0 50px 0;
+  @include t.fluid-prop("padding-top", 40, 100, 320, 1440);
+  @include t.fluid-prop("padding-bottom", 20, 50, 320, 1440);
 
   &__inner {
     width: 100%;
     max-width: 1540px;
-    @include t.flex-mix(space-between, start,row, 40px);
+    @include t.flex-mix(space-between, start, row, 40px);
 
     @media (max-width: 900px) {
-      @include t.flex-mix(flex-start, center, column);
+      @include t.flex-mix(flex-start, center, column, 40px);
     }
   }
 
   &__info {
     width: 100%;
     max-width: 445px;
+    @include t.fluid-prop("max-width", 380, 445, 900, 1440);
     padding-top: 70px;
+    @include t.fluid-prop("padding-top", 0, 70, 900, 1440);
+
+    @media (max-width: 900px) {
+      max-width: 650px;
+    }
   }
 
   &__title {
@@ -29,15 +36,20 @@
 
     &:not(:last-child) {
       margin-bottom: 40px;
+
+      @media (max-width: 900px) {
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__tabs-container {
     width: 100%;
-    max-width: 750px;
     @include t.flex-mix(center, center);
+
     @media (max-width: 900px) {
-      @include t.flex-mix(center, center, column);
+      @include t.flex-mix(start, center, column);
+      max-width: 650px;
     }
   }
 
@@ -46,8 +58,17 @@
     height: 466px;
     overflow: hidden;
     border-radius: 40px 0 0 40px;
-    outline: 10px solid t.$bgColorSecondary;
-    box-shadow: inset 2px -2px 12px 0 #226f215c;
+    box-shadow:
+      inset 2px -2px 12px 0 #226f215c,
+      0 0 0 10px t.$bgColorSecondary;
+
+    @media (max-width: 900px) {
+      width: 100%;
+      max-width: calc(100% - 20px);
+      height: 65px;
+      border-radius: 50px 50px 0 0;
+      @include t.flex-mix(start, center, row);
+    }
   }
 
   &__tab-btn {
@@ -56,6 +77,19 @@
     color: t.$textColor3;
     @include t.flex-mix(space-between, center, column, 15px);
     padding: 25px 16px;
+
+    @media (max-width: 900px) {
+      width: 50%;
+      height: 100%;
+      @include t.flex-mix(space-between, center, row, 15px);
+      padding: 16px 35px 16px 35px;
+    }
+
+    @media (max-width: 550px) {
+      @include t.flex-mix(center, center, row);
+      padding: 10px 20px;
+    }
+
     transition: color 0.3s ease;
 
     &--active {
@@ -82,14 +116,33 @@
   }
 
   &__tab-name {
+    overflow: hidden;
     transform: rotate(180deg);
+    text-overflow: ellipsis;
+    white-space: nowrap;
     writing-mode: vertical-lr;
+
+    @media (max-width: 900px) {
+      transform: rotate(0deg);
+      writing-mode: horizontal-tb;
+    }
+
+    @media (max-width: 550px) {
+      display: none;
+    }
   }
 
   &__tab-content {
     position: relative;
     width: 100%;
     max-width: 675px;
+    @include t.fluid-prop("min-height", 545, 655, 900, 1440);
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 900px) {
+      max-width: 100%;
+      min-height: auto;
+    }
   }
 
   &__tab-content-item {
@@ -97,10 +150,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 655px;
+    //  min-height: 655px;
+    @include t.fluid-prop("min-height", 545, 655, 900, 1440);
     border-radius: 65px 0 0 65px;
     background-color: t.$bgColorSecondary;
-    @include t.flex-mix(space-between, center, row, 40px);
+    @include t.flex-mix(space-between, center, row);
+    @include t.fluid-prop("gap", 20, 40, 900, 1440);
     visibility: hidden;
     opacity: 0;
     transition:
@@ -113,12 +168,24 @@
       position: relative;
       opacity: 1;
     }
+    @media (max-width: 900px) {
+      border-radius: 0 0 50px 50px;
+      @include t.flex-mix(space-between, center, column);
+      padding: 0 15px 15px;
+    }
   }
 
   &__tab-list {
     width: 100%;
     max-width: 356px;
     padding: 114px 0 114px 40px;
+    @include t.fluid-prop("padding-top", 20, 114, 900, 1440);
+    @include t.fluid-prop("padding-bottom", 20, 114, 900, 1440);
+    @include t.fluid-prop("padding-left", 20, 40, 900, 1440);
+
+    @media (max-width: 900px) {
+      // max-width: 100%;
+    }
   }
 
   &__list-item {
@@ -164,16 +231,25 @@
   picture {
     display: flex;
     align-self: stretch;
-    width: 36%;
-  
+    // width: 36%;
+    // width: 240px;
+
+    @media (max-width: 900px) {
+      aspect-ratio: 2/1;
+      width: 100%;
+    }
   }
 
   &__tab-img {
     width: 100%;
     height: 100%;
-     object-fit: cover;
+    object-fit: cover;
     border-radius: 50px 0 0 50px;
     box-shadow: -4px 0 8px 0 #0f2c0f59;
+
+    @media (max-width: 900px) {
+      border-radius: 50px;
+      box-shadow: 0 -4px 8px 0 rgba(15, 44, 15, 0.35);
+    }
   }
 }
-
