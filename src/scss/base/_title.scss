@@ -4,7 +4,7 @@
   color: t.$textColor1;
   font-weight: 400;
   @include t.fluid-prop("font-size", 25, 45, 320, 480);
-  width: max-content;
+  width: fit-content;
   line-height: 1.33;
   font-family: t.$font-title;
   text-transform: capitalize;

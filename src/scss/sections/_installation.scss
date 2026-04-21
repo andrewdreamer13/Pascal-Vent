@@ -3,8 +3,22 @@
   animation: breathe 5s ease-in-out infinite;
 }
 
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(103, 198, 107, 0.2));
+  }
+  50% {
+    transform: scale(1.03); // Мягкое расширение
+    filter: drop-shadow(
+      0 0 15px rgba(103, 198, 107, 0.5)
+    ); 
+  }
+}
+
 .svg-leaves {
-  width: 100%;
+   width: 100%;
 }
 
 @keyframes leaf-sway {
@@ -30,20 +44,3 @@
   }
 }
 
-@keyframes breathe {
-  0%,
-  100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 5px rgba(103, 198, 107, 0.2));
-  }
-  50% {
-    transform: scale(1.03); // Мягкое расширение
-    filter: drop-shadow(
-      0 0 15px rgba(103, 198, 107, 0.5)
-    ); // Эффект свечения на вдохе
-  }
-}
-
-.svg-lungs:hover {
-  scale: (50%);
-}
