@@ -1,45 +1,67 @@
 export const initHeader = () => {
-  const header = document.querySelector(".header");
   const themeBtn = document.querySelector("#themeToggle");
+  const header = document.querySelector(".header");
   const hero = document.querySelector(".hero");
   const body = document.body;
 
   if (!header) return;
 
-  let lastScrollY = window.scrollY;
-  let heroHeight = 0;
+ 
+  // let heroHeight = 0;
 
-  const updateHeroHeight = () => {
-    if (hero) {
-      heroHeight = hero.offsetHeight;
-    } else {
-      heroHeight = 200;
-    }
-  };
+  // const updateHeroHeight = () => {
+  //   if (hero) {
+  //     heroHeight = hero.offsetHeight;
+  //   } else {
+  //     heroHeight = 200;
+  //   }
+  // };
 
-  updateHeroHeight();
+  // updateHeroHeight();
 
-  window.addEventListener("resize", updateHeroHeight);
+  // window.addEventListener("resize", updateHeroHeight);
+
+  
+
+   let lastScrollY = window.scrollY;
+   let ticking = false;
 
   const handleScroll = () => {
-    if (body.classList.contains("lock")) return;
-
     const currentScrollY = window.scrollY;
+    const threshold = 200;
     if (currentScrollY < 0) return;
-    if (Math.abs(currentScrollY - lastScrollY) < 10) return;
 
-    if (currentScrollY <= heroHeight) {
+    if (currentScrollY <= threshold) {
       header.classList.remove("header--sticky", "header--hidden");
-    } else if (currentScrollY > lastScrollY && currentScrollY > heroHeight) {
-      header.classList.add("header--hidden");
-      header.classList.remove("header--sticky");
-    } else if (currentScrollY < lastScrollY) {
-      header.classList.remove("header--hidden");
-      header.classList.add("header--sticky");
+    } else {
+      if (
+        currentScrollY > lastScrollY &&
+        !header.classList.contains("header--hidden")
+      ) {
+        header.classList.add("header--hidden");
+        header.classList.remove("header--sticky");
+      }
+      else if (
+        currentScrollY < lastScrollY &&
+        header.classList.contains("header--hidden")
+      ) {
+        header.classList.remove("header--hidden");
+        header.classList.add("header--sticky");
+      }
     }
 
     lastScrollY = currentScrollY;
+    ticking = false;
   };
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(handleScroll);
+      ticking = true;
+    }
+  });
+
+  //  window.addEventListener("scroll", handleScroll);
 
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -52,6 +74,5 @@ export const initHeader = () => {
   const savedTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", savedTheme);
 
-  window.addEventListener("scroll", handleScroll);
   if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
 };

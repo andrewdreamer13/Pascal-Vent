@@ -3,7 +3,6 @@ export const initLazySvg = () => {
   if (lazyContainers.length === 0) return;
 
   const options = {
-    // Уменьшаем rootMargin до 50px, чтобы загрузка начиналась почти при входе в экран
     rootMargin: "50px 0px",
     threshold: 0.01,
   };
@@ -13,9 +12,7 @@ export const initLazySvg = () => {
       if (entry.isIntersecting) {
         const container = entry.target;
         const id = container.dataset.svgId;
-        const src = container.dataset.svgSrc; // Путь для тяжелых файлов
-
-        // Сначала пробуем найти в template (для мелких иконок)
+        const src = container.dataset.svgSrc;
         const template = document.getElementById(id);
 
         try {
@@ -24,13 +21,11 @@ export const initLazySvg = () => {
             template.content &&
             template.innerHTML.trim() !== ""
           ) {
-            // ВАРИАНТ 1: Обычный шаблон
             const clone = template.content.cloneNode(true);
             container.innerHTML = "";
             container.appendChild(clone);
             console.log(`SVG ${id} loaded from template`);
           } else if (src) {
-            // ВАРИАНТ 2: Тяжелый файл через fetch (твои листья)
             const response = await fetch(src);
             if (!response.ok)
               throw new Error(`network error: ${response.status}`);
@@ -50,4 +45,3 @@ export const initLazySvg = () => {
 
   lazyContainers.forEach((container) => observer.observe(container));
 };
-

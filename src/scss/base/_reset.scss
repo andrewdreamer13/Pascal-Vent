@@ -15,10 +15,9 @@
 }
 
 html {
-  min-height: 100dvh;
-  min-height: 100vh;
+  height: 100%;
   margin: 0;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 body {

@@ -1,11 +1,9 @@
-
 import Swiper from "swiper/bundle";
 
 // script for turning on swiper slider at pointed window width
 
 export const initResizableSwiper = () => {
-
-const resizableSwiper = (
+  const resizableSwiper = (
     breakpoint,
     swiperClass,
     swiperSettings,
@@ -25,9 +23,16 @@ const resizableSwiper = (
 
     const checker = function () {
       if (breakpoint.matches) {
-        return enableSwiper(swiperClass, swiperSettings);
+        // Создаем слайдер ТОЛЬКО если его еще нет
+        if (swiper === undefined) {
+          return enableSwiper(swiperClass, swiperSettings);
+        }
       } else {
-        if (swiper !== undefined) swiper.destroy(true, true);
+        // Уничтожаем ТОЛЬКО если он существует
+        if (swiper !== undefined) {
+          swiper.destroy(true, true);
+          swiper = undefined; // Важно: очищаем переменную для следующего цикла
+        }
         return;
       }
     };
@@ -49,23 +54,16 @@ const resizableSwiper = (
   // Swiper initialization
 
   resizableSwiper(
-    "(max-width: 376px)",
-    ".galary__images",
+    "(max-width: 950px)",
+    ".installation__card-slider",
     {
-      // loop:true,
-      spaceBetween: 0,
-      slidesPerView: 1,
-      centeredSlides: true,
+      spaceBetween: 20,
+      slidesPerView: "auto",
       speed: 500,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        // dynamicBullets: true,
+      grid: {
+        rows: 2,
       },
     },
-    someFunc,
+    // someFunc,
   );
-
-
-}
-  
+};

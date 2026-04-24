@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   openModalWindow();
   initAppearance();
   initValidation("[data-validate]");
-  initResizableSwiper();
+   initResizableSwiper();
   initLazySvg();
   initTabs();
 });
