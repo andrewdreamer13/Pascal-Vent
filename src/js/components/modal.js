@@ -27,6 +27,7 @@ export function openModalWindow() {
   openButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const path = event.currentTarget.getAttribute("data-modal");
+      
       const targetContent = document.querySelector(
         `[data-modal-target="${path}"]`,
       );

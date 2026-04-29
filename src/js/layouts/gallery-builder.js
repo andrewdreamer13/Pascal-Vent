@@ -4,7 +4,7 @@ const createSlideHTML = (img) => `
   <div class="gallery__slider-slide swiper-slide">
     <picture>
       <source srcset="${img.webp}" type="image/webp">
-      <img src="${img.jpg}" alt="${img.alt}" loading="lazy">
+      <img class="gallery__slider-img" src="${img.jpg}" alt="${img.alt}" loading="lazy">
     </picture>
   </div>
 `;
@@ -32,6 +32,10 @@ const buildGallery = (category) => {
   if (window.gallerySwiper) {
     window.gallerySwiper.update();
     window.gallerySwiper.slideTo(0, 0);
+  }
+  if (window.gallerySwiper.pagination) {
+    window.gallerySwiper.pagination.render();
+    window.gallerySwiper.pagination.update();
   }
 };
 

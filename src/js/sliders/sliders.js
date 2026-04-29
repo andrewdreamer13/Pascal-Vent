@@ -10,11 +10,11 @@ export const initSliders = () => {
     speed: 2000,
     observer: true,
     observeParents: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-      waitForTransition: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    //   waitForTransition: false,
+    // },
     pagination: {
       el: ".hero__pagination",
     },
@@ -50,11 +50,14 @@ export const initSliders = () => {
 
   const gallerySwiper = new Swiper(".gallery__slider", {
     slidesPerView: 1,
-    spaceBetween: 20,
-     loop: true,
+    spaceBetween: 10,
+    initialSlide: 0,
+    // loop: true,
     observer: true,
     observeParents: true,
     observeSlideChildren: true,
+    centeredSlides: true, 
+    roundLengths: true,
 
     pagination: {
       el: ".swiper-pagination",
