@@ -48,26 +48,26 @@ export const initSliders = () => {
     },
   });
 
-  const gallerySwiper = new Swiper(".gallery__slider", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    initialSlide: 0,
-    // loop: true,
-    observer: true,
-    observeParents: true,
-    observeSlideChildren: true,
-    centeredSlides: true, 
-    roundLengths: true,
+  //   const gallerySwiper = new Swiper(".gallery__slider", {
+  //     slidesPerView: 1,
+  //     spaceBetween: 10,
+  //     initialSlide: 0,
+  //     // loop: true,
+  //     observer: true,
+  //     observeParents: true,
+  //     observeSlideChildren: true,
+  //     centeredSlides: true,
+  //     roundLengths: true,
 
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+  //     pagination: {
+  //       el: ".swiper-pagination",
+  //       clickable: true,
+  //     },
+  //     navigation: {
+  //       nextEl: ".swiper-button-next",
+  //       prevEl: ".swiper-button-prev",
+  //     },
+  //   });
 };
 
 //  slideChange: function () {

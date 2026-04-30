@@ -128,6 +128,17 @@ export const galleries = {
       jpg: "./src/assets/img/raw/installation/pools/pools-6.jpg",
       alt: "Pool ventilation projects",
     },
+    {
+      webp: "./src/assets/img/webp/pools-6.webp",
+      jpg: "./src/assets/img/raw/installation/pools/pools-6.jpg",
+      alt: "Pool ventilation projects",
+    },
+    {
+      webp: "./src/assets/img/webp/pools-6.webp",
+      jpg: "./src/assets/img/raw/installation/pools/pools-6.jpg",
+      alt: "Pool ventilation projects",
+    },
+    
   ],
 
   townhouses: [
