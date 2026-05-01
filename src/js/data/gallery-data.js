@@ -129,13 +129,8 @@ export const galleries = {
       alt: "Pool ventilation projects",
     },
     {
-      webp: "./src/assets/img/webp/pools-6.webp",
-      jpg: "./src/assets/img/raw/installation/pools/pools-6.jpg",
-      alt: "Pool ventilation projects",
-    },
-    {
-      webp: "./src/assets/img/webp/pools-6.webp",
-      jpg: "./src/assets/img/raw/installation/pools/pools-6.jpg",
+      webp: "./src/assets/img/webp/pools-7.webp",
+      jpg: "./src/assets/img/raw/installation/pools/pools-7.jpg",
       alt: "Pool ventilation projects",
     },
     
@@ -170,6 +165,11 @@ export const galleries = {
     {
       webp: "./src/assets/img/webp/townhouses-6.webp",
       jpg: "./src/assets/img/raw/installation/townhouses/townhouses-6.jpg",
+      alt: "Townhouse ventilation projects",
+    },
+    {
+      webp: "./src/assets/img/webp/townhouses-7.webp",
+      jpg: "./src/assets/img/raw/installation/townhouses/townhouses-7.jpg",
       alt: "Townhouse ventilation projects",
     },
   ],
@@ -238,6 +238,16 @@ export const galleries = {
       jpg: "./src/assets/img/raw/installation/clinics/clinics-6.jpg",
       alt: "Clinic ventilation projects",
     },
+    {
+      webp: "./src/assets/img/webp/clinics-7.webp",
+      jpg: "./src/assets/img/raw/installation/clinics/clinics-7.jpg",
+      alt: "Clinic ventilation projects",
+    },
+    {
+      webp: "./src/assets/img/webp/clinics-8.webp",
+      jpg: "./src/assets/img/raw/installation/clinics/clinics-8.jpg",
+      alt: "Clinic ventilation projects",
+    },
   ],
 
   spa: [
@@ -266,10 +276,6 @@ export const galleries = {
       jpg: "./src/assets/img/raw/installation/spa/spa-5.jpg",
       alt: "SPA ventilation projects",
     },
-    {
-      webp: "./src/assets/img/webp/spa-6.webp",
-      jpg: "./src/assets/img/raw/installation/spa/spa-6.jpg",
-      alt: "SPA ventilation projects",
-    },
+   
   ],
 };
