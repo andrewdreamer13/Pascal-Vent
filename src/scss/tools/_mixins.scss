@@ -58,7 +58,7 @@
 
 // Clamp for all units of measurement
 
-@mixin fluid-range($prop, $min, $max, $min-width: 320px, $max-width: 768px) {
+@mixin fluid-range($prop, $min, $max, $min-width, $max-width) {
   #{$prop}: clamp(
     #{$min},
     calc(
@@ -66,6 +66,20 @@
         ((100vw - #{$min-width}) / #{f.strip-unit($max-width - $min-width)})
     ),
     #{$max}
+  );
+}
+
+// 
+
+@mixin fluid-percent($prop, $min-val, $max-val, $min-width: 1440, $max-width: 1920) {
+  // Рассчитываем разницу как чистые числа
+  $val-diff: $max-val - $min-val;
+  $width-diff: $max-width - $min-width;
+
+  #{$prop}: clamp(
+    #{$min-val * 1%},
+    calc(#{$min-val} * 1% + #{$val-diff} * (100vw - #{$min-width} * 1px) / #{$width-diff}),
+    #{$max-val * 1%}
   );
 }
 

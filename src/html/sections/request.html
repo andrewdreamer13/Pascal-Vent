@@ -1,0 +1,84 @@
+<section
+  class="request"
+  id="request"
+>
+  <div class="request__bg-wrapper">
+    <div
+      class="icon-wrapper"
+      id="request-gust-desktop"
+      data-svg-receiver
+      data-svg-id="gust"
+    ></div>
+    <div
+      class="icon-wrapper"
+      id="request-gust-mobile"
+      data-svg-receiver
+      data-svg-id="gust-mobile"
+    ></div>
+   
+  </div>
+  <div class="container">
+    <div class="request__inner">
+       <div
+      class="icon-wrapper"
+      id="request-propeller"
+      data-svg-receiver
+      data-svg-id="propeller"
+    ></div>
+      <h2 class="request__title title">
+        <span class="title__row title__row--with-line">
+          <span class="title__text">Leave details</span>
+        </span>
+        <span class="title__row">and we'll call you back</span>
+      </h2>
+      <form
+        class="request__form form"
+        action="#"
+        method="POST"
+        data-validate
+        novalidate
+      >
+        <div class="request__input-box form__input-box">
+          <input
+            class="request__input"
+            id="request-name"
+            type="text"
+            placeholder="Full name"
+            name="name"
+            aria-describedby="name-error"
+            required
+            autocomplete="off"
+          />
+          <span
+            class="request__error form__error-text"
+            id="name-error"
+            >Please enter a valid name</span
+          >
+        </div>
+        <div class="request__input-box form__input-box">
+          <input
+            class="request__input"
+            id="request-tel"
+            type="tel"
+            placeholder="Phone"
+            name="tel"
+            aria-describedby="tel-error"
+            required
+            autocomplete="off"
+          />
+          <span
+            class="request__error form__error-text"
+            id="tel-error"
+            >Please enter a valid number</span
+          >
+        </div>
+        <button
+          class="button-small request__button"
+          type="submit"
+        >
+          send request
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

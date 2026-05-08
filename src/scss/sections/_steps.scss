@@ -139,18 +139,18 @@
 
     @media (max-width: 768px) {
       &:nth-child(1) {
-        @include t.fluid-range(left, 42%, 64%);
-        @include t.fluid-range(top, 30%, 40%);
+        @include t.fluid-range(left, 42%, 64%, 320px,768px);
+        @include t.fluid-range(top, 30%, 40%, 320px,768px);
       }
 
       &:nth-child(2) {
-        @include t.fluid-range(left, 58%, 58%);
-        @include t.fluid-range(top, 61%, 75%);
+        @include t.fluid-range(left, 58%, 58%, 320px,768px);
+        @include t.fluid-range(top, 61%, 75%,320px,768px);
       }
 
       &:nth-child(3) {
-        @include t.fluid-range(left, 31%, 98%);
-        @include t.fluid-range(top, 92%, 112%);
+        @include t.fluid-range(left, 31%, 98%, 320px,768px);
+        @include t.fluid-range(top, 92%, 112%, 320px,768px);
       }
     }
   }
