@@ -127,6 +127,14 @@ export const initValidation = (formSelector) => {
         const data = Object.fromEntries(formData.entries());
         console.log("Data is ready to send:", data);
 
+       const nameBlocks = document.querySelectorAll("[data-naming]");
+
+       if (nameBlocks.length > 0 && data.name) {
+         nameBlocks.forEach((block) => {
+           block.textContent = data.name.trim();
+         });
+       }
+
         const successBlock = form.parentElement.querySelector(".success-block");
         if (successBlock) {
           successBlock.classList.add("success-block--shown");
@@ -138,8 +146,32 @@ export const initValidation = (formSelector) => {
               .classList.remove("_is-valid", "_is-invalid"),
           );
         } else {
-          alert("Thank you! We will call you back soon.");
-          form.reset();
+
+          const modal = document.querySelector("#modal");
+          const successContent = document.querySelector(
+            '[data-modal-target="popup-success"]');
+           
+
+          if (modal && successContent) {
+            
+            document
+              .querySelectorAll("[data-modal-target]")
+              .forEach((target) => {
+                target.classList.remove("modal__content--visible");
+              });
+             
+
+            modal.classList.add("modal--visible");
+            successContent.classList.add("modal__content--visible");
+            document.body.classList.add("modal-open");
+
+            form.reset();
+           inputs.forEach((input) => {
+             const parent = input.closest(".form__input-box");
+             return parent.classList.remove("_is-valid", "_is-invalid");
+           });
+          
+          }
         }
       }
     });

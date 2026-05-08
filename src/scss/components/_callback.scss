@@ -2,7 +2,6 @@
 
 .callback {
   width: 100%;
-  max-width: 445px;
   @include t.fluid-prop("width", 280, 445, 320, 480);
   @include t.fluid-prop("border-radius", 30, 50, 320, 480);
   background-color: t.$bgColorSecondary;
@@ -57,7 +56,7 @@
     width: 100%;
     @include t.fluid-prop("padding-top", 18, 35, 320, 480);
     @include t.fluid-prop("padding-right", 18, 35, 320, 480);
-    @include t.fluid-prop("padding-bottom", 28, 35, 320, 480);
+    @include t.fluid-prop("padding-bottom", 30, 65, 320, 480);
     @include t.fluid-prop("padding-left", 18, 35, 320, 480);
 
     @include t.fluid-prop("border-top-left-radius", 20, 35, 320, 480);
@@ -172,8 +171,6 @@
     }
   }
 
-  &__success-message {
-  }
 
   &__footer {
     width: 100%;
@@ -218,6 +215,9 @@
     @include t.fluid-prop("font-size", 15, 22, 320, 480);
     text-align: center;
     margin-bottom: 40px;
+  }
+  &__text--name {
+    margin-bottom: 10px;
   }
 
   &__icon {
