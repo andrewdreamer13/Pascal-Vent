@@ -10,13 +10,8 @@ const createSlideHTML = (img) => `
   </div>
 `;
 
-// Переменная для хранения экземпляра, чтобы иметь к ней доступ из любой функции в файле
 let gallerySwiper = null;
 
-/**
- * Инициализация слайдера.
- * Вызываем каждый раз при открытии категории.
- */
 const initSwiper = () => {
   gallerySwiper = new Swiper(".gallery__slider", {
     slidesPerView: 1,
@@ -24,107 +19,72 @@ const initSwiper = () => {
     initialSlide: 0,
     centeredSlides: true,
     roundLengths: true,
-    // Наблюдатели полезны для стабильности при динамической вставке
-    observer: true,
-    observeParents: true,
-    observeSlideChildren: true,
+
+    // observer: true,
+    // observeParents: true,
+    // observeSlideChildren: true,
 
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".gallery__button-next",
+      prevEl: ".gallery__button-prev",
     },
   });
 };
 
-/**
- * Сборка галереи и перезапуск слайдера
- */
-const buildGallery = (category) => {
+export const buildGallery = (category) => {
   const wrapper = document.querySelector(".gallery__slider-track");
   const data = galleries[category];
 
-  // 1. Проверки
   if (!wrapper) {
-    console.error("Ошибка: Контейнер .gallery__slider-track не найден");
+    console.error("Error: container .gallery__slider-track is not found");
     return;
   }
   if (!data) {
-    console.error(`Ошибка: Категория "${category}" не найдена в данных`);
+    console.error(`Error:category "${category}" is not found in data`);
     return;
   }
 
-  // 2. Если слайдер уже существует (был открыт ранее), полностью удаляем его
-  if (gallerySwiper) {
-    // true, true — удаляем объект и все инлайновые стили Swiper
+  if (
+    gallerySwiper &&
+    typeof gallerySwiper.destroy === "function" &&
+    !gallerySwiper.destroyed
+  ) {
     gallerySwiper.destroy(true, true);
-    gallerySwiper = null;
   }
 
-  // 3. Очищаем старый HTML и вставляем новые слайды
+  gallerySwiper = null;
+  // if (gallerySwiper) {
+  //   gallerySwiper.destroy(true, false);
+  //   gallerySwiper = null;
+  // }
+
   wrapper.innerHTML = "";
   const slidesHTML = data.map((img) => createSlideHTML(img)).join("");
   wrapper.insertAdjacentHTML("afterbegin", slidesHTML);
 
-  // 4. Инициализируем Swiper с чистого листа
-  // После вставки HTML слайдер увидит новые элементы и начнет с 0-го индекса
-  initSwiper();
+ requestAnimationFrame(() => {
+   initSwiper();
+ });
 };
 
-/**
- * Не забываем про функцию закрытия (вызывать при клике на крестик модалки)
- */
-const closeGallery = () => {
-  if (gallerySwiper) {
+export const closeGallery = () => {
+  // if (gallerySwiper) {
+  //   gallerySwiper.destroy(true, false);
+  //   gallerySwiper = null;
+  // }
+  if (
+    gallerySwiper &&
+    typeof gallerySwiper.destroy === "function" &&
+    !gallerySwiper.destroyed
+  ) {
     gallerySwiper.destroy(true, true);
-    gallerySwiper = null;
   }
-  // Тут твой код скрытия модального окна, например:
-  // document.querySelector('.modal').classList.remove('open');
+
+  gallerySwiper = null;
+ 
 };
 
-export const initGalleryTriggers = () => {
-  const cards = document.querySelectorAll('[data-modal="gallery"]');
-
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const category = card.dataset.galleryType;
-      if (category) {
-        buildGallery(category);
-      }
-    });
-  });
-};
-
-// const buildGallery = (category) => {
-//   const wrapper = document.querySelector(".gallery__slider-track");
-//   const data = galleries[category];
-
-//   if (!wrapper) {
-//     console.error("Ошибка: Контейнер .gallery__slider-track не найден");
-//     return;
-//   }
-
-//   if (!data) {
-//     console.error(`Ошибка: Категория "${category}" не найдена в данных`);
-//     return;
-//   }
-
-//   wrapper.innerHTML = "";
-
-//   const slidesHTML = data.map((img) => createSlideHTML(img)).join("");
-
-//   wrapper.insertAdjacentHTML("afterbegin", slidesHTML);
-
-//   if (window.gallerySwiper) {
-//     window.gallerySwiper.update();
-//     window.gallerySwiper.slideTo(0, 0);
-//   }
-//   if (window.gallerySwiper.pagination) {
-//     window.gallerySwiper.pagination.render();
-//     window.gallerySwiper.pagination.update();
-//   }
-// };

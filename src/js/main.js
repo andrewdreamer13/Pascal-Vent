@@ -14,7 +14,7 @@ import { initValidation } from "./forms/validation.js";
 import { initResizableSwiper } from "./sliders/matchMediaSwiper.js";
 import { initLazySvg } from "./layouts/lazySvgLoader.js";
 import { initTabs } from "./components/tabs.js";
-import {initGalleryTriggers} from "./layouts/gallery-builder.js"
+// import {initGalleryTriggers} from "./layouts/gallery-builder.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
@@ -27,5 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
    initResizableSwiper();
   initLazySvg();
   initTabs();
-  initGalleryTriggers();
+  // initGalleryTriggers();
 });

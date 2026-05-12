@@ -1,10 +1,14 @@
+import { buildGallery, closeGallery } from "../layouts/gallery-builder.js";
+
 export function openModalWindow() {
+  
   const modal = document.querySelector("#modal");
   const openButtons = document.querySelectorAll("[data-modal]");
 
   const closeAll = () => {
     modal.classList.remove("modal--visible");
     document.body.classList.remove("modal-open");
+    closeGallery();
 
     document.querySelectorAll("[data-modal-target]").forEach((target) => {
       target.classList.remove("modal__content--visible");
@@ -27,7 +31,7 @@ export function openModalWindow() {
   openButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const path = event.currentTarget.getAttribute("data-modal");
-      
+
       const targetContent = document.querySelector(
         `[data-modal-target="${path}"]`,
       );
@@ -36,6 +40,15 @@ export function openModalWindow() {
         modal.classList.add("modal--visible");
         targetContent.classList.add("modal__content--visible");
         document.body.classList.add("modal-open");
+
+        // gallery hook
+        if (path === "gallery") {
+          const category = event.currentTarget.dataset.galleryType;
+
+          requestAnimationFrame(() => {
+            buildGallery(category);
+          });
+        }
       }
     });
   });
