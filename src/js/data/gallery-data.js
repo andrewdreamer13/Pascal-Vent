@@ -199,7 +199,11 @@ export const galleries = {
       jpg: "/img/installation/cafes/cafes-5.jpg",
       alt: "Cafe and restaurant ventilation projects",
     },
-   
+    {
+      webp: "/img/webp/cafes-6.webp",
+      jpg: "/img/installation/cafes/cafes-6.jpg",
+      alt: "Cafe and restaurant ventilation projects",
+    },
   ],
 
   clinics: [

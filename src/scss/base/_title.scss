@@ -12,6 +12,7 @@
   &__row {
     display: block;
     max-width: 100%;
+    white-space: nowrap;
   }
 
   &__row--with-line {
