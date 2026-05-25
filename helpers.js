@@ -40,7 +40,7 @@ async function convertImages() {
   const files = globSync(paths.img.in);
 
   if (files.length === 0) {
-    console.log("⚠️No images found on the path:", paths.img.in);
+    console.log("No images found on the path:", paths.img.in);
     return;
   }
 
@@ -51,7 +51,7 @@ async function convertImages() {
       .webp({ quality: 80 })
       .toFile(path.join(paths.img.out, `${fileName}.webp`));
 
-    console.log(`✅ Image: ${path.basename(filePath)} -> webp`);
+    console.log(`Image: ${path.basename(filePath)} -> webp`);
   }
 }
 
