@@ -48,54 +48,42 @@ export const initSliders = () => {
     },
   });
 
-  //   const gallerySwiper = new Swiper(".gallery__slider", {
-  //     slidesPerView: 1,
-  //     spaceBetween: 10,
-  //     initialSlide: 0,
-  //     // loop: true,
-  //     observer: true,
-  //     observeParents: true,
-  //     observeSlideChildren: true,
-  //     centeredSlides: true,
-  //     roundLengths: true,
+  const gallerySwiper = new Swiper(".projects__slider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    speed: 500,
+    // observer: true,
+    // observeParents: true,
+    centeredSlides: true,
+    // loopAdditionalSlides: 4,
+    slidesPerView: 1,
+    spaceBetween: 20,
 
-  //     pagination: {
-  //       el: ".swiper-pagination",
-  //       clickable: true,
-  //     },
-  //     navigation: {
-  //       nextEl: ".swiper-button-next",
-  //       prevEl: ".swiper-button-prev",
-  //     },
-  //   });
+    breakpoints: {
+      480: {
+        slidesPerView: 1.3,
+        spaceBetween: 20,
+      },
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+
+    navigation: {
+      nextEl: ".slider-nav__button--next",
+      prevEl: ".slider-nav__button--prev",
+    },
+  });
 };
-
-//  slideChange: function () {
-//         const swiperInstance = this;
-
-//         window.requestAnimationFrame(() => {
-//           const paginationEl = document.querySelector(".hero__pagination");
-//           if (!paginationEl) return;
-
-//           const activeIndex = swiperInstance.activeIndex;
-//           const bulletWidth = 20; // 10px ширина + 10px суммарный margin
-//           const viewWidth = 60; // Окно на 3 буллита
-
-//           // Формула "Активный всегда справа":
-//           let offset = viewWidth - (activeIndex * bulletWidth + bulletWidth);
-
-//           // Ограничитель только для начала (чтобы первый буллит не улетал вправо)
-//           if (offset > 0) offset = 0;
-
-//           // ВНИМАНИЕ: Мы убрали проверку (offset < maxOffset),
-//           // чтобы буллит НЕ уходил влево на последних слайдах.
-
-//           const bullets = paginationEl.querySelectorAll(
-//             ".swiper-pagination-bullet",
-//           );
-//           bullets.forEach((bullet) => {
-//             // Применяем смещение. Если вдруг поедет не туда — убери минус перед offset
-//             bullet.style.transform = `translateX(${-offset}px)`;
-//           });
-//         });
-//       },

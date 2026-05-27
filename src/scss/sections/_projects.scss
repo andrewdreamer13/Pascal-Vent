@@ -1,0 +1,153 @@
+@use "../tools" as t;
+
+.projects {
+  width: 100%;
+  padding: 50px 0 100px 0;
+  overflow-x: clip;
+  overflow-y: visible;
+  background-color: t.$whiteColor;
+
+  &__content {
+    @include t.flex-mix(space-between, center);
+    margin-bottom: 50px;
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      align-items: start;
+      gap: 30px;
+    }
+  }
+
+
+  &__description {
+    width: 100%;
+    max-width: 500px;
+    color: t.$textColor2;
+    line-height: 1.6;
+    @media (max-width: 1100px) {
+      align-self: end;
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    padding-top: 76px;
+     padding-bottom: 15px;
+
+    @media (max-width: 768px) {
+      padding-top: 15px;
+      padding-bottom: 76px;
+    }
+  }
+
+  &__slider-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    @media (max-width: 768px) {
+      top: auto;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+
+  .swiper-slide {
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  &__card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 35px;
+   
+  }
+
+  &__card-img-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    filter: grayscale(50%);
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+
+    .swiper-slide-active & {
+      transform: scale(1);
+      filter: grayscale(0%);
+    }
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 35px;
+    left: -1px;
+    width: 100%;
+    max-width: 164px;
+    padding: 10px 30px 10px 40px;
+      opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 0 15px 15px 0;
+    background-color: t.$bgColorSecondary;
+    transition: all 0.7s cubic-bezier(0.31, 1.32, 0.87, 1.33);
+    transition-delay: 0.2s;
+
+    .swiper-slide-active & {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  &__card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 25px 45px 25px;
+  }
+
+  &__card-title {
+    margin-bottom: 10px;
+    transform: translateX(150px);
+    color: t.$whiteColor;
+    font-size: 24px;
+    line-height: 1.4;
+    font-family: t.$font-title;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.26, 1.1, 0.45, 1.2);
+    transition-delay: 0.3s;
+    .swiper-slide-active & {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &__card-description {
+    transform: translateX(150px);
+    color: t.$whiteColor;
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.26, 1.1, 0.45, 1.2);
+    transition-delay: 0.5s;
+
+    .swiper-slide-active & {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
