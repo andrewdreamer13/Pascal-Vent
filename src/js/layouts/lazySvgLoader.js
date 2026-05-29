@@ -7,7 +7,7 @@ export const initLazySvg = () => {
   if (lazyContainers.length === 0) return;
 
   const options = {
-    rootMargin: "150px 0px",
+    rootMargin: "150px 150px",
     threshold: 0.01,
   };
 

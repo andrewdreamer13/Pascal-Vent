@@ -1,16 +1,116 @@
+@use "../tools" as t;
+
 .clients {
   width: 100%;
-  // overflow: hidden;
-  border: 1px solid; 
+  @include t.fluid-prop("padding-top", 50, 156, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 50, 100, 320, 1200);
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+  background-color: t.$whiteColor;
+
+  .container-right {
+    z-index: 2;
+    position: relative;
+    @include t.flex-mix(center, end, row, 70px);
+
+    @media (max-width: 1200px) {
+      @include t.flex-mix(center, start, column, 70px);
+    }
+  }
+
+  &__content {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 550px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    color: t.$textColor2;
+    line-height: 1.6;
+  }
+
+  &__slider.swiper {
+    position: relative;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 76px;
+  }
+
+  &__slider-nav {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+
+    @media (max-width: 768px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .swiper-slide {
+    flex-shrink: 0;
+    width: 258px;
+    height: 116px;
+    border-radius: 30px;
+    background-color: t.$whiteColor;
+    box-shadow: 0 0 10px 0 rgba(73, 93, 76, 0.1);
+  }
+
+  &__card {
+    width: 100%;
+    height: 100%;
+    @include t.flex-mix(center, center);
+    padding: 15px;
+    filter: grayscale(100%);
+     transform: scale(.7);
+    transition: all 0.5s;
+
+    .icon-wrapper {
+      @include t.flex-mix(center, center);
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+
+        
+      }
+    }
+
+    .swiper-slide-active & {
+      filter: grayscale(0%);
+      transform: scale(1);
+    }
+  }
 }
 
+.client__bg-wrapper {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 515px;
+  pointer-events: none;
+}
 .svg-client-bg {
   width: 100%;
+  height: 100%;
 }
 
 .client-bg {
   transform-box: fill-box;
-  transform-origin: 50% 100%; 
+  transform-origin: 50% 100%;
   will-change: transform;
 
   &--back {
@@ -19,25 +119,22 @@
   }
 
   &--front {
-    fill: #D9FADD;
+    fill: #d9fadd;
     animation: wave-front 10s linear infinite alternate;
   }
-
 }
 
 @keyframes wave-back {
   0% {
-   
     transform: scaleY(0.97) translateX(0);
   }
   100% {
-    transform: scaleY(1.01)translateX(5%);
+    transform: scaleY(1.01) translateX(5%);
   }
 }
 
 @keyframes wave-front {
   0% {
-   
     transform: scaleY(1) scaleX(1);
   }
   100% {

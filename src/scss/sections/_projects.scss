@@ -3,6 +3,8 @@
 .projects {
   width: 100%;
   padding: 50px 0 100px 0;
+  @include t.fluid-prop("padding-top", 25, 50, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 50, 100, 320, 1200);
   overflow-x: clip;
   overflow-y: visible;
   background-color: t.$whiteColor;

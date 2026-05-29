@@ -24,11 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
   openModalWindow();
   initAppearance();
   initValidation("[data-validate]");
-   initResizableSwiper();
-  initLazySvg();
+  initResizableSwiper();
+  // initLazySvg();
   initTabs();
   // initGalleryTriggers();
+
+  (async () => {
+    try {
+     await import("./layouts/svg-templates.js");
+      initLazySvg();
+    } catch (error) {
+      console.error('SVG template lazy-loading error:', error);
+      initLazySvg();
+    }
+  })();
 });
-
-
-

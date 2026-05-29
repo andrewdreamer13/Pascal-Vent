@@ -1,5 +1,6 @@
 //  Swiper
 import Swiper from "swiper/bundle";
+import { initLazySvg } from "../layouts/lazySvgLoader.js";
 
 export const initSliders = () => {
   const swiper = new Swiper(".hero__slider", {
@@ -48,15 +49,10 @@ export const initSliders = () => {
     },
   });
 
-  const gallerySwiper = new Swiper(".projects__slider", {
-    slidesPerView: 4,
-    spaceBetween: 30,
+  const projectsSwiper = new Swiper(".projects__slider", {
     loop: true,
     speed: 500,
-    // observer: true,
-    // observeParents: true,
     centeredSlides: true,
-    // loopAdditionalSlides: 4,
     slidesPerView: 1,
     spaceBetween: 20,
 
@@ -82,8 +78,33 @@ export const initSliders = () => {
     },
 
     navigation: {
-      nextEl: ".slider-nav__button--next",
-      prevEl: ".slider-nav__button--prev",
+      nextEl: ".projects__slider-nav .slider-nav__button--next",
+      prevEl: ".projects__slider-nav .slider-nav__button--prev",
+    },
+  });
+
+  const clientsSwiper = new Swiper(".clients__slider", {
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    loop: true,
+    speed: 500,
+      centeredSlides: true,
+    // watchSlidesProgress: true,
+     loopedSlides: 8,
+
+    on: {
+    
+    init: function () {
+      initLazySvg(); 
+    },
+   
+    slideChange: function () {
+      initLazySvg();
+    },
+  },
+    navigation: {
+      nextEl: ".clients__slider-nav .slider-nav__button--next",
+      prevEl: ".clients__slider-nav .slider-nav__button--prev",
     },
   });
 };

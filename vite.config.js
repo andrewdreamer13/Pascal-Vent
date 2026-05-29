@@ -38,7 +38,7 @@ export default defineConfig({
           { name: "removeDimensions" },
           { name: "sortAttrs" },
 
-          { name: "removeXMLNS", active: true },
+          // { name: "removeXMLNS", active: true },
         ],
       },
       webp: { quality: 80 },
