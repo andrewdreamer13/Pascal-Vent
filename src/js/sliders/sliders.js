@@ -90,18 +90,18 @@ export const initSliders = () => {
     speed: 500,
       centeredSlides: true,
     // watchSlidesProgress: true,
-     loopedSlides: 8,
+    //  loopedSlides: 8,
 
-    on: {
+  //   on: {
     
-    init: function () {
-      initLazySvg(); 
-    },
+  //   init: function () {
+  //     initLazySvg(); 
+  //   },
    
-    slideChange: function () {
-      initLazySvg();
-    },
-  },
+  //   slideChange: function () {
+  //     initLazySvg();
+  //   },
+  // },
     navigation: {
       nextEl: ".clients__slider-nav .slider-nav__button--next",
       prevEl: ".clients__slider-nav .slider-nav__button--prev",
