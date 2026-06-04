@@ -88,15 +88,15 @@
       0 0 0 10px t.$shadowColorActive,
       inset 2px -2px 12px 0 #226f215c;
   }
-
-  @media (max-width: 1200px) {
-    @include t.fluid-prop("padding-top", 12, 20, 768, 1200);
-    @include t.fluid-prop("padding-bottom", 12, 20, 768, 1200);
-    @include t.fluid-prop("border-radius", 14, 17, 768, 1200);
-    box-shadow:
-      0 0 0 8px t.$shadowColor,
-      inset 2px -2px 12px 0 #226f215c;
-  }
+// rewrite for the header's button
+  // @media (max-width: 1200px) {
+  //   @include t.fluid-prop("padding-top", 12, 20, 768, 1200);
+  //   @include t.fluid-prop("padding-bottom", 12, 20, 768, 1200);
+  //   @include t.fluid-prop("border-radius", 14, 17, 768, 1200);
+  //   box-shadow:
+  //     0 0 0 8px t.$shadowColor,
+  //     inset 2px -2px 12px 0 #226f215c;
+  // }
 }
 
 .theme-toggle-btn {
