@@ -1,13 +1,12 @@
 @use "../tools" as t;
 
-.header {
+ .header {
   z-index: 100;
   position: absolute;
   top: 0;
-  left: 50%;
-  translate: -50%;
+  left: 0;
   width: 100%;
-   max-width: 1920px;
+  //  max-width: 1920px;
   background-color: transparent;
   transition:
     transform 0.3s ease,
@@ -15,12 +14,12 @@
     box-shadow 0.3s ease;
   @include t.fluid-prop("padding-left", 10, 45, 375, 1440);
   @include t.fluid-prop("padding-right", 10, 45, 375, 1440);
-  @include t.fluid-prop("border-bottom-right-radius", 40, 70, 375, 1200);
-  @include t.fluid-prop("border-bottom-left-radius", 40, 70, 375, 1200);
+  //@include t.fluid-prop("border-bottom-right-radius", 40, 70, 375, 1200);
+  //@include t.fluid-prop("border-bottom-left-radius", 40, 70, 375, 1200);
   @include t.fluid-prop("height", 74, 114, 375, 1200);
 
   &--hidden {
-    transform: translateY(-110%);
+   transform: translateY(-110%);
   }
 
   &--sticky {

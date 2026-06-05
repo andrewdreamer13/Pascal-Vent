@@ -8,8 +8,14 @@
   }
 }
 
+html.menu-open,
+html.modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
 body {
-  overflow-x: hidden;
+   overflow-x: hidden;
   background-color: var(--clr-bodyBg);
   color: var(--clr-textColor);
   font-weight: 400;
@@ -22,9 +28,11 @@ body {
   &.menu-open {
     overflow: hidden;
     touch-action: none;
+   
   }
   &.modal-open {
     overflow: hidden;
     touch-action: none;
+   
   }
 }

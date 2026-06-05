@@ -8,6 +8,7 @@ export function openModalWindow() {
   const closeAll = () => {
     modal.classList.remove("modal--visible");
     document.body.classList.remove("modal-open");
+    document.documentElement.classList.remove("modal-open");
     closeGallery();
 
     document.querySelectorAll("[data-modal-target]").forEach((target) => {
@@ -40,7 +41,7 @@ export function openModalWindow() {
         modal.classList.add("modal--visible");
         targetContent.classList.add("modal__content--visible");
         document.body.classList.add("modal-open");
-
+         document.documentElement.classList.add("modal-open");
         // gallery hook
         if (path === "gallery") {
           const category = event.currentTarget.dataset.galleryType;

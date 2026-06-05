@@ -18,19 +18,26 @@
   @media (max-width: 1200px) {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     width: 100%;
-    height: 100dvh;
-    height: 100vh;
-    padding: 10px;
-    overflow-y: auto;
-     transform: translateX(100%);
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: translateY(-100%);
     background-color: t.$bgColorSecondary;
-     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition:
+      transform 0.3s ease,
+      height 0s linear 0.3s;
 
     &.is-open {
-       transform: translateX(0);
+      padding: 10px;
       z-index: 10;
+      height: 100dvh;
+      transform: translateY(0);
+      transition:
+        transform 0.3s ease,
+        height 0s linear 0s;
     }
 
     &__list {
@@ -40,8 +47,7 @@
     }
 
     &__link {
-    font-size: 18px;
-  }
-
+      font-size: 18px;
+    }
   }
 }

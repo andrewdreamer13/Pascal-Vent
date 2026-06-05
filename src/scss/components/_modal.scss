@@ -3,11 +3,10 @@
 .modal {
   visibility: hidden;
   z-index: -1000;
-  // position: relative;
   position: fixed;
   inset: 0;
   padding: 15px;
-  overflow-y: auto;
+   overflow-y: auto;
   background: t.$modalBg;
   opacity: 0;
   pointer-events: none;
@@ -24,7 +23,6 @@
 
   &__content {
     visibility: hidden;
-    z-index: -1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -39,7 +37,7 @@
     visibility: visible;
     opacity: 1;
     pointer-events: all;
-    // z-index: 1;
+    
   }
 }
 

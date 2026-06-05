@@ -226,24 +226,24 @@
     min-height: 820px;
     background-color: t.$bgColorThird;
 
-     @media (min-width: 1920px) {
-&::after {
-      z-index: 2;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 20%;
-      background: linear-gradient(
-        to right,
-        rgba(t.$bgColorThird, 0) 0%,
-        t.$bgColorThird 100%
-      );
-      content: "";
+    @media (min-width: 1920px) {
+      &::after {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: -5px;
+        bottom: 0;
+        width: 20%;
+        background: linear-gradient(
+          to right,
+          rgba(t.$bgColorThird, 0) 0%,
+          t.$bgColorThird 100%
+        );
+        content: "";
 
-      pointer-events: none;
+        pointer-events: none;
+      }
     }
-     }
 
     @media (max-width: 900px) {
       min-height: auto;
