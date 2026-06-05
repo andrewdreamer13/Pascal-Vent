@@ -84,6 +84,7 @@
     font-size: 18px;
     @include t.fluid-prop("font-size", 14, 18, 320, 768);
     font-family: t.$font-title;
+    line-height: 1;
   }
 
   &__info-tagline-accent {

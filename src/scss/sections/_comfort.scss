@@ -113,11 +113,20 @@
     line-height: 1.6;
   }
 
-  &__button {
-    margin: 0 0 15px 15px;
+  &__button-box {
+    padding: 15px;
 
     @media (max-width: 576px) {
+      max-width: 468px;
       margin: 0 auto;
+      padding: 10px;
+    }
+  }
+
+  &__button {
+   
+
+    @media (max-width: 576px) {
       box-shadow:
         0 0 0 10px t.$shadowColor,
         inset 2px -2px 12px 0 #226f215c;
@@ -143,7 +152,8 @@
     height: 718px;
     transform: translate(-30%, -55%);
     border-radius: 50%;
-    background-color: #baffc3;
+    background-color: #54e165;
+    opacity: .5;
     filter: blur(100px);
     pointer-events: none;
 
@@ -208,8 +218,8 @@
         transition: background-color 0.3s ease;
       }
 
-     &:hover {
-        scrollbar-color: t.$buttonColor transparent; 
+      &:hover {
+        scrollbar-color: t.$buttonColor transparent;
 
         &::-webkit-scrollbar-thumb {
           background-color: t.$buttonColor;

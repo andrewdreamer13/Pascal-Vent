@@ -10,8 +10,23 @@
   background-color: t.$whiteColor;
 
   &__content {
+    position: relative;
     @include t.flex-mix(space-between, center);
     margin-bottom: 50px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top:100%;
+      left:10%;
+      width: 656px;
+      height: 500px;
+      border-radius: 50%;
+      background-color: #54e165;
+      filter: blur(100px);
+      opacity: 0.4;
+      pointer-events: none;
+    }
 
     @media (max-width: 1100px) {
       flex-direction: column;
@@ -19,7 +34,6 @@
       gap: 30px;
     }
   }
-
 
   &__description {
     width: 100%;
@@ -34,7 +48,7 @@
   .swiper {
     width: 100%;
     padding-top: 76px;
-     padding-bottom: 15px;
+    padding-bottom: 15px;
 
     @media (max-width: 768px) {
       padding-top: 15px;
@@ -43,10 +57,10 @@
   }
 
   &__slider-nav {
+    z-index: 10;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
 
     @media (max-width: 768px) {
       top: auto;
@@ -56,13 +70,11 @@
     }
   }
 
-
   .swiper-slide {
-    width: 100%;
     aspect-ratio: 1 / 1.5;
+    width: 100%;
     transition: all 0.3s ease-in-out;
   }
-
 
   &__card {
     position: relative;
@@ -70,7 +82,6 @@
     height: 100%;
     overflow: hidden;
     border-radius: 35px;
-   
   }
 
   &__card-img-box {
@@ -102,11 +113,11 @@
     width: 100%;
     max-width: 164px;
     padding: 10px 30px 10px 40px;
-      opacity: 0;
     transform: scaleX(0);
     transform-origin: left;
     border-radius: 0 15px 15px 0;
     background-color: t.$bgColorSecondary;
+    opacity: 0;
     transition: all 0.7s cubic-bezier(0.31, 1.32, 0.87, 1.33);
     transition-delay: 0.2s;
 

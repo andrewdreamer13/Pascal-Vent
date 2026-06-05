@@ -45,7 +45,7 @@
 
   &__tabs-container {
     width: 100%;
-    @include t.flex-mix(center, center);
+    @include t.flex-mix(flex-end, center);
 
     @media (max-width: 900px) {
       @include t.flex-mix(start, center, column);
@@ -150,7 +150,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    //  min-height: 655px;
     @include t.fluid-prop("min-height", 545, 655, 900, 1440);
     border-radius: 65px 0 0 65px;
     background-color: t.$bgColorSecondary;
@@ -168,6 +167,11 @@
       position: relative;
       opacity: 1;
     }
+
+    @media (min-width: 1920px) {
+      border-radius: 65px;
+    }
+
     @media (max-width: 900px) {
       border-radius: 0 0 50px 50px;
       @include t.flex-mix(space-between, center, column);
@@ -183,9 +187,6 @@
     @include t.fluid-prop("padding-bottom", 20, 114, 900, 1440);
     @include t.fluid-prop("padding-left", 20, 40, 900, 1440);
 
-    @media (max-width: 900px) {
-      // max-width: 100%;
-    }
   }
 
   &__list-item {
@@ -231,8 +232,6 @@
   picture {
     display: flex;
     align-self: stretch;
-    // width: 36%;
-    // width: 240px;
 
     @media (max-width: 900px) {
       aspect-ratio: 2/1;
@@ -246,6 +245,9 @@
     object-fit: cover;
     border-radius: 50px 0 0 50px;
     box-shadow: -4px 0 8px 0 #0f2c0f59;
+    @media (min-width: 1920px) {
+      border-radius: 50px;
+    }
 
     @media (max-width: 900px) {
       border-radius: 50px;
