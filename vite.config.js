@@ -10,8 +10,11 @@ import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 const rootFolder = path.basename(path.resolve());
 
+const isGH =
+  process.env.NODE_ENV === "production" || process.argv.includes("build");
+
 export default defineConfig({
-  base: command === "build" ? "/Pascal-Vent/" : "/",
+  base: isGH ? "/Pascal-Vent/" : "./",
 
   plugins: [
     injectHTML(),
