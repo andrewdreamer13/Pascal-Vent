@@ -7,6 +7,10 @@
   background-color: t.$bgColorSecondary;
   box-shadow: 0 0 10px 0 #495d4c1a;
 
+   html[data-theme="dark"] & {
+       background-color: var(--clr-bodyBg);
+      }
+
   &__header {
     width: 100%;
     @include t.fluid-prop("padding-top", 18, 35, 320, 480);
@@ -23,6 +27,10 @@
     line-height: 1.4;
     font-family: t.$font-title;
     text-transform: capitalize;
+
+     html[data-theme="dark"] & {
+       color: t.$textColor5;
+      }
   }
 
   &__title-row {
@@ -66,6 +74,10 @@
     overflow: hidden;
     background-color: t.$whiteColor;
     box-shadow: 0 0 10px 0 #495d4c1a;
+
+     html[data-theme="dark"] & {
+       background-color: transparent;
+      }
   }
 
   &__form {
@@ -197,6 +209,10 @@
   z-index: -1;
   transition: opacity .3s ease, visibility .3s ease;
 
+   html[data-theme="dark"] & {
+       background-color: t.$darkItemBg;
+      }
+
   &--shown {
      opacity: 1;
   visibility: visible;
@@ -209,6 +225,10 @@
     text-align: center;
     text-transform: uppercase;
     color: t.$textColor1;
+
+     html[data-theme="dark"] & {
+       color: t.$textColor5;
+      }
   }
 
   &__text {

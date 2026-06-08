@@ -67,14 +67,35 @@
 
     #steps-desktop-wrapper {
       display: block;
+
+      html[data-theme="dark"] & {
+        circle {
+          fill: t.$darkItemBg;
+          // fill:transparent;
+        }
+      }
     }
 
     #steps-tablet-wrapper {
       display: none;
+
+       html[data-theme="dark"] & {
+        circle {
+          fill: t.$darkItemBg;
+          // fill:transparent;
+        }
+      }
     }
 
     #steps-mobile-wrapper {
       display: none;
+
+       html[data-theme="dark"] & {
+        circle {
+          fill: t.$darkItemBg;
+          // fill:transparent;
+        }
+      }
     }
     @media (max-width: 1200px) {
       #steps-desktop-wrapper {
@@ -90,7 +111,6 @@
       @include t.fluid-prop("height", 430, 541, 320, 768);
       margin-bottom: 30px;
       @include t.fluid-prop("margin-bottom", 30, 70, 320, 768);
-
 
       #steps-tablet-wrapper {
         display: none;
@@ -121,7 +141,7 @@
   &__visualization-item {
     position: absolute;
     transform: translateX(-50%);
-    color: t.$textColor1;
+    color: var(--clr-titleColor);
     font-weight: 600;
     @include t.fluid-prop("font-size", 18, 28, 768, 1920);
     @include t.fluid-prop("font-size", 16, 18, 320, 768);
@@ -139,18 +159,18 @@
 
     @media (max-width: 768px) {
       &:nth-child(1) {
-        @include t.fluid-range(left, 42%, 64%, 320px,768px);
-        @include t.fluid-range(top, 30%, 40%, 320px,768px);
+        @include t.fluid-range(left, 42%, 64%, 320px, 768px);
+        @include t.fluid-range(top, 30%, 40%, 320px, 768px);
       }
 
       &:nth-child(2) {
-        @include t.fluid-range(left, 58%, 58%, 320px,768px);
-        @include t.fluid-range(top, 61%, 75%,320px,768px);
+        @include t.fluid-range(left, 58%, 58%, 320px, 768px);
+        @include t.fluid-range(top, 61%, 75%, 320px, 768px);
       }
 
       &:nth-child(3) {
-        @include t.fluid-range(left, 31%, 98%, 320px,768px);
-        @include t.fluid-range(top, 92%, 112%, 320px,768px);
+        @include t.fluid-range(left, 31%, 98%, 320px, 768px);
+        @include t.fluid-range(top, 92%, 112%, 320px, 768px);
       }
     }
   }

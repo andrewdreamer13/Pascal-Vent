@@ -7,6 +7,10 @@
   box-shadow: 0 0 10px 0 #495d4c1a;
   @include t.fluid-prop("border-radius", 30, 50, 320, 480);
 
+   html[data-theme="dark"] & {
+       background-color: t.$darkItemBg;
+      }
+
   &__header {
     width: 100%;
     padding: 35px 35px 20px 35px;
@@ -24,6 +28,10 @@
     line-height: 1.4;
     font-family: t.$font-title;
     text-transform: capitalize;
+
+      html[data-theme="dark"] & {
+       color: t.$textColor5;
+      }
   }
 
   &__title-row {
@@ -64,12 +72,20 @@
     @include t.fluid-prop("border-bottom-right-radius", 30, 50, 320, 480);
     @include t.fluid-prop("border-bottom-left-radius", 30, 50, 320, 480);
     box-shadow: 0 0 10px 0 #495d4c1a;
+
+     html[data-theme="dark"] & {
+       background-color: t.$darkBodyBg;
+      }
   }
 
   &__descr {
     margin-bottom: 20px;
     color: t.$textColor3;
     line-height: 1.6;
+
+     html[data-theme="dark"] & {
+       color: t.$textColor5;
+      }
   }
 
   &__schedule {

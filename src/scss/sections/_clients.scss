@@ -7,7 +7,7 @@
   position: relative;
   overflow-x: clip;
   overflow-y: visible;
-  background-color: t.$whiteColor;
+  background-color: var(--clr-bodyBg);
 
   .container-right {
     z-index: 2;
@@ -30,7 +30,7 @@
   }
 
   &__description {
-    color: t.$textColor2;
+    color: var(--clr-textColor);
     line-height: 1.6;
   }
 
@@ -59,6 +59,10 @@
     border-radius: 30px;
     background-color: t.$whiteColor;
     box-shadow: 0 0 10px 0 rgba(73, 93, 76, 0.1);
+
+    html[data-theme="dark"] & {
+      background-color: t.$mainTitleColorDark;
+    }
   }
 
   &__card {
@@ -66,8 +70,8 @@
     height: 100%;
     @include t.flex-mix(center, center);
     padding: 15px;
+    transform: scale(0.7);
     filter: grayscale(100%);
-     transform: scale(.7);
     transition: all 0.5s;
 
     .icon-wrapper {
@@ -81,14 +85,12 @@
         height: auto;
         max-height: 100%;
         object-fit: contain;
-
-        
       }
     }
 
     .swiper-slide-active & {
-      filter: grayscale(0%);
       transform: scale(1);
+      filter: grayscale(0%);
     }
   }
 }
@@ -121,6 +123,15 @@
   &--front {
     fill: #d9fadd;
     animation: wave-front 10s linear infinite alternate;
+  }
+
+  html[data-theme="dark"] & {
+    &--front {
+      fill: t.$darkItemBg;
+    }
+    &--back {
+      fill: t.$modalBg;
+    }
   }
 }
 

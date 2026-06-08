@@ -5,7 +5,7 @@
   padding: 100px 0 50px 0;
   overflow-x: clip;
   overflow-y: visible;
-  background-color: t.$whiteColor;
+   background-color: var(--clr-bodyBg);
 
   &__inner {
     width: 100%;
@@ -24,7 +24,7 @@
     padding: 33px 45px;
     transform-style: preserve-3d;
     border-radius: 50px;
-    background-color: t.$whiteColor;
+    background-color: var(--clr-itemBg);
     box-shadow: 0 0 10px 0 rgba(73, 93, 76, 0.1);
 
     @media (max-width: 576px) {
@@ -54,14 +54,14 @@
   }
 
   &__features-title {
-    color: t.$textColor1;
+    color: var(--clr-titleColor);
     font-weight: 600;
     @include t.fluid-prop("font-size", 18, 24, 320, 768);
     font-family: t.$font-title;
   }
 
   &__features-text {
-    color: t.$textColor2;
+    color: var(--clr-textColor);
     font-weight: 500;
   }
 
@@ -153,7 +153,7 @@
     width: 100%;
     max-width: 198px;
     margin: 0 auto;
-    color: t.$textColor3;
+   color: var(--clr-textColor);
     line-height: 1.6;
     text-align: center;
   }

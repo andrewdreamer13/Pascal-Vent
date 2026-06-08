@@ -11,7 +11,7 @@ import { ViteMinifyPlugin } from "vite-plugin-minify";
 const rootFolder = path.basename(path.resolve());
 
 export default defineConfig({
-  base: "./",
+  base: command === "build" ? "/Pascal-Vent/" : "/",
 
   plugins: [
     injectHTML(),

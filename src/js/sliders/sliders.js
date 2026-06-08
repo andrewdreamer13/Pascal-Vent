@@ -11,11 +11,11 @@ export const initSliders = () => {
     speed: 2000,
     observer: true,
     observeParents: true,
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    //   waitForTransition: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      waitForTransition: false,
+    },
     pagination: {
       el: ".hero__pagination",
     },

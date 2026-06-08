@@ -176,6 +176,10 @@
       inset 2px -2px 12px 0 #226f215c;
   }
 
+   html[data-theme="dark"] & {
+       background-color: t.$darkItemBg;
+      }
+
   &__span {
     position: absolute;
     top: 50%;
@@ -185,6 +189,11 @@
     transform: translate(-50%, -50%) rotate(0);
     border-radius: 1.5px;
     background-color: t.$whiteColor;
+
+     html[data-theme="dark"] & {
+       background-color: t.$bgColorForthDark;
+      }
+
 
     &:nth-child(1) {
       transform: translate(-50%, -50%) rotate(-45deg);

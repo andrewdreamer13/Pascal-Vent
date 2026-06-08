@@ -1,40 +1,52 @@
 @use "../tools" as t;
 
 .popup-success {
-    padding: 50px 20px;
   width: 100%;
+  padding: 50px 20px;
   @include t.fluid-prop("width", 280, 445, 320, 480);
   @include t.fluid-prop("border-radius", 30, 50, 320, 480);
   background-color: t.$bgColorSecondary;
   box-shadow: 0 0 10px 0 #495d4c1a;
 
+  html[data-theme="dark"] & {
+    background-color: t.$darkBodyBg;
+  }
+
   &__body {
     width: 100%;
-     background-color: t.$whiteColor;
+    background-color: t.$whiteColor;
     box-shadow: 0 0 10px 0 #495d4c1a;
     @include t.fluid-prop("border-radius", 20, 40, 320, 480);
-      padding: 50px 15px;
+    padding: 50px 15px;
+
+    html[data-theme="dark"] & {
+      background-color: t.$darkItemBg;
+    }
   }
   &__title {
-     font-family: t.$font-title;
+    font-family: t.$font-title;
     @include t.fluid-prop("font-size", 35, 45, 320, 480);
+    color: t.$textColor1;
     text-align: center;
     text-transform: uppercase;
-    color: t.$textColor1;
+
+    html[data-theme="dark"] & {
+      color: t.$textColor5;
+    }
   }
 
   &__text {
-     @include t.fluid-prop("font-size", 15, 22, 320, 480);
-    text-align: center;
+    @include t.fluid-prop("font-size", 15, 22, 320, 480);
     margin-bottom: 40px;
+    text-align: center;
   }
 
   &__text--name {
     margin-bottom: 20px;
 
     span {
-        font-weight: 700;
-        text-transform: capitalize;
+      font-weight: 700;
+      text-transform: capitalize;
     }
   }
 
@@ -43,11 +55,9 @@
   }
 
   &__icon {
-     font-size: 100px;
-    line-height: 1;
-    font-weight: 700;
     color: t.$iconFill;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 1;
   }
-
 }
-

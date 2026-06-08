@@ -36,3 +36,10 @@ body {
    
   }
 }
+
+input[type="text"],
+input[type="tel"] {
+   html[data-theme="dark"] & {
+       background-color: t.$bgColorThird;
+      }
+}

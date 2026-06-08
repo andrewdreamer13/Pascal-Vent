@@ -20,10 +20,18 @@ $buttonColorActive: #5ccd6a;
 $bgColorSecondary: #d9fadd;
 $bgColorSecondaryBlur: #d9fadd80;
 $bgColorThird: #ebedec;
+$bgColorThirdDark: rgb(21, 29, 23);
+$bgColorForth: #d9fadd;
+$bgColorForthDark: #5ccd6a;
 $modalBg: #343d36f0;
 $successColor: #54e165;
 $errorColor: #ff5858;
-$whiteColor: #ffffff;
+$whiteColor: rgb(255, 255, 255);
+$darkBodyBg:rgb(21, 29, 23);
+$darkItemBg:rgb(31, 43, 34);
+$mainTitleColor:#495e4c; 
+$mainTitleColorDark:#bbc4bc; 
+
 
 $shadowColor: #78c08125;
 $shadowColorHover: #78c08150;
@@ -38,19 +46,34 @@ $textColor3: #7ca381;
 $textColor4: #7b897d;
 $textColor5: #78c081;
 
+ 
+
+// --- НОВЫЕ ЦВЕТА ДЛЯ ТЁМНОЙ ТЕМЫ ---
+//$dark-bg: #151d17;         // Глубокий хвойный фон (body)
+//$dark-surface: #1f2b22;    // Карточки и модалки (чуть светлее фона)
+//$dark-text: #f5f7f5;       // Высококонтрастный текст (почти белый)
+//$dark-muted: #a3b2a6;      // Среднеконтрастный текст (приглушенный хвойный)
+//$dark-border: #2d3e31;     // Границы в темной теме
+
 // 4. themes
 
 $light-theme: (
   "bodyBg": $whiteColor,
   "itemBg": $bgColorSecondary,
+  "heroBg" :$bgColorThird,
+  "decorBg":$bgColorForth,
+  "mainTitle" :$mainTitleColor,
   "titleColor": $textColor1,
   "textColor": $textColor2,
 );
 
 $dark-theme: (
-  "bodyBg": $textColor1,
-  "itemBg": $buttonColorActive,
-  "titleColor": $whiteColor,
+  "bodyBg": $darkBodyBg,
+  "itemBg": $darkItemBg,
+  "heroBg" :$bgColorThirdDark,
+  "decorBg":$bgColorForthDark,
+  "titleColor": $textColor5,
+  "mainTitle" :$mainTitleColorDark,
   "textColor": $bgColorSecondary,
 );
 

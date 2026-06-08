@@ -3,7 +3,8 @@
 .hero {
   width: 100%;
   min-height: 820px;
-  background-color: t.$bgColorThird;
+  //  background-color: t.$bgColorThird;
+    background-color: var(--clr-heroBg);
 
   &__inner {
     @include t.flex-mix(space-between, center);
@@ -27,7 +28,7 @@
   &__title {
     width: 100%;
     margin-bottom: 20px;
-    color: t.$textColor1;
+    color: var(--clr-mainTitle);
     @include t.fluid-prop("font-size", 34, 64, 320, 1440);
     line-height: 1.16;
     font-family: t.$font-title;
@@ -67,7 +68,7 @@
 
   &__description {
     max-width: 453px;
-    color: t.$textColor3;
+    color: var(--clr-mainTitle);
     font-size: 22px;
     line-height: 1.45;
     @include t.fluid-prop("margin-bottom", 25, 52, 320, 1440);
@@ -94,7 +95,7 @@
 
   &__contact-item {
     padding-left: 10px;
-    color: t.$textColor4;
+     color: var(--clr-mainTitle);
     @include t.flex-mix(start, center, row, 20px);
 
     @media (max-width: 480px) {
@@ -224,7 +225,8 @@
     position: relative;
     width: 100%;
     min-height: 820px;
-    background-color: t.$bgColorThird;
+    // background-color: t.$bgColorThird;
+    background-color: var(--clr-heroBg);
 
     @media (min-width: 1920px) {
       &::after {
@@ -236,8 +238,8 @@
         width: 20%;
         background: linear-gradient(
           to right,
-          rgba(t.$bgColorThird, 0) 0%,
-          t.$bgColorThird 100%
+          transparent 0%,
+          var(--clr-heroBg) 100%
         );
         content: "";
 

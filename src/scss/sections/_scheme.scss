@@ -3,7 +3,7 @@
 .scheme {
   width: 100%;
   padding: 50px 0 50px 0;
-  background-color: t.$whiteColor;
+   background-color: var(--clr-bodyBg);
 
   &__title {
     margin-bottom: 45px;
@@ -123,7 +123,7 @@
   &__item-text {
     width: 100%;
     max-width: 400px;
-    color: t.$textColor1;
+     color: var(--clr-textColor);
   }
 
   &__item-bg {

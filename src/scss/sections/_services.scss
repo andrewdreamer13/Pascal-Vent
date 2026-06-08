@@ -60,7 +60,7 @@
     border-radius: 40px 0 0 40px;
     box-shadow:
       inset 2px -2px 12px 0 #226f215c,
-      0 0 0 10px t.$bgColorSecondary;
+      0 0 0 10px  var(--clr-itemBg);
 
     @media (max-width: 900px) {
       width: 100%;
@@ -152,7 +152,7 @@
     width: 100%;
     @include t.fluid-prop("min-height", 545, 655, 900, 1440);
     border-radius: 65px 0 0 65px;
-    background-color: t.$bgColorSecondary;
+    background-color: var(--clr-itemBg);
     @include t.flex-mix(space-between, center, row);
     @include t.fluid-prop("gap", 20, 40, 900, 1440);
     visibility: hidden;
@@ -193,6 +193,7 @@
     width: 100%;
     min-height: 60px;
     @include t.flex-mix(start, start, row, 15px);
+    
 
     &:not(:last-child) {
       margin-bottom: 13px;
@@ -208,7 +209,7 @@
       width: 34px;
       height: 34px;
       border-radius: 10px;
-      background-color: t.$whiteColor;
+       background-color: var(--clr-bodyBg);
       @include t.flex-mix(center, center);
 
       svg path {
@@ -225,7 +226,7 @@
   }
 
   &__list-text {
-    color: t.$textColor1;
+   color: var(--clr-textColor);
     font-size: 20px;
   }
 

@@ -19,6 +19,18 @@
       height: 100%;
       object-fit: cover;
     }
+
+     html[data-theme="dark"] & {
+     
+      svg rect{
+        fill:t.$darkBodyBg;
+        
+      }
+      svg path{
+        fill:t.$darkBodyBg;
+        
+      }
+    }
   }
 
   &__inner {
@@ -67,7 +79,7 @@
     margin-bottom: 35px;
     padding-bottom: 25px;
     border-bottom: 1px solid t.$textColor3;
-    color: t.$textColor4;
+    color: var(--clr-textColor);
     font-size: 14px;
     line-height: 1.7;
 
@@ -79,7 +91,7 @@
 
   &__info-tagline {
     margin-top: auto;
-    color: t.$textColor1;
+     color: var(--clr-textColor);
     font-weight: 500;
     font-size: 18px;
     @include t.fluid-prop("font-size", 14, 18, 320, 768);
@@ -118,6 +130,10 @@
     @include t.fluid-prop("font-size", 22, 26, 320, 576);
     @include t.fluid-prop("margin-bottom", 15, 25, 320, 576);
     font-family: t.$font-title;
+
+     html[data-theme="dark"] & {
+      color: t.$textColor5;
+     }
   }
 
   &__contacts-list {
@@ -176,6 +192,7 @@
 
   &__contacts-text {
     color: t.$textColor4;
+     color: var(--clr-textColor);
     font-size: 14px;
     line-height: 1.4;
   }

@@ -5,6 +5,7 @@
   padding: 50px 0 50px 0;
   overflow-x: clip;
   overflow-y: visible;
+   background-color: var(--clr-bodyBg);
 
   &__inner {
     width: 100%;
@@ -108,7 +109,7 @@
   }
 
   &__benefits-text {
-    color: t.$textColor2;
+    color: var(--clr-textColor);
     font-weight: 500;
     line-height: 1.6;
   }
