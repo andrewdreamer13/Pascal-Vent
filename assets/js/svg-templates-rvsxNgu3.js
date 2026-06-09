@@ -794,7 +794,7 @@ const i=`<svg\r
     </clipPath>\r
   </defs>\r
 </svg>\r
-`,G=Object.freeze(Object.defineProperty({__proto__:null,default:U},Symbol.toStringTag,{value:"Module"})),I=`<svg\r
+`,G=Object.freeze(Object.defineProperty({__proto__:null,default:U},Symbol.toStringTag,{value:"Module"})),$=`<svg\r
    width="25"\r
   height="25"\r
   viewBox="0 0 25 25"\r
@@ -806,8 +806,8 @@ const i=`<svg\r
     fill="white"\r
   />\r
 </svg>\r
-`,$=Object.freeze(Object.defineProperty({__proto__:null,default:I},Symbol.toStringTag,{value:"Module"})),Q=`<svg\r
- \r
+`,I=Object.freeze(Object.defineProperty({__proto__:null,default:$},Symbol.toStringTag,{value:"Module"})),Q=`<svg\r
+ class="{=$class}"\r
   xmlns="http://www.w3.org/2000/svg"\r
   fill="none"\r
   viewBox="0 0 196 61"\r
@@ -942,8 +942,8 @@ const i=`<svg\r
   </g>\r
 </svg>\r
 `,r1=Object.freeze(Object.defineProperty({__proto__:null,default:C1},Symbol.toStringTag,{value:"Module"})),n1=`<svg\r
-   width="34"\r
-  height="34"\r
+  class="{=$class}"\r
+  \r
   viewBox="0 0 34 34"\r
   fill="none"\r
   xmlns="http://www.w3.org/2000/svg"\r
@@ -2687,7 +2687,7 @@ const i=`<svg\r
   </defs>\r
 </svg>\r
 `,t1=Object.freeze(Object.defineProperty({__proto__:null,default:l1},Symbol.toStringTag,{value:"Module"})),i1=`<svg\r
-  class="svg-lungs"\r
+  class="svg-lungs {=$class}"\r
 \r
   viewBox="0 0 468 468"\r
   fill="none"\r
@@ -5226,7 +5226,7 @@ id="gust-svg"\r
     d="M13.5996 26.0357V18.3215C13.5996 17.7885 13.1672 17.3572 12.6328 17.3572C12.0984 17.3572 11.666 17.7885 11.666 18.3215V26.0357C11.666 26.5687 12.0984 27 12.6328 27C13.1672 27 13.5996 26.5687 13.5996 26.0357Z"\r
   />\r
 </svg>\r
-`,G1=Object.freeze(Object.defineProperty({__proto__:null,default:U1},Symbol.toStringTag,{value:"Module"})),I1=`<svg\r
+`,G1=Object.freeze(Object.defineProperty({__proto__:null,default:U1},Symbol.toStringTag,{value:"Module"})),$1=`<svg\r
   width="20"\r
   height="20"\r
   viewBox="0 0 20 20"\r
@@ -5262,7 +5262,7 @@ id="gust-svg"\r
     fill="#78C081"\r
   />\r
 </svg>\r
-`,$1=Object.freeze(Object.defineProperty({__proto__:null,default:I1},Symbol.toStringTag,{value:"Module"})),Q1=`<svg\r
+`,I1=Object.freeze(Object.defineProperty({__proto__:null,default:$1},Symbol.toStringTag,{value:"Module"})),Q1=`<svg\r
   width="22"\r
   height="21"\r
   viewBox="0 0 22 21"\r
@@ -6884,7 +6884,7 @@ id="gust-svg"\r
     </g>\r
   </g>\r
 </svg>\r
-`,g2=Object.freeze(Object.defineProperty({__proto__:null,default:_2},Symbol.toStringTag,{value:"Module"})),n=Object.assign({"/src/html/icons/about/advantage-bg.html":e,"/src/html/icons/about/feature-bg.html":o,"/src/html/icons/clients/ballymore.html":a,"/src/html/icons/clients/barratt.html":Z,"/src/html/icons/clients/bellway.html":f,"/src/html/icons/clients/berkeley.html":s,"/src/html/icons/clients/clients-bg.html":H,"/src/html/icons/clients/grainger.html":g,"/src/html/icons/clients/mount.html":D,"/src/html/icons/clients/taylor.html":m,"/src/html/icons/comfort/airflow.html":w,"/src/html/icons/comfort/co2-control.html":E,"/src/html/icons/comfort/filtration.html":y,"/src/html/icons/comfort/home.html":F,"/src/html/icons/comfort/humidity.html":j,"/src/html/icons/comfort/list-marker-round.html":z,"/src/html/icons/comfort/temperature.html":O,"/src/html/icons/common/calendar.html":T,"/src/html/icons/common/clock.html":G,"/src/html/icons/common/close.html":$,"/src/html/icons/common/logo.html":R,"/src/html/icons/common/mail.html":K,"/src/html/icons/common/map-pin.html":W,"/src/html/icons/common/next-arrow.html":Y,"/src/html/icons/common/phone.html":r1,"/src/html/icons/common/prev-arrow.html":L1,"/src/html/icons/footer/footer-bg.html":t1,"/src/html/icons/installation/lung.html":e1,"/src/html/icons/portfolio/portfolio-bg.html":o1,"/src/html/icons/request/gust-mobile.html":a1,"/src/html/icons/request/gust.html":Z1,"/src/html/icons/request/propeller.html":f1,"/src/html/icons/scheme/consult.html":s1,"/src/html/icons/scheme/contract.html":H1,"/src/html/icons/scheme/delivery.html":g1,"/src/html/icons/scheme/done.html":D1,"/src/html/icons/scheme/flow-line-1.html":m1,"/src/html/icons/scheme/flow-line-2.html":w1,"/src/html/icons/scheme/flow-line-mobile-1.html":E1,"/src/html/icons/scheme/flow-line-mobile-2.html":y1,"/src/html/icons/scheme/flow-line-tablet-1.html":F1,"/src/html/icons/scheme/flow-line-tablet-2.html":j1,"/src/html/icons/scheme/location.html":z1,"/src/html/icons/scheme/request.html":O1,"/src/html/icons/scheme/schedule.html":T1,"/src/html/icons/services/air-conditioning-tab.html":G1,"/src/html/icons/services/air-inflow.html":$1,"/src/html/icons/services/air-outflow.html":R1,"/src/html/icons/services/dehumidification.html":K1,"/src/html/icons/services/design.html":W1,"/src/html/icons/services/fancoil.html":Y1,"/src/html/icons/services/humidity.html":r2,"/src/html/icons/services/multi-split-system.html":L2,"/src/html/icons/services/onwall-system.html":t2,"/src/html/icons/services/recuperator.html":e2,"/src/html/icons/services/split-system.html":o2,"/src/html/icons/services/vent-tab.html":a2,"/src/html/icons/services/vrf-system.html":Z2,"/src/html/icons/steps/list-marker.html":f2,"/src/html/icons/steps/steps-icons-desktop.html":s2,"/src/html/icons/steps/steps-icons-mobile.html":H2,"/src/html/icons/steps/steps-icons-tablet.html":g2});let L="";for(const r in n){const l=r.split("/").pop().replace(".html",""),t=n[r].default;L+=`
+`,g2=Object.freeze(Object.defineProperty({__proto__:null,default:_2},Symbol.toStringTag,{value:"Module"})),n=Object.assign({"/src/html/icons/about/advantage-bg.html":e,"/src/html/icons/about/feature-bg.html":o,"/src/html/icons/clients/ballymore.html":a,"/src/html/icons/clients/barratt.html":Z,"/src/html/icons/clients/bellway.html":f,"/src/html/icons/clients/berkeley.html":s,"/src/html/icons/clients/clients-bg.html":H,"/src/html/icons/clients/grainger.html":g,"/src/html/icons/clients/mount.html":D,"/src/html/icons/clients/taylor.html":m,"/src/html/icons/comfort/airflow.html":w,"/src/html/icons/comfort/co2-control.html":E,"/src/html/icons/comfort/filtration.html":y,"/src/html/icons/comfort/home.html":F,"/src/html/icons/comfort/humidity.html":j,"/src/html/icons/comfort/list-marker-round.html":z,"/src/html/icons/comfort/temperature.html":O,"/src/html/icons/common/calendar.html":T,"/src/html/icons/common/clock.html":G,"/src/html/icons/common/close.html":I,"/src/html/icons/common/logo.html":R,"/src/html/icons/common/mail.html":K,"/src/html/icons/common/map-pin.html":W,"/src/html/icons/common/next-arrow.html":Y,"/src/html/icons/common/phone.html":r1,"/src/html/icons/common/prev-arrow.html":L1,"/src/html/icons/footer/footer-bg.html":t1,"/src/html/icons/installation/lung.html":e1,"/src/html/icons/portfolio/portfolio-bg.html":o1,"/src/html/icons/request/gust-mobile.html":a1,"/src/html/icons/request/gust.html":Z1,"/src/html/icons/request/propeller.html":f1,"/src/html/icons/scheme/consult.html":s1,"/src/html/icons/scheme/contract.html":H1,"/src/html/icons/scheme/delivery.html":g1,"/src/html/icons/scheme/done.html":D1,"/src/html/icons/scheme/flow-line-1.html":m1,"/src/html/icons/scheme/flow-line-2.html":w1,"/src/html/icons/scheme/flow-line-mobile-1.html":E1,"/src/html/icons/scheme/flow-line-mobile-2.html":y1,"/src/html/icons/scheme/flow-line-tablet-1.html":F1,"/src/html/icons/scheme/flow-line-tablet-2.html":j1,"/src/html/icons/scheme/location.html":z1,"/src/html/icons/scheme/request.html":O1,"/src/html/icons/scheme/schedule.html":T1,"/src/html/icons/services/air-conditioning-tab.html":G1,"/src/html/icons/services/air-inflow.html":I1,"/src/html/icons/services/air-outflow.html":R1,"/src/html/icons/services/dehumidification.html":K1,"/src/html/icons/services/design.html":W1,"/src/html/icons/services/fancoil.html":Y1,"/src/html/icons/services/humidity.html":r2,"/src/html/icons/services/multi-split-system.html":L2,"/src/html/icons/services/onwall-system.html":t2,"/src/html/icons/services/recuperator.html":e2,"/src/html/icons/services/split-system.html":o2,"/src/html/icons/services/vent-tab.html":a2,"/src/html/icons/services/vrf-system.html":Z2,"/src/html/icons/steps/list-marker.html":f2,"/src/html/icons/steps/steps-icons-desktop.html":s2,"/src/html/icons/steps/steps-icons-mobile.html":H2,"/src/html/icons/steps/steps-icons-tablet.html":g2});let L="";for(const r in n){const l=r.split("/").pop().replace(".html",""),t=n[r].default;L+=`
     <template id="${l}">
       ${t}
     </template>
