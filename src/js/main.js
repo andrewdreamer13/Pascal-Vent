@@ -14,8 +14,9 @@ import { initValidation } from "./forms/validation.js";
 import { initResizableSwiper } from "./sliders/matchMediaSwiper.js";
 import { initLazySvg } from "./layouts/lazySvgLoader.js";
 import { initTabs } from "./components/tabs.js";
+import {initPreloader} from "./components/preloader.js"
 // import {initGalleryTriggers} from "./layouts/gallery-builder.js"
-
+initPreloader();
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
   initBurger("#burger", ".nav");
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // initLazySvg();
   initTabs();
   // initGalleryTriggers();
+  
 
   (async () => {
     try {
@@ -39,5 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
 });
+
+
 
 

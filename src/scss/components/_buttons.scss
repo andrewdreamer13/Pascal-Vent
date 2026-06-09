@@ -41,8 +41,7 @@
   &:focus {
     outline: none;
     background-color: t.$buttonColorActive;
-    box-shadow:
-      0 0 0 15px t.$shadowColorActive,
+    box-shadow: 0 0 0 15px t.$shadowColorActive;
   }
 }
 
@@ -88,7 +87,7 @@
       0 0 0 10px t.$shadowColorActive,
       inset 2px -2px 12px 0 #226f215c;
   }
-// rewrite for the header's button
+  // rewrite for the header's button
   // @media (max-width: 1200px) {
   //   @include t.fluid-prop("padding-top", 12, 20, 768, 1200);
   //   @include t.fluid-prop("padding-bottom", 12, 20, 768, 1200);
@@ -149,10 +148,10 @@
   position: absolute;
   top: -75px;
   right: 10px;
-   @include t.fluid-prop("width", 40, 50, 320, 480);
-    @include t.fluid-prop("height", 40, 50, 320, 480);
+  @include t.fluid-prop("width", 40, 50, 320, 480);
+  @include t.fluid-prop("height", 40, 50, 320, 480);
   border-radius: 15px;
-   @include t.fluid-prop("border-radius", 12, 15, 320, 480);
+  @include t.fluid-prop("border-radius", 12, 15, 320, 480);
   background: t.$buttonColor;
   box-shadow:
     0 0 0 10px t.$shadowColor,
@@ -176,9 +175,24 @@
       inset 2px -2px 12px 0 #226f215c;
   }
 
-   html[data-theme="dark"] & {
-       background-color: t.$darkItemBg;
-      }
+  html[data-theme="dark"] & {
+    background-color: t.$darkItemBg;
+
+    &:hover {
+      background-color: t.$buttonColorHover;
+      box-shadow:
+        0 0 0 10px t.$shadowColorHover,
+        inset 2px -2px 12px 0 #226f215c;
+    }
+
+    &:active {
+      transform: scale(0.99);
+      background-color: t.$buttonColorActive;
+      box-shadow:
+        0 0 0 10px t.$shadowColorActive,
+        inset 2px -2px 12px 0 #226f215c;
+    }
+  }
 
   &__span {
     position: absolute;
@@ -190,10 +204,6 @@
     border-radius: 1.5px;
     background-color: t.$whiteColor;
 
-     html[data-theme="dark"] & {
-       background-color: t.$bgColorForthDark;
-      }
-
 
     &:nth-child(1) {
       transform: translate(-50%, -50%) rotate(-45deg);
@@ -203,8 +213,7 @@
     }
   }
 
-  @media (max-width:480px) {
-     top: -65px;
+  @media (max-width: 480px) {
+    top: -65px;
   }
 }
-
