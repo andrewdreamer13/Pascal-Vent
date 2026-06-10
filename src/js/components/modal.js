@@ -1,12 +1,12 @@
 import { buildGallery, closeGallery } from "../layouts/gallery-builder.js";
 
 export function openModalWindow() {
-  
   const modal = document.querySelector("#modal");
   const openButtons = document.querySelectorAll("[data-modal]");
 
   const closeAll = () => {
     modal.classList.remove("modal--visible");
+     modal.classList.remove("modal--gallery");
     document.body.classList.remove("modal-open");
     document.documentElement.classList.remove("modal-open");
     closeGallery();
@@ -39,11 +39,14 @@ export function openModalWindow() {
 
       if (targetContent) {
         modal.classList.add("modal--visible");
+
         targetContent.classList.add("modal__content--visible");
+
         document.body.classList.add("modal-open");
-         document.documentElement.classList.add("modal-open");
+        document.documentElement.classList.add("modal-open");
         // gallery hook
         if (path === "gallery") {
+           modal.classList.add("modal--gallery");
           const category = event.currentTarget.dataset.galleryType;
 
           requestAnimationFrame(() => {
