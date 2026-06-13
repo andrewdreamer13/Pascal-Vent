@@ -5,7 +5,7 @@
   min-height: 528px;
   padding-bottom: 100px;
   @include t.fluid-prop("padding-top", 50, 100, 320, 1200);
-   @include t.fluid-prop("padding-bottom", 100, 140, 320, 1200);
+  @include t.fluid-prop("padding-bottom", 100, 140, 320, 1200);
 
   &__bg-wrapper {
     z-index: 1;
@@ -21,15 +21,12 @@
       object-fit: cover;
     }
 
-     html[data-theme="dark"] & {
-     
-      svg rect{
-        fill:t.$darkBodyBg;
-        
+    html[data-theme="dark"] & {
+      svg rect {
+        fill: t.$darkBodyBg;
       }
-      svg path{
-        fill:t.$darkBodyBg;
-        
+      svg path {
+        fill: t.$darkBodyBg;
       }
     }
   }
@@ -92,12 +89,12 @@
 
   &__info-tagline {
     margin-top: auto;
-     color: var(--clr-textColor);
+    color: var(--clr-textColor);
     font-weight: 500;
     font-size: 18px;
     @include t.fluid-prop("font-size", 14, 18, 320, 768);
-    font-family: t.$font-title;
     line-height: 1;
+    font-family: t.$font-title;
   }
 
   &__info-tagline-accent {
@@ -132,9 +129,9 @@
     @include t.fluid-prop("margin-bottom", 15, 25, 320, 576);
     font-family: t.$font-title;
 
-     html[data-theme="dark"] & {
+    html[data-theme="dark"] & {
       color: t.$textColor5;
-     }
+    }
   }
 
   &__contacts-list {
@@ -193,9 +190,36 @@
 
   &__contacts-text {
     color: t.$textColor4;
-     color: var(--clr-textColor);
+    color: var(--clr-textColor);
     font-size: 14px;
     line-height: 1.4;
+
+    &[data-text] {
+      display: block;
+      position: relative;
+      transition: all 0.3s;
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        overflow: hidden;
+        content: attr(data-text);
+        color: t.$buttonColorHover;
+        white-space: nowrap;
+        transition: width 0.3s;
+      }
+
+      &:hover {
+        transform: translateX(2px);
+        color: transparent;
+      }
+
+      &:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+    }
   }
 
   &__mail-link {
@@ -339,15 +363,14 @@
 
   &__up-button {
     display: block;
+    z-index: 10;
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
     overflow: hidden;
-     @include t.fluid-prop("width", 40, 55, 576, 1200);
+    transform: translateX(-50%);
+    @include t.fluid-prop("width", 40, 55, 576, 1200);
     @include t.fluid-prop("height", 40, 55, 576, 1200);
-    //  @include t.fluid-prop("padding", 6, 10, 576, 1200);
     @include t.fluid-prop("border-radius", 10, 15, 576, 1200);
 
     background-color: t.$buttonColor;
@@ -372,23 +395,39 @@
         0 0 0 7px t.$shadowColor,
         inset 2px -2px 10px 0 #226f215c;
     }
-
-    @media (max-width: 576px) {
-      // display: none;
-    }
   }
 
-  &__up-button-svg{
-     rotate: 90deg;
+  &__up-button-svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    animation: arrow-float 2s infinite linear;
+    pointer-events: none;
+  }
+
+  &__up-button-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform-origin: center;
+
+    rotate: 90deg;
+    animation: arrow-push 2.5s infinite linear;
     pointer-events: none;
 
-   
-   
+    .footer__up-button:hover &{
+    animation-play-state: paused;
+  }
+  }
+
+  @keyframes arrow-push {
+    0%,
+    100% {
+      transform: translateX(-3px);
+    }
+
+    50% {
+      transform: translateX(3px);
+    }
   }
 }
-
-
-

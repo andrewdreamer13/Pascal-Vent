@@ -7,7 +7,6 @@
   width: fit-content;
   line-height: 1.33;
   font-family: t.$font-title;
-  text-transform: capitalize;
 
   &__row {
     display: block;
@@ -20,17 +19,22 @@
     align-items: start;
     @include t.fluid-prop("gap", 15, 25, 320, 480);
     width: 100%;
+    --line-scale: 0;
 
-    &::after {
+   &::after {
       max-width: 100%;
       height: 2px;
-      transform: translateY(0.65em);
+      transform: translateY(0.65em) scaleX(var(--line-scale));
+      transform-origin: left center; // Чтобы линия росла слева направо
       background: t.$iconFill;
       content: "";
     }
   }
 
   &__text {
-    text-wrap: balance;
+    white-space: nowrap;
+    span {
+      display: inline-block;
+    }
   }
 }

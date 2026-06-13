@@ -1,9 +1,9 @@
 <section
   class="hero"
   id="hero"
- > 
- <!-- <div class="container-wide"> -->
- <div class="container-right">
+>
+  <!-- <div class="container-wide"> -->
+  <div class="container-right">
     <div class="hero__inner">
       <div class="hero__content">
         <h1 class="hero__title">
@@ -34,10 +34,13 @@
           </div>
 
           <div class="hero__contact-item">
-            <load
-              class="hero__svg-icon phone-icon"
-              src="/src/html/icons/common/phone.html"
-            />
+            <div class="hero__phone-box">
+              <load
+                class="hero__svg-icon hero__phone-icon"
+                src="/src/html/icons/common/phone.html"
+              />
+            </div>
+
             <div class="hero__contact-phones">
               <a
                 class="hero__phone-link"
@@ -47,7 +50,9 @@
                   class="hero__svg-icon phone-icon--mobile"
                   src="/src/html/icons/common/phone.html"
                 />
-                <span>+44 20 7946 0018</span>
+                <span data-text="+44&nbsp;20&nbsp;7946&nbsp;0018"
+                  >+44 20 7946 0018</span
+                >
               </a>
               <a
                 class="hero__phone-link"
@@ -57,7 +62,9 @@
                   class="hero__svg-icon phone-icon--mobile"
                   src="/src/html/icons/common/phone.html"
                 />
-                <span>+44 20 7946 0552</span>
+                <span data-text="+44&nbsp;20&nbsp;7946&nbsp;0552"
+                  >+44 20 7946 0552</span
+                >
               </a>
             </div>
           </div>
@@ -75,7 +82,5 @@
       <load src="/src/html/sliders/hero-slider.html" />
     </div>
   </div>
-<!-- </div> -->
- 
-  
+  <!-- </div> -->
 </section>

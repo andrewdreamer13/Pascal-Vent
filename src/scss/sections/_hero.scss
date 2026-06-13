@@ -3,8 +3,7 @@
 .hero {
   width: 100%;
   min-height: 820px;
-  //  background-color: t.$bgColorThird;
-    background-color: var(--clr-heroBg);
+  background-color: var(--clr-heroBg);
 
   &__inner {
     @include t.flex-mix(space-between, center);
@@ -95,8 +94,18 @@
 
   &__contact-item {
     padding-left: 10px;
-     color: var(--clr-mainTitle);
+    color: var(--clr-mainTitle);
     @include t.flex-mix(start, center, row, 20px);
+
+    &:hover {
+      .hero__phone-icon {
+        animation-play-state: paused;
+      }
+
+      .hero__phone-box {
+        animation-play-state: paused;
+      }
+    }
 
     @media (max-width: 480px) {
       padding-left: 0;
@@ -144,6 +153,35 @@
 
   &__phone-link {
     @include t.flex-mix(center, center, row, 12px);
+
+    span {
+      display: block;
+      position: relative;
+      transition: all 0.3s;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        overflow: hidden;
+        content: attr(data-text);
+        color: t.$buttonColorHover;
+        white-space: nowrap;
+
+        transition: width 0.3s;
+      }
+
+      &:hover {
+        transform: translateX(2px);
+        color: transparent;
+      }
+
+      &:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+    }
   }
 
   &__button {
@@ -225,7 +263,6 @@
     position: relative;
     width: 100%;
     min-height: 820px;
-    // background-color: t.$bgColorThird;
     background-color: var(--clr-heroBg);
 
     @media (min-width: 1920px) {
@@ -277,5 +314,77 @@
       scale: 1;
       opacity: 1;
     }
+  }
+}
+
+.map-pin {
+  animation: map-pin-float 4s infinite ease-in-out;
+}
+
+@keyframes map-pin-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.hero__phone-box {
+  display: flex;
+  z-index: 10;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  animation: pulse-shadows 2s infinite ease-out;
+
+  @media(max-width:480px) {
+    display: none;
+  }
+}
+
+@keyframes pulse-shadows {
+  0% {
+    box-shadow:
+      0 0 2px 0px rgba(t.$iconFill, 0.6),
+      0 0 2px 0px rgba(t.$iconFill, 0.4);
+  }
+
+  100% {
+    box-shadow:
+      0 0 6px 18px rgba(t.$iconFill, 0),
+      0 0 4px 18px rgba(t.$iconFill, 0);
+  }
+}
+
+.hero__phone-icon {
+  animation: phone-shake 2s infinite ease-in-out;
+  
+}
+
+@keyframes phone-shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(-12deg);
+  }
+  20% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(0);
   }
 }
