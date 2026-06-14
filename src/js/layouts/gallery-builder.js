@@ -1,3 +1,4 @@
+
 import Swiper from "swiper/bundle";
 import { galleries } from "../data/gallery-data.js";
 
@@ -13,16 +14,25 @@ const createSlideHTML = (img) => `
 let gallerySwiper = null;
 
 const initSwiper = () => {
+  const isDesktop = window.innerWidth > 768;
+
   gallerySwiper = new Swiper(".gallery__slider", {
     slidesPerView: 1,
-    spaceBetween: 10,
     initialSlide: 0,
-    centeredSlides: true,
     roundLengths: true,
+    centeredSlides: isDesktop,
 
-    // observer: true,
-    // observeParents: true,
-    // observeSlideChildren: true,
+    effect: isDesktop ? "fade" : "slide",
+    fadeEffect: {
+      crossFade: true,
+    },
+
+    // Настройки расстояния и скорости
+    spaceBetween: isDesktop ? 0 : 10, // Для свайпа на мобилке нужен зазор, для фейда — нет
+    speed: isDesktop ? 800 : 400, // На десктопе благородный фейд (800ms), на мобилке — шустрый свайп
+
+    // На десктопе отключаем тач (мышкой фейд не потянешь), на мобилке — ЖЕЛЕЗНО включаем для пальца
+    allowTouchMove: !isDesktop,
 
     pagination: {
       el: ".swiper-pagination",
@@ -57,25 +67,17 @@ export const buildGallery = (category) => {
   }
 
   gallerySwiper = null;
-  // if (gallerySwiper) {
-  //   gallerySwiper.destroy(true, false);
-  //   gallerySwiper = null;
-  // }
 
   wrapper.innerHTML = "";
   const slidesHTML = data.map((img) => createSlideHTML(img)).join("");
   wrapper.insertAdjacentHTML("afterbegin", slidesHTML);
 
- requestAnimationFrame(() => {
-   initSwiper();
- });
+  requestAnimationFrame(() => {
+    initSwiper();
+  });
 };
 
 export const closeGallery = () => {
-  // if (gallerySwiper) {
-  //   gallerySwiper.destroy(true, false);
-  //   gallerySwiper = null;
-  // }
   if (
     gallerySwiper &&
     typeof gallerySwiper.destroy === "function" &&
@@ -85,6 +87,31 @@ export const closeGallery = () => {
   }
 
   gallerySwiper = null;
- 
 };
 
+
+// const initSwiper = () => {
+//   gallerySwiper = new Swiper(".gallery__slider", {
+//     slidesPerView: 1,
+//     spaceBetween: 10,
+//     initialSlide: 0,
+//     centeredSlides: true,
+//     roundLengths: true,
+
+//     effect: "fade",
+//     fadeEffect: {
+//       crossFade: true,
+//     },
+
+//     speed: 800,
+
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: ".gallery__button-next",
+//       prevEl: ".gallery__button-prev",
+//     },
+//   });
+// };

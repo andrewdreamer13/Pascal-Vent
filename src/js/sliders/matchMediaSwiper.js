@@ -1,7 +1,5 @@
 import Swiper from "swiper/bundle";
 
-// script for turning on swiper slider at pointed window width
-
 export const initResizableSwiper = () => {
   const resizableSwiper = (
     breakpoint,
@@ -23,15 +21,13 @@ export const initResizableSwiper = () => {
 
     const checker = function () {
       if (breakpoint.matches) {
-        // Создаем слайдер ТОЛЬКО если его еще нет
         if (swiper === undefined) {
           return enableSwiper(swiperClass, swiperSettings);
         }
       } else {
-        // Уничтожаем ТОЛЬКО если он существует
         if (swiper !== undefined) {
           swiper.destroy(true, true);
-          swiper = undefined; // Важно: очищаем переменную для следующего цикла
+          swiper = undefined; 
         }
         return;
       }
@@ -41,10 +37,10 @@ export const initResizableSwiper = () => {
     checker();
   };
 
-  // callback function to do something when slider is working
+
   const someFunc = (instance) => {
     if (instance) {
-      // console.log(instance)
+      
       instance.on("slideChange", function (e) {
         console.log("*** mySwiper.activeIndex", instance.activeIndex);
       });

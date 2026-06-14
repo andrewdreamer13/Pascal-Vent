@@ -23,7 +23,9 @@
     top: -10%;
     left: -30%;
     width: 43%;
+    transform-style: preserve-3d;
     opacity: 0.8;
+    will-change: opacity;
 
     @media (min-width: 1440px) {
       top: 0%;
@@ -55,6 +57,8 @@
     left: 50%;
     width: 100%;
     transform: translate(-45%, -50%);
+    transform-style: preserve-3d;
+    will-change: opacity;
 
     @media (min-width: 1440px) {
       width: 90%;
@@ -162,8 +166,8 @@
     left: 0;
     padding: 5px 15px;
     border-radius: 0 10px 10px 0;
-     background-color: var(--clr-decorBg);
-   
+    background-color: var(--clr-decorBg);
+
     color: t.$textColor1;
     font-weight: 600;
     font-size: 15px;
@@ -229,6 +233,16 @@
   }
 }
 
+@keyframes leaves-shift {
+  0%,
+  100% {
+    transform: translate(-45%, -50%);
+  }
+  50% {
+    transform: translate(calc(-45% + 15px), -50%);
+  }
+}
+
 @keyframes leaf-sway {
   0% {
     transform: rotate(-10deg) skewX(-2deg) translate(10px, 10px);
@@ -240,7 +254,7 @@
 
 .svg-lungs path {
   transform-origin: 50% 20%;
-  animation: breathe 5s ease-in-out infinite;
+  animation: breathe 6s ease-in-out infinite;
 }
 
 @keyframes breathe {

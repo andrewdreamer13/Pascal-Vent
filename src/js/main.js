@@ -8,7 +8,6 @@ import "swiper/css/navigation";
 
 import { initBurger } from "./components/burger.js";
 import { initSliders } from "./sliders/sliders.js";
-import { initServicesAnimation } from "./animations/servicesAnimation.js";
 import { changeTheme } from "./components/changeTheme.js";
 import { initHeader } from "./layouts/header.js";
 import { openModalWindow } from "./components/modal.js";
@@ -17,7 +16,8 @@ import { initResizableSwiper } from "./sliders/matchMediaSwiper.js";
 import { initLazySvg } from "./layouts/lazySvgLoader.js";
 import { initTabs } from "./components/tabs.js";
 import {initPreloader} from "./components/preloader.js"
-
+import { initServicesAnimation } from "./animations/servicesAnimation.js";
+import {initInstallationAnimation} from "./animations/installationAnimation.js"
 // initPreloader();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initSliders();
   changeTheme();
   openModalWindow();
-  initServicesAnimation();
   initValidation("[data-validate]");
   initResizableSwiper();
   initTabs();
-  
+  initServicesAnimation();
+  initInstallationAnimation();
 
   (async () => {
     try {
