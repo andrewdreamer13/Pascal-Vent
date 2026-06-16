@@ -19,6 +19,7 @@ import { initInstallationAnimation } from "./animations/installationAnimation.js
 import { initStepsAnimation } from "./animations/stepsAnimation.js";
 import { initRequestAnimation } from "./animations/requestAnimatjon.js";
  import { initAboutAnimation } from "./animations/aboutAnimation.js";
+ import { initComfortAnimation } from "./animations/comfortAnimation.js";
 // initPreloader();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStepsAnimation();
   initRequestAnimation();
   initAboutAnimation();
+  initComfortAnimation();
 
   (async () => {
     try {
