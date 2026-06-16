@@ -1,4 +1,3 @@
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -56,7 +55,6 @@ export const initStepsAnimation = () => {
 
   let mm = gsap.matchMedia();
 
-  // 1200px + (Desktop) -------------------------------------------------------------
   mm.add("(min-width: 1200px)", () => {
     const wrapper = document.getElementById("steps-desktop-wrapper");
     if (!wrapper) return;
@@ -106,14 +104,14 @@ export const initStepsAnimation = () => {
         const totalSteps = Math.max(el.circles.length, el.icons.length);
 
         for (let i = 0; i < totalSteps; i++) {
-          const circleDuration = 1.0; // Сделали появление плавнее
-          const lineDuration = 1.3; // Линия бежит параллельно и финиширует чуть позже
+          const circleDuration = 1.0;
+          const lineDuration = 1.3;
 
           if (el.circles[i])
             tl.to(
               el.circles[i],
               { duration: circleDuration, opacity: 1, ease: "power2.out" },
-              time, // Стартует в текущую временную засечку
+              time,
             );
           if (el.icons[i])
             tl.to(
@@ -137,20 +135,18 @@ export const initStepsAnimation = () => {
                 autoAlpha: 1,
                 ease: "power1.inOut",
               },
-              time, // ТУТ МАГИЯ: линия начинает бежать ОДНОВРЕМЕННО с кружком
+              time,
             );
             if (el.heads[i]) {
               tl.to(
                 el.heads[i],
                 { duration: 0.2, autoAlpha: 1, ease: "power1.out" },
-                time + lineDuration - 0.1, // Наконечник мягко загорается под самый конец линии
+                time + lineDuration - 0.1,
               );
             }
 
-            // Следующий шаг начнется ровно тогда, когда текущая линия добежит
             time += lineDuration;
           } else {
-            // Если линии нет, шагаем по времени кружка
             time += circleDuration;
           }
         }
@@ -182,7 +178,6 @@ export const initStepsAnimation = () => {
     checkDesktopSvg();
   });
 
-  // 768px - 1199px (Tablet) -------------------------------------------------------------
   mm.add("(min-width: 768px) and (max-width: 1199px)", () => {
     const wrapper = document.getElementById("steps-tablet-wrapper");
     if (!wrapper) return;
@@ -304,7 +299,6 @@ export const initStepsAnimation = () => {
     checkTabletSvg();
   });
 
-  // Меньше 767px (Mobile) -------------------------------------------------------------
   mm.add("(max-width: 767px)", () => {
     const wrapper = document.getElementById("steps-mobile-wrapper");
     if (!wrapper) return;
@@ -440,7 +434,3 @@ export const initStepsAnimation = () => {
     checkMobileSvg();
   });
 };
-
-
-
-

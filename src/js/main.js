@@ -19,6 +19,7 @@ import {initPreloader} from "./components/preloader.js"
 import { initServicesAnimation } from "./animations/servicesAnimation.js";
 import {initInstallationAnimation} from "./animations/installationAnimation.js"
 import {initStepsAnimation} from "./animations/stepsAnimation.js"
+ import {initRequestAnimation} from "./animations/requestAnimatjon.js"
 // initPreloader();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initServicesAnimation();
   initInstallationAnimation();
   initStepsAnimation();
+   initRequestAnimation();
   
   
   (async () => {

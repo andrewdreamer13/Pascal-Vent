@@ -3,7 +3,7 @@
 .steps {
   width: 100%;
   padding-top: 25px;
-  @include t.fluid-prop("padding-bottom", 45, 100, 320, 768);
+  @include t.fluid-prop("padding-bottom", 45, 150, 320, 768);
 
   &__inner {
     width: 100%;
