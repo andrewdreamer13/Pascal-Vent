@@ -18,6 +18,7 @@ import { initTabs } from "./components/tabs.js";
 import {initPreloader} from "./components/preloader.js"
 import { initServicesAnimation } from "./animations/servicesAnimation.js";
 import {initInstallationAnimation} from "./animations/installationAnimation.js"
+import {initStepsAnimation} from "./animations/stepsAnimation.js"
 // initPreloader();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,13 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
   initTabs();
   initServicesAnimation();
   initInstallationAnimation();
-
+  initStepsAnimation();
+  
+  
   (async () => {
     try {
-     await import("./layouts/svg-templates.js");
+      await import("./layouts/svg-templates.js");
       initLazySvg();
     } catch (error) {
-      console.error('SVG template lazy-loading error:', error);
+      console.error("SVG template lazy-loading error:", error);
       initLazySvg();
     }
   })();
