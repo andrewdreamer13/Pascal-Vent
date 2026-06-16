@@ -1,5 +1,3 @@
-
-
 import "../scss/main.scss";
 import "virtual:svg-icons-register";
 
@@ -15,15 +13,15 @@ import { initValidation } from "./forms/validation.js";
 import { initResizableSwiper } from "./sliders/matchMediaSwiper.js";
 import { initLazySvg } from "./layouts/lazySvgLoader.js";
 import { initTabs } from "./components/tabs.js";
-import {initPreloader} from "./components/preloader.js"
+import { initPreloader } from "./components/preloader.js";
 import { initServicesAnimation } from "./animations/servicesAnimation.js";
-import {initInstallationAnimation} from "./animations/installationAnimation.js"
-import {initStepsAnimation} from "./animations/stepsAnimation.js"
- import {initRequestAnimation} from "./animations/requestAnimatjon.js"
+import { initInstallationAnimation } from "./animations/installationAnimation.js";
+import { initStepsAnimation } from "./animations/stepsAnimation.js";
+import { initRequestAnimation } from "./animations/requestAnimatjon.js";
+ import { initAboutAnimation } from "./animations/aboutAnimation.js";
 // initPreloader();
 
 document.addEventListener("DOMContentLoaded", () => {
-
   initHeader();
   initBurger("#burger", ".nav");
   initSliders();
@@ -35,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initServicesAnimation();
   initInstallationAnimation();
   initStepsAnimation();
-   initRequestAnimation();
-  
-  
+  initRequestAnimation();
+  initAboutAnimation();
+
   (async () => {
     try {
       await import("./layouts/svg-templates.js");
@@ -48,7 +46,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
 });
-
-
-
-
