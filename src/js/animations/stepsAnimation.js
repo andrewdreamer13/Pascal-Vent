@@ -59,7 +59,7 @@ export const initStepsAnimation = () => {
     const wrapper = document.getElementById("steps-desktop-wrapper");
     if (!wrapper) return;
 
-    gsap.set(letters, { opacity: 0, y: 40 });
+    gsap.set(letters, { opacity: 0, y: 15 });
     if (contentDesktop) gsap.set(contentDesktop, { opacity: 0, y: -40 });
     if (vizItems.length) gsap.set(vizItems, { opacity: 0 });
 
@@ -182,7 +182,7 @@ export const initStepsAnimation = () => {
     const wrapper = document.getElementById("steps-tablet-wrapper");
     if (!wrapper) return;
 
-    gsap.set(letters, { opacity: 0, y: 35 });
+    gsap.set(letters, { opacity: 0, y: 15 });
     if (contentDesktop) gsap.set(contentDesktop, { opacity: 0, y: -35 });
     if (vizItems.length) gsap.set(vizItems, { opacity: 0 });
 

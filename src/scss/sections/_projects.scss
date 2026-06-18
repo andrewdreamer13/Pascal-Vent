@@ -13,6 +13,7 @@
     position: relative;
     @include t.flex-mix(space-between, center);
     margin-bottom: 50px;
+    --projects-bg-opacity: 0;
 
     &::after {
       position: absolute;
@@ -24,7 +25,8 @@
       background-color: #54e165;
       content: "";
       filter: blur(100px);
-      opacity: 0.4;
+     opacity: var(--projects-bg-opacity); 
+    // transition: opacity 0.3s ease;
       pointer-events: none;
     }
 

@@ -7,7 +7,7 @@ export const initComfortAnimation = () => {
   const comfortSection = document.querySelector(".comfort");
   if (!comfortSection) return;
 
-  // 1. Посимвольное разбиение заголовков
+  
   const sectionTitleTexts = comfortSection.querySelectorAll(".title__text");
   sectionTitleTexts.forEach((item) => {
     const originalText = item.textContent;
@@ -22,7 +22,7 @@ export const initComfortAnimation = () => {
   const letters = comfortSection.querySelectorAll(".title__text span");
   const rowWithLine = comfortSection.querySelector(".title__row--with-line");
 
-  // Иконки и текстовый контент
+
   const iconsContainer = comfortSection.querySelector(
     ".comfort__benefits-icons",
   );

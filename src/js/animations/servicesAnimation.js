@@ -27,7 +27,7 @@ export const initServicesAnimation = () => {
   let mm = gsap.matchMedia();
 
   mm.add("(min-width: 901px)", () => {
-    gsap.set(letters, { opacity: 0, y: 40 });
+    gsap.set(letters, { opacity: 0, y: 15 });
     gsap.set(descriptions, { opacity: 0, y: 30 });
     gsap.set(tabsContainer, { opacity: 0, y: -40 });
 
@@ -65,7 +65,7 @@ export const initServicesAnimation = () => {
   });
 
   mm.add("(max-width: 900px)", () => {
-    gsap.set(letters, { opacity: 0, y: 30 });
+    gsap.set(letters, { opacity: 0, y: 15 });
     gsap.set(descriptions, { opacity: 0, y: 20 });
     gsap.set(tabsContainer, { opacity: 0, y: 30 });
 

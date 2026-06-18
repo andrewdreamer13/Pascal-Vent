@@ -31,7 +31,7 @@ export const initInstallationAnimation = () => {
 
   
   mm.add("(min-width: 951px)", () => {
-    gsap.set(letters, { opacity: 0, y: 40 });
+    gsap.set(letters, { opacity: 0, y: 15 });
     gsap.set(bgLung, { opacity: 0 });
     gsap.set(bgLeaves, { opacity: 0 });
     gsap.set(allCards, { opacity: 0, x: 50 });
@@ -93,7 +93,7 @@ export const initInstallationAnimation = () => {
   });
   
   mm.add("(max-width: 950px)", () => {
-    gsap.set(letters, { opacity: 0, y: 30 });
+    gsap.set(letters, { opacity: 0, y: 15 });
     gsap.set(bgLeaves, { opacity: 0 });
     gsap.set(allCards, { opacity: 0, x: 40 });
 

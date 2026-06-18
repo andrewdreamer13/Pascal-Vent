@@ -20,6 +20,8 @@ import { initStepsAnimation } from "./animations/stepsAnimation.js";
 import { initRequestAnimation } from "./animations/requestAnimatjon.js";
  import { initAboutAnimation } from "./animations/aboutAnimation.js";
  import { initComfortAnimation } from "./animations/comfortAnimation.js";
+ import { initSchemeAnimation } from "./animations/schemeAnimation.js";
+ import { initProjectsAnimation } from "./animations/projectsAnimation.js";
 // initPreloader();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -37,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initRequestAnimation();
   initAboutAnimation();
   initComfortAnimation();
+  initSchemeAnimation();
+  initProjectsAnimation();
 
   (async () => {
     try {
