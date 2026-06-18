@@ -18,10 +18,11 @@ import { initServicesAnimation } from "./animations/servicesAnimation.js";
 import { initInstallationAnimation } from "./animations/installationAnimation.js";
 import { initStepsAnimation } from "./animations/stepsAnimation.js";
 import { initRequestAnimation } from "./animations/requestAnimatjon.js";
- import { initAboutAnimation } from "./animations/aboutAnimation.js";
- import { initComfortAnimation } from "./animations/comfortAnimation.js";
- import { initSchemeAnimation } from "./animations/schemeAnimation.js";
- import { initProjectsAnimation } from "./animations/projectsAnimation.js";
+import { initAboutAnimation } from "./animations/aboutAnimation.js";
+import { initComfortAnimation } from "./animations/comfortAnimation.js";
+import { initSchemeAnimation } from "./animations/schemeAnimation.js";
+import { initProjectsAnimation } from "./animations/projectsAnimation.js";
+import { initClientsAnimation } from "./animations/clientsAnimation.js";
 // initPreloader();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initComfortAnimation();
   initSchemeAnimation();
   initProjectsAnimation();
+  initClientsAnimation();
 
   (async () => {
     try {
