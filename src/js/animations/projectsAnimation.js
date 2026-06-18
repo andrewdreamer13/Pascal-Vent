@@ -31,7 +31,7 @@ export const initProjectsAnimation = () => {
     if (description) gsap.set(description, { opacity: 0, y: -40 });
     if (slider) gsap.set(slider, { opacity: 0, y: 30 });
     if (projectsContent)
-      gsap.set(projectsContent, { "--projects-bg-opacity": 0 }); // Скрываем фон в 0
+      gsap.set(projectsContent, { "--projects-bg-opacity": 0 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
