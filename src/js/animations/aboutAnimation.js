@@ -7,9 +7,9 @@ export const initAboutAnimation = () => {
   const aboutSection = document.querySelector(".about");
   if (!aboutSection) return;
 
- 
   const sectionTitleTexts = aboutSection.querySelectorAll(".title__text");
   sectionTitleTexts.forEach((item) => {
+    if (item.querySelector("span")) return;
     const originalText = item.textContent;
     item.innerHTML = "";
     for (let char of originalText) {
@@ -29,14 +29,12 @@ export const initAboutAnimation = () => {
     ".about__advantages-item",
   );
 
-
   const advantagesBgs = aboutSection.querySelectorAll(
     ".about__advantages-item-bg .icon-wrapper",
   );
 
   let mm = gsap.matchMedia();
 
-  
   mm.add("(min-width: 951px)", () => {
     gsap.set(letters, { opacity: 0, y: 15 });
     gsap.set(featuresBox, { opacity: 0, x: -30 });
@@ -73,7 +71,7 @@ export const initAboutAnimation = () => {
         { duration: 0.8, opacity: 1, y: 0, stagger: 0.15, ease: "power2.out" },
         0.3,
       )
-     
+
       .to(
         advantagesItems,
         {
@@ -86,13 +84,13 @@ export const initAboutAnimation = () => {
         },
         0.4,
       )
-    
+
       .to(advantagesBgs, {
         duration: 0.6,
         opacity: 1,
         scale: 1,
         stagger: 0.15,
-        ease: "back.out(1.3)", 
+        ease: "back.out(1.3)",
       });
 
     if (rowWithLine) {
@@ -104,7 +102,6 @@ export const initAboutAnimation = () => {
     }
   });
 
- 
   mm.add("(max-width: 950px)", () => {
     gsap.set(letters, { opacity: 0, y: 15 });
     gsap.set(featuresBox, { opacity: 0, y: 30 });
@@ -157,7 +154,6 @@ export const initAboutAnimation = () => {
       );
     }
 
-    
     if (advantagesContainer) {
       const tlMobileAdv = gsap.timeline({
         scrollTrigger: {

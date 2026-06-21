@@ -1,7 +1,4 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const initProjectsAnimation = () => {
   const projectsSection = document.querySelector(".projects");
@@ -9,6 +6,7 @@ export const initProjectsAnimation = () => {
 
   const sectionTitleTexts = projectsSection.querySelectorAll(".title__text");
   sectionTitleTexts.forEach((item) => {
+    if (item.querySelector("span")) return;
     const originalText = item.textContent;
     item.innerHTML = "";
     for (let char of originalText) {
@@ -26,20 +24,28 @@ export const initProjectsAnimation = () => {
 
   let mm = gsap.matchMedia();
 
+  const resetStyles = () => {
+    gsap.set([letters, description, slider, projectsContent], {
+      clearProps: "all",
+    });
+    if (rowWithLine) gsap.set(rowWithLine, { clearProps: "--line-scale" });
+  };
+
+  const sliderAnimProps = {
+    initial: { opacity: 0, y: 40, scale: 0.96 },
+    animate: { duration: 1.2, opacity: 1, y: 0, scale: 1, ease: "power3.out" },
+  };
+
   mm.add("(min-width: 1101px)", () => {
+    resetStyles();
+
     gsap.set(letters, { opacity: 0, y: 15 });
     if (description) gsap.set(description, { opacity: 0, y: -40 });
-    if (slider) gsap.set(slider, { opacity: 0, y: 30 });
+    if (slider) gsap.set(slider, sliderAnimProps.initial);
     if (projectsContent)
       gsap.set(projectsContent, { "--projects-bg-opacity": 0 });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: projectsSection,
-        start: "top 55%",
-        toggleActions: "play none none none",
-      },
-    });
+    const tl = gsap.timeline({ paused: true });
 
     tl.to(
       letters,
@@ -60,36 +66,40 @@ export const initProjectsAnimation = () => {
     }
 
     if (slider) {
-      tl.to(
-        slider,
-        { duration: 1.2, opacity: 1, y: 0, ease: "power2.out" },
-        0.6,
-      );
+      tl.to(slider, sliderAnimProps.animate, 0.6);
     }
 
     if (projectsContent) {
       tl.to(
         projectsContent,
         { "--projects-bg-opacity": 0.4, duration: 1.0, ease: "power1.out" },
-        1.8,
+        1.4,
       );
     }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          tl.play();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -25% 0px" },
+    );
+
+    observer.observe(projectsSection);
+    return () => observer.disconnect();
   });
 
   mm.add("(max-width: 1100px)", () => {
+    resetStyles();
+
     gsap.set(letters, { opacity: 0, y: 25 });
     if (description) gsap.set(description, { opacity: 0, y: -25 });
-    if (slider) gsap.set(slider, { opacity: 0 });
     if (projectsContent)
-      gsap.set(projectsContent, { "--projects-bg-opacity": 0 }); // Скрываем фон в 0
+      gsap.set(projectsContent, { "--projects-bg-opacity": 0 });
 
-    const tlMobile = gsap.timeline({
-      scrollTrigger: {
-        trigger: projectsSection,
-        start: "top 65%",
-        toggleActions: "play none none none",
-      },
-    });
+    const tlMobile = gsap.timeline({ paused: true });
 
     tlMobile
       .to(
@@ -117,20 +127,51 @@ export const initProjectsAnimation = () => {
       );
     }
 
+    const observerTop = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          tlMobile.play();
+          observerTop.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -15% 0px" },
+    );
+    observerTop.observe(projectsSection);
+
+    let observerSlider;
     if (slider) {
-      tlMobile.to(
-        slider,
-        { duration: 1.0, opacity: 1, ease: "power1.out" },
-        0.5,
+      gsap.set(slider, sliderAnimProps.initial);
+
+      observerSlider = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            const tlSlider = gsap.timeline();
+
+            tlSlider.to(slider, sliderAnimProps.animate, 0);
+
+            if (projectsContent) {
+              tlSlider.to(
+                projectsContent,
+                {
+                  "--projects-bg-opacity": 0.4,
+                  duration: 0.8,
+                  ease: "power1.out",
+                },
+                0.4,
+              );
+            }
+
+            observerSlider.disconnect();
+          }
+        },
+        { rootMargin: "0px 0px -15% 0px" },
       );
+      observerSlider.observe(slider);
     }
 
-    if (projectsContent) {
-      tlMobile.to(
-        projectsContent,
-        { "--projects-bg-opacity": 0.4, duration: 0.8, ease: "power1.out" },
-        1.5,
-      );
-    }
+    return () => {
+      observerTop.disconnect();
+      if (observerSlider) observerSlider.disconnect();
+    };
   });
 };

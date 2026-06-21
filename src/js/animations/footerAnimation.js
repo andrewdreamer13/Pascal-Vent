@@ -1,91 +1,127 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const initFooterAnimation = () => {
-  const footerSection = document.querySelector(".footer");
-  if (!footerSection) return;
+  const footerInner = document.querySelector(".footer__inner");
+  if (!footerInner) return;
 
-  const logo = footerSection.querySelector(".footer__logo");
-  const info = footerSection.querySelector(".footer__info");
-  const contacts = footerSection.querySelector(".footer__contacts");
-  const request = footerSection.querySelector(".footer__request");
-  const upButton = footerSection.querySelector(".footer__up-button");
+  const logo = footerInner.querySelector(".footer__logo");
+  const info = footerInner.querySelector(".footer__info");
+  const contacts = footerInner.querySelector(".footer__contacts");
+  const request = footerInner.querySelector(".footer__request");
 
   let mm = gsap.matchMedia();
 
+  const resetStyles = () => {
+    gsap.set([logo, info, contacts, request], { clearProps: "all" });
+  };
+
+  const animProps = {
+    initial: { opacity: 0, y: 40, scale: 0.96 }, // Откуда начинаем (скрыты, опущены, чуть уменьшены)
+    animate: { duration: 1.2, opacity: 1, y: 0, scale: 1, ease: "power3.out" }, // Куда летим
+  };
+
   mm.add("(min-width: 1201px)", () => {
-    gsap.set([logo, info, contacts, request], { opacity: 0, y: 15 });
-    if (upButton) gsap.set(upButton, { opacity: 0, scale: 0.3 });
+    resetStyles();
+    gsap.set([logo, info, contacts, request], animProps.initial);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: footerSection,
-        start: "top 85%",
-        toggleActions: "play none none none",
+    const tl = gsap.timeline({ paused: true });
+
+    if (logo) tl.to(logo, animProps.animate, 0.2);
+    if (info) tl.to(info, animProps.animate, 0.5);
+    if (contacts) tl.to(contacts, animProps.animate, 0.8);
+    if (request) tl.to(request, animProps.animate, 1.1);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          tl.play();
+          observer.disconnect();
+        }
       },
-    });
+      { rootMargin: "0px 0px -25% 0px" },
+    );
 
-    tl.to(
-      [logo, info],
-      { duration: 0.6, opacity: 1, y: 0, ease: "power2.out" },
-      0,
-    )
-      .to(
-        contacts,
-        { duration: 0.6, opacity: 1, y: 0, ease: "power2.out" },
-        0.15,
-      )
-      .to(
-        request,
-        { duration: 0.6, opacity: 1, y: 0, ease: "power2.out" },
-        0.3,
-      );
-
-    if (upButton) {
-      tl.to(
-        upButton,
-        { duration: 0.5, opacity: 1, scale: 1, ease: "back.out(1.5)" },
-        0.5,
-      );
-    }
+    observer.observe(footerInner);
+    return () => observer.disconnect();
   });
 
-  mm.add("(max-width: 1200px)", () => {
-    const blocks = [logo, contacts, request, info];
+  mm.add("(min-width: 769px) and (max-width: 1200px)", () => {
+    resetStyles();
+    gsap.set([logo, info, contacts, request], animProps.initial);
 
-    blocks.forEach((block) => {
-      if (!block) return;
+    const tlTop = gsap.timeline({ paused: true });
+    if (logo) tlTop.to(logo, animProps.animate, 0.2);
+    if (info) tlTop.to(info, animProps.animate, 0.5);
 
-      gsap.set(block, { opacity: 0, y: 15 });
+    const topObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          tlTop.play();
+          topObserver.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -25% 0px" },
+    );
+    topObserver.observe(footerInner);
 
-      gsap.to(block, {
-        duration: 0.6,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: block,
-          start: "top 85%",
-          toggleActions: "play none none none",
+    const elementsToObserve = [
+      { el: contacts, delay: 0.2 },
+      { el: request, delay: 0.2 },
+    ];
+
+    const observersList = [];
+
+    elementsToObserve.forEach(({ el, delay }) => {
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to(el, { ...animProps.animate, delay });
+            obs.disconnect();
+          }
         },
-      });
+        { rootMargin: "0px 0px -25% 0px" },
+      );
+      obs.observe(el);
+      observersList.push(obs);
     });
 
-    if (upButton) {
-      gsap.set(upButton, { opacity: 0, scale: 0.3 });
-      gsap.to(upButton, {
-        duration: 0.5,
-        opacity: 1,
-        scale: 1,
-        ease: "back.out(1.5)",
-        scrollTrigger: {
-          trigger: footerSection,
-          start: "top 95%",
-          toggleActions: "play none none none",
+    return () => {
+      topObserver.disconnect();
+      observersList.forEach((obs) => obs.disconnect());
+    };
+  });
+
+  mm.add("(max-width: 768px)", () => {
+    resetStyles();
+    const elements = [logo, contacts, request, info];
+
+    gsap.set(elements, { opacity: 0, y: 25 });
+
+    const observersList = [];
+
+    elements.forEach((el) => {
+      if (!el) return;
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to(el, {
+              duration: 0.8,
+              opacity: 1,
+              y: 0,
+              ease: "power2.out",
+            });
+            obs.disconnect();
+          }
         },
-      });
-    }
+        { rootMargin: "0px 0px -25% 0px" },
+      );
+
+      obs.observe(el);
+      observersList.push(obs);
+    });
+
+    return () => observersList.forEach((obs) => obs.disconnect());
   });
 };

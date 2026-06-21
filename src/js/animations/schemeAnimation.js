@@ -9,6 +9,7 @@ export const initSchemeAnimation = () => {
 
   const sectionTitleTexts = schemeSection.querySelectorAll(".title__text");
   sectionTitleTexts.forEach((item) => {
+    if (item.querySelector("span")) return;
     const originalText = item.textContent;
     item.innerHTML = "";
     for (let char of originalText) {
@@ -203,4 +204,8 @@ export const initSchemeAnimation = () => {
       );
     }
   }
+  const resizeObserver = new ResizeObserver(() => {
+    ScrollTrigger.refresh();
+  });
+  resizeObserver.observe(document.body);
 };

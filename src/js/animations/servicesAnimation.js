@@ -8,6 +8,7 @@ export const initServicesAnimation = () => {
 
   const sectionTitleTexts = servicesSection.querySelectorAll(".title__text");
   sectionTitleTexts.forEach((item) => {
+    if (item.querySelector("span")) return;
     const originalText = item.textContent;
     item.innerHTML = "";
     for (let char of originalText) {
@@ -116,4 +117,3 @@ export const initServicesAnimation = () => {
     });
   });
 };
-

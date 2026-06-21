@@ -8,6 +8,7 @@ export const initInstallationAnimation = () => {
 
   const titleTexts = installationSection.querySelectorAll(".title__text");
   titleTexts.forEach((item) => {
+    if (item.querySelector("span")) return;
     const originalText = item.textContent;
     item.innerHTML = "";
     for (let char of originalText) {
