@@ -25,8 +25,7 @@
       background-color: #54e165;
       content: "";
       filter: blur(100px);
-     opacity: var(--projects-bg-opacity); 
-    // transition: opacity 0.3s ease;
+      opacity: var(--projects-bg-opacity);
       pointer-events: none;
     }
 
@@ -123,11 +122,23 @@
     transition: all 0.7s cubic-bezier(0.31, 1.32, 0.87, 1.33);
     transition-delay: 0.2s;
 
-    
-
     .swiper-slide-active & {
       transform: scaleX(1);
       opacity: 1;
+    }
+
+    .logo-svg {
+      #bg,
+      #pascalVent,
+      #freshAir,
+      #leftLung,
+      #rightLung,
+      #rightTrachea,
+      #centralTrachea {
+        transform: none !important;
+        animation: none !important;
+        filter: none !important;
+      }
     }
   }
 
