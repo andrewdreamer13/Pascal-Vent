@@ -6,7 +6,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  //  max-width: 1920px;
   background-color: transparent;
   transition:
     transform 0.3s ease,
@@ -14,8 +13,6 @@
     box-shadow 0.3s ease;
   @include t.fluid-prop("padding-left", 10, 45, 375, 1440);
   @include t.fluid-prop("padding-right", 10, 45, 375, 1440);
-  //@include t.fluid-prop("border-bottom-right-radius", 40, 70, 375, 1200);
-  //@include t.fluid-prop("border-bottom-left-radius", 40, 70, 375, 1200);
   @include t.fluid-prop("height", 74, 114, 375, 1200);
 
   &--hidden {
@@ -95,3 +92,89 @@ body.menu-open {
     }
   }
 }
+
+
+
+ @keyframes bgPulse {
+  0%, 100% {
+    fill-opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    fill-opacity: 0.22;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes shiftLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes shiftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+}
+
+@keyframes lungsScale {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.06) translateY(-1px);
+  }
+}
+
+.logo-svg {
+  overflow: visible; // КРИТИЧЕСКИ ВАЖНО: чтобы копии, уходящие за пределы SVG, не обрезались
+
+  // Применяем эффект глубины (3D-эхо) для всей графики легких и трахеи
+  #leftLung, #rightLung, #rightTrachea, #centralTrachea {
+    transform-origin: 29px 30px;
+    animation: lungsScale 5.8s cubic-bezier(0.37, 0.01, 0.63, 1) 0.15s infinite;
+    
+    // Создаем два слоя "эха", уходящих вглубь (назад по оси Z и вбок)
+    // Первый параметр — смещение по X, второй — по Y, третий — размытие (0 означает четкий контур), четвертый — цвет
+    filter: 
+      drop-shadow(-4px 3px 0px rgba(120, 192, 129, 0.4)) 
+      drop-shadow(-8px 6px 0px rgba(120, 192, 129, 0.15));
+  }
+
+  // Для текста тоже можно сделать легкий уходящий вглубь шлейф, но в противоположную сторону
+  #pascalVent {
+    animation: shiftLeft 5.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s infinite;
+    filter: drop-shadow(3px 2px 0px rgba(73, 94, 76, 0.2));
+  }
+
+  #freshAir {
+    animation: shiftRight 5.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s infinite;
+    filter: drop-shadow(3px 2px 0px rgba(120, 192, 129, 0.2));
+  }
+
+  #bg {
+    transform-origin: center bottom;
+    animation: bgPulse 6s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+  }
+}
+
+@media (hover: hover) {
+  a:hover .logo-svg {
+    #bg,
+    #pascalVent,
+    #freshAir,
+    #leftLung, 
+    #rightLung, 
+    #rightTrachea, 
+    #centralTrachea {
+      animation-play-state: paused;
+    }
+  }
+}  
