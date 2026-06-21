@@ -31,7 +31,6 @@
     @include t.fluid-prop("font-size", 34, 64, 320, 1440);
     line-height: 1.16;
     font-family: t.$font-title;
-    text-transform: capitalize;
   }
 
   &__title-row {
@@ -42,8 +41,12 @@
   &__title-text {
     display: inline-block;
     text-wrap: balance;
-  }
 
+    span {
+      display: inline-block;
+      white-space: pre;
+    }
+  }
   &__title-row--with-line {
     display: inline-grid;
     grid-template-columns: auto minmax(93px, 1fr);
@@ -51,18 +54,27 @@
     @include t.fluid-prop("gap", 15, 45, 320, 1440);
     width: 100%;
     max-width: 667px;
+    --line-scale: 0;
+
     &::after {
+      display: block;
       height: 2px;
       background: t.$iconFill;
       content: "";
       @include t.fluid-prop("max-width", 93, 148, 375, 1440);
-      transform: translateY(0.65em);
+      transform: translateY(0.65em) scaleX(var(--line-scale));
+      transform-origin: left center;
     }
   }
 
   &__title-row--accent {
     color: t.$iconFill;
-    text-transform: uppercase;
+    .hero__title-text {
+      span {
+        display: inline-block;
+        text-transform: uppercase;
+      }
+    }
   }
 
   &__description {
@@ -343,7 +355,7 @@
 
   animation: pulse-shadows 2s infinite ease-out;
 
-  @media(max-width:480px) {
+  @media (max-width: 480px) {
     display: none;
   }
 }
@@ -364,7 +376,6 @@
 
 .hero__phone-icon {
   animation: phone-shake 2s infinite ease-in-out;
-  
 }
 
 @keyframes phone-shake {
