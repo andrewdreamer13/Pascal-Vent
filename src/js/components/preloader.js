@@ -1,7 +1,7 @@
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const initPreloader = async () => {
+export const initPreloader = async (onUnveil) => {
   const preloader = document.querySelector("#preloader");
   if (!preloader) return;
 
@@ -16,6 +16,10 @@ export const initPreloader = async () => {
   await Promise.all([pageLoaded, delay(3000)]);
 
   preloader.classList.add("hide");
+
+  if (typeof onUnveil === "function") {
+    onUnveil();
+  }
 
   await delay(600);
   preloader.remove();

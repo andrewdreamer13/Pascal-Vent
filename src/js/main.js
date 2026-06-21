@@ -1,3 +1,8 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 import "../scss/main.scss";
 import "virtual:svg-icons-register";
 
@@ -24,7 +29,9 @@ import { initSchemeAnimation } from "./animations/schemeAnimation.js";
 import { initProjectsAnimation } from "./animations/projectsAnimation.js";
 import { initClientsAnimation } from "./animations/clientsAnimation.js";
 import { initFooterAnimation } from "./animations/footerAnimation.js";
-// initPreloader();
+import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
+import {initUpButton} from "./components/upButton.js"
+initPreloader(initFirstScreenAnimation);
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
@@ -45,6 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjectsAnimation();
   initClientsAnimation();
   initFooterAnimation();
+  initUpButton();
+  const resizeObserver = new ResizeObserver(() => {
+    ScrollTrigger.refresh();
+  });
+  resizeObserver.observe(document.body);
 
   (async () => {
     try {

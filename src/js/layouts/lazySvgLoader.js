@@ -1,6 +1,3 @@
-
-
-
 export const initLazySvg = () => {
   const lazyContainers = document.querySelectorAll("[data-svg-receiver]");
 
@@ -21,7 +18,6 @@ export const initLazySvg = () => {
 
     insertSvg(container, clone);
 
-    console.log(`SVG ${id} loaded from template`);
   };
 
   const loadFromFetch = async (container, src, id) => {
@@ -35,7 +31,6 @@ export const initLazySvg = () => {
 
     container.innerHTML = svgText;
 
-    console.log(`SVG ${id} loaded with fetch`);
   };
 
   const handleIntersection = async (entry, observer) => {

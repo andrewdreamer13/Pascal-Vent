@@ -6,25 +6,8 @@ export const initHeader = () => {
 
   if (!header) return;
 
- 
-  // let heroHeight = 0;
-
-  // const updateHeroHeight = () => {
-  //   if (hero) {
-  //     heroHeight = hero.offsetHeight;
-  //   } else {
-  //     heroHeight = 200;
-  //   }
-  // };
-
-  // updateHeroHeight();
-
-  // window.addEventListener("resize", updateHeroHeight);
-
-  
-
-   let lastScrollY = window.scrollY;
-   let ticking = false;
+  let lastScrollY = window.scrollY;
+  let ticking = false;
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -40,8 +23,7 @@ export const initHeader = () => {
       ) {
         header.classList.add("header--hidden");
         header.classList.remove("header--sticky");
-      }
-      else if (
+      } else if (
         currentScrollY < lastScrollY &&
         header.classList.contains("header--hidden")
       ) {
@@ -60,8 +42,6 @@ export const initHeader = () => {
       ticking = true;
     }
   });
-
-  //  window.addEventListener("scroll", handleScroll);
 
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
