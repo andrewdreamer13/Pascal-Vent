@@ -31,6 +31,7 @@ import { initClientsAnimation } from "./animations/clientsAnimation.js";
 import { initFooterAnimation } from "./animations/footerAnimation.js";
 import { initFirstScreenAnimation } from "./animations/firstScreenAnimation.js";
 import {initUpButton} from "./components/upButton.js"
+// import {initFocusManager} from "./components/focusManager.js"
 initPreloader(initFirstScreenAnimation);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initClientsAnimation();
   initFooterAnimation();
   initUpButton();
+  // initFocusManager();
   const resizeObserver = new ResizeObserver(() => {
     ScrollTrigger.refresh();
   });

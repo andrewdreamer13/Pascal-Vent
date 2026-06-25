@@ -109,9 +109,11 @@
     color: var(--clr-mainTitle);
     @include t.flex-mix(start, center, row, 20px);
 
-    &:hover {
-      .hero__phone-icon {
-        animation-play-state: paused;
+    @media (hover: hover) {
+      &:hover {
+        .hero__phone-icon {
+          animation-play-state: paused;
+        }
       }
 
       .hero__phone-box {
@@ -184,14 +186,16 @@
         transition: width 0.3s;
       }
 
-      &:hover {
-        transform: translateX(2px);
-        color: transparent;
-      }
+      @media (hover: hover) {
+        &:hover {
+          transform: translateX(2px);
+          color: transparent;
+        }
 
-      &:hover::after {
-        width: 100%;
-        transition: width 0.3s;
+        &:hover::after {
+          width: 100%;
+          transition: width 0.3s;
+        }
       }
     }
   }

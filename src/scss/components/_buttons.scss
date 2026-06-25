@@ -24,11 +24,19 @@
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.3s ease;
 
-  &:hover {
-    background-color: t.$buttonColorHover;
-    box-shadow:
-      0 0 0 15px t.$shadowColorHover,
-      inset 2px -2px 12px 0 #226f215c;
+  @media (hover: hover) {
+    &:hover {
+      background-color: t.$buttonColorHover;
+      box-shadow:
+        0 0 0 15px t.$shadowColorHover,
+        inset 2px -2px 12px 0 #226f215c;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: t.$buttonColorActive;
+    box-shadow: 0 0 0 15px t.$shadowColorActive;
   }
 
   &:active {
@@ -37,11 +45,6 @@
     box-shadow:
       0 0 0 15px t.$shadowColorActive,
       inset 2px -2px 12px 0 #226f215c;
-  }
-  &:focus {
-    outline: none;
-    background-color: t.$buttonColorActive;
-    box-shadow: 0 0 0 15px t.$shadowColorActive;
   }
 }
 
@@ -73,11 +76,19 @@
     transform 0.3s ease,
     visibility 0.3s ease;
 
-  &:hover {
-    background-color: t.$buttonColorHover;
-    box-shadow:
-      0 0 0 10px t.$shadowColorHover,
-      inset 2px -2px 12px 0 #226f215c;
+  @media (hover: hover) {
+    &:hover {
+      background-color: t.$buttonColorHover;
+      box-shadow:
+        0 0 0 10px t.$shadowColorHover,
+        inset 2px -2px 12px 0 #226f215c;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: t.$buttonColorActive;
+    box-shadow: 0 0 0 10px t.$shadowColorActive;
   }
 
   &:active {
@@ -87,15 +98,6 @@
       0 0 0 10px t.$shadowColorActive,
       inset 2px -2px 12px 0 #226f215c;
   }
-  // rewrite for the header's button
-  // @media (max-width: 1200px) {
-  //   @include t.fluid-prop("padding-top", 12, 20, 768, 1200);
-  //   @include t.fluid-prop("padding-bottom", 12, 20, 768, 1200);
-  //   @include t.fluid-prop("border-radius", 14, 17, 768, 1200);
-  //   box-shadow:
-  //     0 0 0 8px t.$shadowColor,
-  //     inset 2px -2px 12px 0 #226f215c;
-  // }
 }
 
 .theme-toggle-btn {
@@ -109,11 +111,22 @@
   @include t.fluid-prop("width", 45, 55, 320, 1200);
   @include t.fluid-prop("height", 45, 55, 320, 1200);
   border-radius: 17px;
-  box-shadow: inset 2px -2px 12px 0 #226f215c;
+  box-shadow:
+    0 0 0 5px transparent,
+    inset 2px -2px 12px 0 #226f215c;
   transition:
     scale 0.3s ease,
     visibility 0.3s ease,
-    opacity 0.3s ease;
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 5px t.$shadowColorActive,
+      inset 2px -2px 12px 0 #226f215c;
+  }
+
   &:active {
     transform: scale(0.99);
   }
@@ -160,11 +173,12 @@
     background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.3s ease;
-  &:hover {
-    background-color: t.$buttonColorHover;
-    box-shadow:
-      0 0 0 10px t.$shadowColorHover,
-      inset 2px -2px 12px 0 #226f215c;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: t.$buttonColorHover;
+      box-shadow: 0 0 0 10px t.$shadowColorHover;
+    }
   }
 
   &:active {
@@ -178,11 +192,13 @@
   html[data-theme="dark"] & {
     background-color: t.$darkItemBg;
 
-    &:hover {
-      background-color: t.$buttonColorHover;
-      box-shadow:
-        0 0 0 10px t.$shadowColorHover,
-        inset 2px -2px 12px 0 #226f215c;
+    @media (hover: hover) {
+      &:hover {
+        background-color: t.$buttonColorHover;
+        box-shadow:
+          0 0 0 10px t.$shadowColorHover,
+          inset 2px -2px 12px 0 #226f215c;
+      }
     }
 
     &:active {
@@ -203,7 +219,6 @@
     transform: translate(-50%, -50%) rotate(0);
     border-radius: 1.5px;
     background-color: t.$whiteColor;
-
 
     &:nth-child(1) {
       transform: translate(-50%, -50%) rotate(-45deg);

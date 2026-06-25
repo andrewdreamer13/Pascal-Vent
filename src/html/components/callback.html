@@ -1,88 +1,91 @@
-<section
-  class="callback modal__content"
+<div
+  class="modal"
   id="callback"
-  data-modal-target="callback"
 >
-  <button
-    class="close-btn"
-    type="button"
-    aria-label="Close modal"
+  <section
+    class="callback modal__content"
   >
-    <span class="close-btn__span"></span>
-    <span class="close-btn__span"></span>
-  </button>
-  <div class="callback__header">
-    <h3 class="callback__title">
-      <span class="callback__title-row callback__title-row--with-line">
-        <span class="callback__title-text">request</span>
-      </span>
-      <span class="callback__title-row">expert callback</span>
-    </h3>
-  </div>
-  <div class="callback__body">
-    <form
-      class="callback__form form"
-      action="#"
-      method="POST"
-      data-validate
-      novalidate
+    <button
+      class="close-btn"
+      type="button"
+      aria-label="Close modal"
     >
-      <div class="callback__input-box form__input-box">
-        <input
-          class="callback__input"
-          id="callback-name"
-          type="text"
-          placeholder="Full name"
-          name="name"
-          aria-describedby="name-error"
-          required
-          autocomplete="off"
-        />
-        <span
-          class="callback__error form__error-text"
-          id="name-error"
-          >Please enter a valid name</span
-        >
-      </div>
-      <div class="callback__input-box form__input-box">
-        <input
-          class="callback__input"
-          id="callback-tel"
-          type="tel"
-          placeholder="Phone"
-          name="tel"
-          aria-describedby="tel-error"
-          required
-          autocomplete="off"
-        />
-        <span
-          class="callback__error form__error-text"
-          id="tel-error"
-          >Please enter a valid number</span
-        >
-      </div>
-      <button
-        class="button callback__button"
-        type="submit"
+      <span class="close-btn__span"></span>
+      <span class="close-btn__span"></span>
+    </button>
+    <div class="callback__header">
+      <h3 class="callback__title">
+        <span class="callback__title-row callback__title-row--with-line">
+          <span class="callback__title-text">request</span>
+        </span>
+        <span class="callback__title-row">expert callback</span>
+      </h3>
+    </div>
+    <div class="callback__body">
+      <form
+        class="callback__form form"
+        action="#"
+        method="POST"
+        data-validate
+        novalidate
       >
-        send request
-      </button>
-    </form>
-    <div class="callback__success-message success-block">
-      <h3 class="success-block__title">success!</h3>
-       <p class="success-block__text success-block__text--name">
-      Thank you, <span data-naming></span>
-    </p>
-      <p class="success-block__text">We will call you back soon.</p>
-      <div class="success-block__icon-wrapper">
-        <i class="success-block__icon">✓</i>
+        <div class="callback__input-box form__input-box">
+          <input
+            class="callback__input"
+            id="callback-name"
+            type="text"
+            placeholder="Full name"
+            name="name"
+            aria-describedby="name-error"
+            required
+            autocomplete="off"
+          />
+          <span
+            class="callback__error form__error-text"
+            id="name-error"
+            >Please enter a valid name</span
+          >
+        </div>
+        <div class="callback__input-box form__input-box">
+          <input
+            class="callback__input"
+            id="callback-tel"
+            type="tel"
+            placeholder="Phone"
+            name="tel"
+            aria-describedby="tel-error"
+            required
+            autocomplete="off"
+          />
+          <span
+            class="callback__error form__error-text"
+            id="tel-error"
+            >Please enter a valid number</span
+          >
+        </div>
+        <button
+          class="button callback__button"
+          type="submit"
+        >
+          send request
+        </button>
+      </form>
+      <div class="callback__success-message success-block">
+        <h3 class="success-block__title">success!</h3>
+        <p class="success-block__text success-block__text--name">
+          Thank you, <span data-naming></span>
+        </p>
+        <p class="success-block__text">We will call you back soon.</p>
+        <div class="success-block__icon-wrapper">
+          <i class="success-block__icon">✓</i>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="callback__footer">
-    <load
-      class="callback__logo"
-      src="/src/html/icons/common/logo.html"
-    />
-  </div>
-</section>
+    <div class="callback__footer">
+      <load
+        class="callback__logo"
+        src="/src/html/icons/common/logo.html"
+      />
+    </div>
+  </section>
+</div>

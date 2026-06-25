@@ -126,20 +126,6 @@
       transform: scaleX(1);
       opacity: 1;
     }
-
-    .logo-svg {
-      #bg,
-      #pascalVent,
-      #freshAir,
-      #leftLung,
-      #rightLung,
-      #rightTrachea,
-      #centralTrachea {
-        transform: none !important;
-        animation: none !important;
-        filter: none !important;
-      }
-    }
   }
 
   &__card-content {

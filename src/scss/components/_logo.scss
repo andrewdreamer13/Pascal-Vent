@@ -1,7 +1,11 @@
-
 @use "../tools" as t;
 
 .logo {
- width: 196px;
-}
+  width: 196px;
+  transition: transform 0.3s linear;
 
+  &:focus-visible {
+    transform: scale(1.2);
+    outline: none;
+  }
+}

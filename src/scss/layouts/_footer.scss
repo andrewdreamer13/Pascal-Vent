@@ -210,14 +210,16 @@
         transition: width 0.3s;
       }
 
-      &:hover {
-        transform: translateX(2px);
-        color: transparent;
-      }
+      @media (hover: hover) {
+        &:hover {
+          transform: translateX(2px);
+          color: transparent;
+        }
 
-      &:hover::after {
-        width: 100%;
-        transition: width 0.3s;
+        &:hover::after {
+          width: 100%;
+          transition: width 0.3s;
+        }
       }
     }
   }
@@ -382,9 +384,13 @@
     svg path {
       fill: t.$whiteColor;
     }
-    &:hover {
-      background-color: t.$buttonColorHover;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: t.$buttonColorHover;
+      }
     }
+
     &:active {
       scale: 0.95;
       background-color: t.$buttonColorActive;
@@ -397,7 +403,6 @@
     }
   }
 
-
   &__up-button-svg {
     width: 100%;
     height: 100%;
@@ -408,9 +413,11 @@
     animation: arrow-push 2.5s infinite linear;
     pointer-events: none;
 
-    .footer__up-button:hover &{
-    animation-play-state: paused;
-  }
+    @media (hover: hover) {
+      .footer__up-button:hover & {
+        animation-play-state: paused;
+      }
+    }
   }
 
   @keyframes arrow-push {

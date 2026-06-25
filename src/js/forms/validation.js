@@ -147,31 +147,27 @@ export const initValidation = (formSelector) => {
               .classList.remove("_is-valid", "_is-invalid"),
           );
         } else {
-          const modal = document.querySelector("#modal");
-          const successContent = document.querySelector(
-            '[data-modal-target="popup-success"]',
-          );
+          document
+            .querySelectorAll(".modal")
+            .forEach((m) => m.classList.remove("modal--visible"));
 
-          if (modal && successContent) {
-            document
-              .querySelectorAll("[data-modal-target]")
-              .forEach((target) => {
-                target.classList.remove("modal__content--visible");
-              });
-
-            modal.classList.add("modal--visible");
-            successContent.classList.add("modal__content--visible");
-            document.body.classList.add("modal-open");
-            document.documentElement.classList.add("modal-open");
-
-            form.reset();
-            inputs.forEach((input) => {
-              const parent = input.closest(".form__input-box");
-              return parent.classList.remove("_is-valid", "_is-invalid");
-            });
+          const successModal = document.getElementById("popup-success");
+          if (successModal) {
+            successModal.classList.add("modal--visible");
           }
+
+          document.body.classList.add("modal-open");
+          document.documentElement.classList.add("modal-open");
+
+          form.reset();
+          inputs.forEach((input) => {
+            const parent = input.closest(".form__input-box");
+            return parent.classList.remove("_is-valid", "_is-invalid");
+          });
         }
       }
+
+      //
     });
   });
 };

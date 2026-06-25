@@ -2,18 +2,16 @@
 
 .modal {
   visibility: hidden;
+  opacity: 0;
   z-index: -1000;
   position: fixed;
   inset: 0;
   padding: 100px 15px;
-   overflow-y: auto;
+  overflow-y: auto;
   background: t.$modalBg;
-  opacity: 0;
   pointer-events: none;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s;
-     @include t.flex-mix(center, flex-start);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  @include t.flex-mix(center, flex-start);
 
   &--visible {
     visibility: visible;
@@ -23,17 +21,68 @@
   }
 
   &__content {
-     position: relative;
-    display: none;
+    position: relative;
+    transform: translateY(50px) scale(0.8); 
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
   }
 
-  &__content--visible {
-    display: block;
-    
+ 
+  &--visible &__content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }
 
 .modal--gallery {
   overflow-y: hidden;
-     @include t.flex-mix(center, center);
+  @include t.flex-mix(center, center);
+  
+  &.modal--visible .modal__content {
+    transform: scale(1);
+  }
 }
+
+
+
+
+
+// @use "../tools" as t;
+
+// .modal {
+//   visibility: hidden;
+//   z-index: -1000;
+//   position: fixed;
+//   inset: 0;
+//   padding: 100px 15px;
+//    overflow-y: auto;
+//   background: t.$modalBg;
+//   opacity: 0;
+//   pointer-events: none;
+//   transition:
+//     opacity 0.3s ease,
+//     visibility 0.3s;
+//      @include t.flex-mix(center, flex-start);
+
+//   &--visible {
+//     visibility: visible;
+//     opacity: 1;
+//     z-index: 1000;
+//     pointer-events: all;
+//   }
+
+//   &__content {
+//      position: relative;
+//     display: none;
+//   }
+
+//   &__content--visible {
+//     display: block;
+    
+//   }
+// }
+
+// .modal--gallery {
+//   overflow-y: hidden;
+//      @include t.flex-mix(center, center);
+// }

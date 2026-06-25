@@ -51,9 +51,12 @@
     }
   }
 
-  &:hover .line {
-    background-color: t.$buttonColorHover;
+  @media (hover: hover) {
+    &:hover .line {
+      background-color: t.$buttonColorHover;
+    }
   }
+
   &:active .line {
     background-color: t.$buttonColorActive;
   }

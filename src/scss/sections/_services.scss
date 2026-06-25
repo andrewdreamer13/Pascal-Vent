@@ -77,6 +77,7 @@
     color: t.$textColor3;
     @include t.flex-mix(space-between, center, column, 15px);
     padding: 25px 16px;
+    transition: color 0.3s ease;
 
     @media (max-width: 900px) {
       width: 50%;
@@ -90,8 +91,6 @@
       padding: 10px 20px;
     }
 
-    transition: color 0.3s ease;
-
     &--active {
       background-color: t.$buttonColorActive;
       color: t.$whiteColor;
@@ -101,11 +100,13 @@
       }
     }
 
-    &:hover:not(.services__tab-btn--active) {
-      color: t.$buttonColorActive;
+    @media (hover: hover) {
+      &:hover:not(.services__tab-btn--active) {
+        color: t.$buttonColorActive;
 
-      svg {
-        fill: t.$buttonColorActive;
+        svg {
+          fill: t.$buttonColorActive;
+        }
       }
     }
 

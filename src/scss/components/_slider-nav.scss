@@ -18,9 +18,11 @@
     }
 
     &:not(:disabled):not(&--disabled) {
-      &:hover {
-        background-color: t.$buttonColorHover;
-        box-shadow: 0 0 0 6px t.$shadowColorHover;
+      @media (hover: hover) {
+        &:hover {
+          background-color: t.$buttonColorHover;
+          box-shadow: 0 0 0 6px t.$shadowColorHover;
+        }
       }
 
       &:active {

@@ -15,6 +15,7 @@
     font-size: 15px;
     letter-spacing: 1px;
     transition: all 0.3s;
+    
 
     &::after {
       position: absolute;
@@ -29,19 +30,33 @@
       transition: width 0.3s;
     }
 
-    &:hover {
-      width: 100%;
-      transform: translateX(2px);
-      color: transparent;
+    @media (hover: hover) {
+      &:hover {
+        transform: translateX(2px);
+        color: transparent;
+      }
+
+      &:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
     }
 
-    &:hover::after {
-      width: 100%;
-      transition: width 0.3s;
+    &:focus {
+      outline: none;
+      color: t.$buttonColorHover !important;
+    }
+
+   &:focus-visible,
+    &.is-nav-focused {
+      outline: 2px solid t.$buttonColorHover;
+      outline-offset: 4px;
+      color: t.$buttonColorHover;
     }
   }
 
   @media (max-width: 1200px) {
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -60,6 +75,7 @@
     transition-delay: 1.2s;
 
     &.is-open {
+      visibility: visible;
       z-index: 10;
       height: 100dvh;
       padding: 10px;
@@ -69,7 +85,6 @@
         transform 0.3s ease,
         height 0.3s ease,
         opacity 0.3s ease;
-        
 
       .nav__item {
         transform: translateY(0) scale(1);
