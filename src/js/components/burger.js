@@ -41,6 +41,7 @@ export const initBurger = (btnSelector, menuSelector) => {
 
   // Focus trap
   menu.addEventListener("keydown", (e) => {
+     if (window.innerWidth > 1200) return;
     if (e.key !== "Tab") return;
 
     if (e.shiftKey) {
