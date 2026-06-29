@@ -3,7 +3,7 @@ import {
   initFocusManager,
   focusModal,
   restoreFocus,
-  setLastFocusedElement
+  setLastFocusedElement,
 } from "../components/focusManager.js";
 
 export function openModalWindow() {
@@ -38,7 +38,7 @@ export function openModalWindow() {
 
   openButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-     setLastFocusedElement(event.currentTarget);
+      setLastFocusedElement(event.currentTarget);
       const path = event.currentTarget.getAttribute("data-modal");
 
       const targetModal = document.getElementById(path);
@@ -55,6 +55,13 @@ export function openModalWindow() {
           const category = event.currentTarget.dataset.galleryType;
           requestAnimationFrame(() => buildGallery(category));
         }
+      }
+    });
+
+    button.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        button.click();
       }
     });
   });
